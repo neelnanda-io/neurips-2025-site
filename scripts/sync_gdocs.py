@@ -15,7 +15,7 @@ FOLDER_ID = os.environ['GDOCS_FOLDER_ID']
 
 # Mapping of doc names to content paths
 DOC_MAPPING = {
-    'overview': 'content/_index.md',
+    'main': 'content/_index.md',
     'cfp': 'content/cfp/_index.md',
     'speakers': 'content/speakers/_index.md',
     'schedule': 'content/schedule/_index.md',

@@ -19,7 +19,7 @@ Content is managed through Google Docs in a shared folder. The GitHub Action syn
 
 ### Document Mapping
 
-- `overview` → Homepage content
+- `main` → Homepage content
 - `cfp` → Call for Papers
 - `speakers` → Speakers and Panelists (displayed on homepage)
 - `schedule` → Workshop Schedule  

@@ -6,7 +6,7 @@ This folder contains markdown-formatted content that you should copy into your G
 
 1. Create a Google Drive folder for your workshop content
 2. Create the following Google Docs in that folder:
-   - `overview` - Copy content from `overview.md`
+   - `main` - Copy content from `main.md`
    - `cfp` - Copy content from `cfp.md`
    - `schedule` - Copy content from `schedule.md`
    - `speakers` - Copy content from `speakers.md`

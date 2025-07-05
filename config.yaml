@@ -9,7 +9,7 @@ params:
   
 menu:
   main:
-    - name: "Overview"
+    - name: "Home"
       url: "/"
       weight: 1
     - name: "Call for Papers"
