@@ -11,7 +11,7 @@ from googleapiclient.errors import HttpError
 
 # Configuration
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-FOLDER_ID = os.environ['GDOCS_FOLDER_ID']
+FOLDER_ID = os.environ.get('GDOCS_FOLDER_ID')
 
 # Mapping of doc names to content paths
 DOC_MAPPING = {
@@ -74,7 +74,8 @@ def main():
     credentials = get_credentials()
     service = build('drive', 'v3', credentials=credentials)
     
-    # List files in folder
+    # List files in folder and subfolders
+    # First get direct documents
     results = service.files().list(
         q=f"'{FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.document'",
         fields="files(id, name)"
@@ -82,8 +83,25 @@ def main():
     
     files = results.get('files', [])
     
+    # Then check for subfolders
+    folder_results = service.files().list(
+        q=f"'{FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder'",
+        fields="files(id, name)"
+    ).execute()
+    
+    subfolders = folder_results.get('files', [])
+    
+    # Get documents from subfolders
+    for subfolder in subfolders:
+        sub_results = service.files().list(
+            q=f"'{subfolder['id']}' in parents and mimeType='application/vnd.google-apps.document'",
+            fields="files(id, name)"
+        ).execute()
+        sub_files = sub_results.get('files', [])
+        files.extend(sub_files)
+    
     if not files:
-        print('No files found.')
+        print('No documents found.')
         return
     
     # Process each document
@@ -110,4 +128,15 @@ def main():
                 print(f"  → Saved to {output_path}")
 
 if __name__ == '__main__':
+    # Load .env file if it exists
+    if os.path.exists('.env'):
+        from dotenv import load_dotenv
+        load_dotenv()
+    
+    # Re-get FOLDER_ID after loading .env
+    FOLDER_ID = os.environ.get('GDOCS_FOLDER_ID')
+    if not FOLDER_ID:
+        print("Error: GDOCS_FOLDER_ID not found in environment")
+        exit(1)
+    
     main()

@@ -52,9 +52,10 @@ def test_sync():
         print(f"❌ Failed to connect to API: {e}")
         return False
     
-    # List files in folder
+    # List files in folder and subfolders
     print("\n4. Checking folder access and contents...")
     try:
+        # First, list direct contents
         results = service.files().list(
             q=f"'{os.environ['GDOCS_FOLDER_ID']}' in parents",
             fields="files(id, name, mimeType)"
@@ -66,36 +67,69 @@ def test_sync():
             print("❌ No files found in folder - is the folder empty or not shared?")
             return False
         
-        print(f"✅ Found {len(files)} files in folder:")
-        expected_docs = ['main', 'cfp', 'schedule', 'speakers', 'organizers']
-        found_docs = []
+        print(f"✅ Found {len(files)} items in main folder:")
+        all_docs = []
+        subfolders = []
         
         for file in files:
             print(f"   - {file['name']} ({file['mimeType']})")
-            if file['name'].lower() in expected_docs:
-                found_docs.append(file['name'].lower())
+            if file['mimeType'] == 'application/vnd.google-apps.folder':
+                subfolders.append(file)
+            elif file['mimeType'] == 'application/vnd.google-apps.document':
+                all_docs.append(file)
+        
+        # Check subfolders for documents
+        for subfolder in subfolders:
+            print(f"\n   Checking subfolder '{subfolder['name']}'...")
+            sub_results = service.files().list(
+                q=f"'{subfolder['id']}' in parents and mimeType='application/vnd.google-apps.document'",
+                fields="files(id, name, mimeType)"
+            ).execute()
+            
+            sub_files = sub_results.get('files', [])
+            if sub_files:
+                print(f"   Found {len(sub_files)} documents in subfolder:")
+                for file in sub_files:
+                    print(f"     - {file['name']}")
+                    all_docs.append(file)
         
         print(f"\n5. Checking for expected documents...")
+        expected_docs = ['main', 'cfp', 'schedule', 'speakers', 'organizers']
+        found_docs = []
+        
+        for doc in all_docs:
+            doc_name = doc['name'].lower()
+            for expected in expected_docs:
+                if expected in doc_name or doc_name in expected:
+                    found_docs.append(expected)
+                    print(f"✅ Found '{expected}' document: {doc['name']}")
+                    break
+        
         for doc in expected_docs:
-            if doc in found_docs:
-                print(f"✅ Found '{doc}' document")
-            else:
+            if doc not in found_docs:
                 print(f"❌ Missing '{doc}' document")
         
         # Test reading a document
         print("\n6. Testing document read access...")
-        if files:
-            test_file = files[0]
+        test_doc = None
+        for doc in all_docs:
+            if doc['mimeType'] == 'application/vnd.google-apps.document':
+                test_doc = doc
+                break
+        
+        if test_doc:
             try:
                 content = service.files().export(
-                    fileId=test_file['id'], 
+                    fileId=test_doc['id'], 
                     mimeType='text/plain'
                 ).execute()
-                print(f"✅ Successfully read '{test_file['name']}' ({len(content)} bytes)")
+                print(f"✅ Successfully read '{test_doc['name']}' ({len(content)} bytes)")
             except Exception as e:
                 print(f"❌ Failed to read document: {e}")
                 print("   Check that the service account has 'Viewer' permission")
                 return False
+        else:
+            print("❌ No Google Docs found to test reading")
                 
     except HttpError as e:
         print(f"❌ API Error: {e}")

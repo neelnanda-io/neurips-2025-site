@@ -254,20 +254,40 @@ def main():
     drive_service = build('drive', 'v3', credentials=credentials)
     docs_service = build('docs', 'v1', credentials=credentials)
     
-    # List files in folder
+    # List files in folder and subfolders
     try:
+        # First get direct documents
         results = drive_service.files().list(
             q=f"'{FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.document'",
             fields="files(id, name)"
         ).execute()
+        
+        files = results.get('files', [])
+        
+        # Then check for subfolders
+        folder_results = drive_service.files().list(
+            q=f"'{FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder'",
+            fields="files(id, name)"
+        ).execute()
+        
+        subfolders = folder_results.get('files', [])
+        
+        # Get documents from subfolders
+        for subfolder in subfolders:
+            print(f"Checking subfolder: {subfolder['name']}")
+            sub_results = drive_service.files().list(
+                q=f"'{subfolder['id']}' in parents and mimeType='application/vnd.google-apps.document'",
+                fields="files(id, name)"
+            ).execute()
+            sub_files = sub_results.get('files', [])
+            files.extend(sub_files)
+            
     except HttpError as error:
         print(f"Error accessing folder: {error}")
         return
     
-    files = results.get('files', [])
-    
     if not files:
-        print('No documents found in the specified folder.')
+        print('No documents found in the specified folder or subfolders.')
         return
     
     print(f"Found {len(files)} documents to sync")
