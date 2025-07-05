@@ -33,7 +33,12 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           GDOCS_FOLDER_ID: ${{ secrets.GDOCS_FOLDER_ID }}
         run: |
-          python scripts/sync_gdocs.py
+          # Use enhanced script if it exists, otherwise fall back to basic
+          if [ -f scripts/sync_gdocs_enhanced.py ]; then
+            python scripts/sync_gdocs_enhanced.py
+          else
+            python scripts/sync_gdocs.py
+          fi
 
       - name: Commit changes
         run: |
