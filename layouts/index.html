@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="workshop-header">
+  <h1 class="fade-in">{{ .Site.Title }}</h1>
+  <h2 class="fade-in">NeurIPS 2025 In-Person Workshop, San Diego, California</h2>
+  <h2 class="fade-in">{{ with .Site.Data.dates.workshop_date }}{{ . }}{{ else }}December 6 or 7, 2025{{ end }}</h2>
+</div>
+
+<main class="fade-in">
+  <section>
+    {{ .Content }}
+  </section>
+  
+  {{ with .Site.Data.dates }}
+  <section>
+    <h2>Important Dates</h2>
+    <ul>
+      <li>Submission Open: {{ .submission_open }}</li>
+      <li>Submission Deadline: {{ .submission_deadline }}</li>
+      <li>Notification of Acceptance: {{ .notification }}</li>
+      <li>Workshop Date: {{ .workshop_date }}</li>
+    </ul>
+    <p>All deadlines are 11:59PM UTC-12:00 ("anywhere on Earth").</p>
+  </section>
+  {{ end }}
+</main>
+{{ end }}

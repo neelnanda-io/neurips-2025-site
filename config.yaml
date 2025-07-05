@@ -1,0 +1,26 @@
+baseURL: "https://neurips-2025-site.netlify.app/"
+languageCode: "en-us"
+title: "NeurIPS 2025 Mechanistic Interpretability Workshop"
+theme: "ananke"
+
+params:
+  description: "The Workshop on Mechanistic Interpretability seeks to explore and drive discussions on the latest advances in interpretable machine learning models."
+  show_reading_time: false
+  
+menu:
+  main:
+    - name: "Overview"
+      url: "/"
+      weight: 1
+    - name: "Call for Papers"
+      url: "/cfp/"
+      weight: 2
+    - name: "Schedule"
+      url: "/schedule/"
+      weight: 3
+    - name: "Speakers"
+      url: "/speakers/"
+      weight: 4
+    - name: "Organizers"
+      url: "/organizers/"
+      weight: 5
