@@ -21,9 +21,13 @@ Content is managed through Google Docs in a shared folder. The GitHub Action syn
 
 - `overview` → Homepage content
 - `cfp` → Call for Papers
-- `speakers` → Speakers and Panelists
+- `speakers` → Speakers and Panelists (displayed on homepage)
 - `schedule` → Workshop Schedule  
-- `organizers` → Organizing Committee
+- `organizers` → Organizing Committee (displayed on homepage)
+
+### Initial Content Setup
+
+See the `gdocs-content/` folder for markdown files containing all the website content. Copy these into your Google Docs to get started.
 
 ## Local Development
 
