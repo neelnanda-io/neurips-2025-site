@@ -15,12 +15,6 @@ menu:
     - name: "Call for Papers"
       url: "/cfp/"
       weight: 2
-    - name: "Schedule"
+    - name: "Draft Schedule"
       url: "/schedule/"
       weight: 3
-    - name: "Speakers"
-      url: "/speakers/"
-      weight: 4
-    - name: "Organizers"
-      url: "/organizers/"
-      weight: 5

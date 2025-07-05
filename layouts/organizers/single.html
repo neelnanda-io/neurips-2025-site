@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  
+  {{ with .Site.Data.organizers }}
+  <div class="organizers speakers">
+    {{ range .organizers }}
+    <div class="speaker">
+      <img src="/img/{{ .image }}" alt="{{ .name }}" />
+      <div>
+        <h3><a href="{{ .website }}">{{ .name }}</a></h3>
+        <p>{{ .affiliation }}</p>
+        {{ if .contact }}<p><strong>Contact Person</strong></p>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  
+  {{ .Content }}
+  
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:neurips2025@mechinterpworkshop.com">neurips2025@mechinterpworkshop.com</a></p>
+  </section>
+</div>
+{{ end }}

@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  
+  {{ with .Site.Data.speakers }}
+  <section>
+    <h2>Keynote Speakers</h2>
+    <div class="speakers">
+      {{ range .speakers }}
+      <div class="speaker">
+        <img src="/img/{{ .image }}" alt="{{ .name }}" />
+        <div>
+          <h3><a href="{{ .website }}">{{ .name }}</a></h3>
+          <p>{{ .affiliation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  
+  <section>
+    <h2>Panelists</h2>
+    <div class="speakers">
+      {{ range .panelists }}
+      <div class="speaker">
+        <img src="/img/{{ .image }}" alt="{{ .name }}" />
+        <div>
+          <h3><a href="{{ .website }}">{{ .name }}</a></h3>
+          <p>{{ .affiliation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+  
+  {{ .Content }}
+</div>
+{{ end }}

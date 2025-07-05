@@ -1,7 +1,5 @@
 ---
 title: "Call for Papers"
-menu: "main"
-weight: 2
 ---
 
 # Call for Papers
