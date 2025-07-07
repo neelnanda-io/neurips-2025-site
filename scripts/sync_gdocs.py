@@ -46,9 +46,18 @@ def text_to_markdown(text, title):
     # Basic conversion - you may want to enhance this
     lines = text.strip().split('\n')
     
+    # Fix title for main page
+    display_title = title
+    if title.lower() == 'main':
+        display_title = "Mechanistic Interpretability Workshop 2025"
+    elif title.lower() == 'cfp':
+        display_title = "Call for Papers"
+    elif title.lower() == 'schedule':
+        display_title = "Draft Schedule"
+    
     # Create frontmatter
     frontmatter = f"""---
-title: "{title}"
+title: "{display_title}"
 ---
 
 """
@@ -126,6 +135,12 @@ def main():
                     f.write(markdown)
                 
                 print(f"  → Saved to {output_path}")
+                
+                # Filter main content to remove duplicate sections
+                if output_path == 'content/_index.md':
+                    import subprocess
+                    subprocess.run(['python', 'scripts/filter_main_content.py'])
+                    print("  → Filtered duplicate sections from main content")
 
 if __name__ == '__main__':
     # Load .env file if it exists
