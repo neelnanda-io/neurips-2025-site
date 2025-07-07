@@ -4,7 +4,7 @@ draft: false
 title: main
 ---
 
-# **The Workshop**
+# **The Workshop 1**
 
 This is a 1 day workshop at NeurIPS on mechanistic interpretability, held on December 6 or 7 at NeurIPS 2025 in San Diego, California. We invite submissions of short (4-pages) and long (9-pages) papers outlining new research in mechanistic interpretability, due August 22nd 2025 AoE.
 

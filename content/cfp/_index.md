@@ -8,7 +8,7 @@ weight: 2
 
 # **Call for Papers**
 
-We are inviting submissions of short (4 pages) and long (9 pages) papers outlining new research, with a deadline of August 22, 2025. We welcome papers on any of the following topics (see the Topics for Discussion section for more details and example papers), or anything else where the authors convincingly argue that it moves forward the field of mechanistic interpretability.
+We are inviting submissions of short (4 pages) and long (9 pages) papers outlining new research, due**August 22, 2025**. We welcome papers on any of the following topics (see the Topics for Discussion section for more details and example papers), or anything else where the authors convincingly argue that it moves forward the field of mechanistic interpretability.
 
 **Techniques:** Work inventing new mechanistic interpretability techniques, evaluating the quality of existing techniques, or proposing benchmarks and tools for future evaluations.
 
