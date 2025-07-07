@@ -86,9 +86,14 @@ h2 {
   align-items: center;
 }
 
+.organizers .speaker div {
+  flex: 1;
+  min-width: 250px;
+}
+
 .speaker img {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
 }
