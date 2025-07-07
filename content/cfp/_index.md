@@ -1,5 +1,5 @@
 ---
-title: "Call for Papers"
+title: Call for Papers
 ---
 
 # **Call for Papers**
