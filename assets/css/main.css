@@ -80,6 +80,26 @@ h2 {
   margin-top: 2rem;
 }
 
+/* Organizers grid - 3 columns */
+.organizers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+  .organizers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .organizers {
+    grid-template-columns: 1fr;
+  }
+}
+
 .speaker {
   display: flex;
   gap: 1rem;
