@@ -1,9 +1,5 @@
 ---
-date: '2025-07-07'
-draft: false
-menu: main
-title: schedule
-weight: 3
+title: "Draft Schedule"
 ---
 
 # **Draft Schedule**

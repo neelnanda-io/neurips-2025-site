@@ -40,6 +40,10 @@ jobs:
             python scripts/sync_gdocs.py
           fi
 
+      - name: Clean up menu entries
+        run: |
+          python scripts/cleanup_menu_entries.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

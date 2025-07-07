@@ -1,7 +1,5 @@
 ---
-date: '2025-07-07'
-draft: false
-title: main
+title: "Mechanistic Interpretability Workshop 2025"
 ---
 
 # **The Workshop 1**

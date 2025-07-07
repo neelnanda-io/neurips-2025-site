@@ -177,26 +177,11 @@ def convert_document_to_markdown(document, title):
     content = document.get('body', {}).get('content', [])
     inline_objects = document.get('inlineObjects', {})
     
-    # Create frontmatter
+    # Create frontmatter - only include title
+    # Navigation menu is handled in config.yaml, not in content files
     frontmatter = {
-        'title': title,
-        'date': datetime.now().strftime('%Y-%m-%d'),
-        'draft': False
+        'title': title
     }
-    
-    # Special handling for certain pages
-    if title.lower() in ['call for papers', 'cfp']:
-        frontmatter['menu'] = 'main'
-        frontmatter['weight'] = 2
-    elif title.lower() in ['speakers', 'speakers and panelists']:
-        frontmatter['menu'] = 'main'
-        frontmatter['weight'] = 4
-    elif title.lower() == 'schedule':
-        frontmatter['menu'] = 'main'
-        frontmatter['weight'] = 3
-    elif title.lower() in ['organizers', 'organizing committee']:
-        frontmatter['menu'] = 'main'
-        frontmatter['weight'] = 5
     
     markdown_content = f"---\n{yaml.dump(frontmatter, default_flow_style=False)}---\n\n"
     
