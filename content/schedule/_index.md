@@ -1,5 +1,9 @@
 ---
-title: "Draft Schedule"
+date: '2025-07-07'
+draft: false
+menu: main
+title: schedule
+weight: 3
 ---
 
 # **Draft Schedule**
