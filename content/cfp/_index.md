@@ -1,5 +1,5 @@
 ---
-title: "Call for Papers"
+title: cfp
 ---
 
 # **Call for Papers**

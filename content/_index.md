@@ -1,5 +1,5 @@
 ---
-title: "Mechanistic Interpretability Workshop 2025"
+title: main
 ---
 
 # **The Workshop 1**
