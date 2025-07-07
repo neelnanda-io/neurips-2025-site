@@ -25,6 +25,19 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0.5rem 0;
+  color: white;
+  opacity: 0.95;
+}
+
+.workshop-header h3.cfp-announcement {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0 0;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  display: inline-block;
 }
 
 /* Navigation */
