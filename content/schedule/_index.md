@@ -1,5 +1,5 @@
 ---
-title: schedule
+title: "Draft Schedule"
 ---
 
 # **Draft Schedule**

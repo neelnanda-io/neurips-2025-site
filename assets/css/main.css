@@ -158,6 +158,61 @@ a:hover {
   padding: 0 20px;
 }
 
+/* Tables - especially for schedule */
+.schedule-page table,
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.schedule-page th,
+.schedule-page td,
+article th,
+article td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.schedule-page th,
+article th {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.schedule-page tr:hover,
+article tr:hover {
+  background: #f7fafc;
+}
+
+.schedule-page tr:last-child td,
+article tr:last-child td {
+  border-bottom: none;
+}
+
+/* First column (time) styling */
+.schedule-page td:first-child,
+article td:first-child {
+  font-weight: 600;
+  color: #667eea;
+  white-space: nowrap;
+}
+
+/* Remove empty header rows */
+.schedule-page thead tr:first-child:empty,
+article thead tr:first-child:empty {
+  display: none;
+}
+
 /* Mailing List Form */
 .mailing-list-form {
   margin: 2rem 0;
