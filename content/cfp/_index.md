@@ -1,5 +1,9 @@
 ---
-title: "Call for Papers"
+date: '2025-07-07'
+draft: false
+menu: main
+title: cfp
+weight: 2
 ---
 
 # **Call for Papers**
