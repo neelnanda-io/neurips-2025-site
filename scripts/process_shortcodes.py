@@ -70,6 +70,57 @@ def load_speakers_html():
     
     return html
 
+def load_schedule_html():
+    """Generate HTML for schedule table"""
+    # Read schedule content
+    schedule_content = """
+<section class="embedded-schedule">
+<h2>Schedule (Provisional)</h2>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>09:00 - 09:30</td><td>Welcome and survey talk</td></tr>
+<tr><td>09:30 - 10:00</td><td>Talk: Been Kim</td></tr>
+<tr><td>10:00 - 11:00</td><td>Contributed talks 1</td></tr>
+<tr><td>11:00 - 12:00</td><td>Poster session 1, coffee</td></tr>
+<tr><td>12:00 - 13:00</td><td>Lunch with organised discussions</td></tr>
+<tr><td>13:00 - 13:30</td><td>Talk: Sarah Schwettmann</td></tr>
+<tr><td>13:30 - 14:30</td><td>Contributed talks 2</td></tr>
+<tr><td>14:30 - 15:30</td><td>Poster session 2, coffee</td></tr>
+<tr><td>15:30 - 16:00</td><td>Talk: Chris Olah</td></tr>
+<tr><td>16:00 - 16:30</td><td>Coffee & Networking break</td></tr>
+<tr><td>16:30 - 17:20</td><td>Panel discussion</td></tr>
+<tr><td>17:20 - 17:30</td><td>Awards & closing</td></tr>
+<tr><td>19:00 - 22:00</td><td>Evening social (invite-only)</td></tr>
+</tbody>
+</table>
+</section>
+"""
+    return schedule_content
+
+def load_signup_html():
+    """Generate HTML for signup box"""
+    signup_html = """
+<div class="embedded-signup">
+  <h2>Stay Updated</h2>
+  <div class="mailing-list-form">
+    <form action="https://buttondown.com/api/emails/embed-subscribe/mechinterpworkshop"
+          method="post" target="popupwindow"
+          onsubmit="window.open('https://buttondown.com/mechinterpworkshop', 'popupwindow')"
+          class="embeddable-buttondown-form">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="submit" value="Subscribe for updates" />
+    </form>
+  </div>
+</div>
+"""
+    return signup_html
+
 def process_shortcodes(content):
     """Process shortcodes in markdown content"""
     
@@ -85,6 +136,18 @@ def process_shortcodes(content):
         content = content.replace('{{< speakers >}}', speakers_html)
         content = content.replace('{{% speakers %}}', speakers_html)
     
+    # Pattern: {{< schedule >}} or {{% schedule %}}
+    if '{{< schedule >}}' in content or '{{% schedule %}}' in content:
+        schedule_html = load_schedule_html()
+        content = content.replace('{{< schedule >}}', schedule_html)
+        content = content.replace('{{% schedule %}}', schedule_html)
+    
+    # Pattern: {{< signup >}} or {{% signup %}}
+    if '{{< signup >}}' in content or '{{% signup %}}' in content:
+        signup_html = load_signup_html()
+        content = content.replace('{{< signup >}}', signup_html)
+        content = content.replace('{{% signup %}}', signup_html)
+    
     # Pattern: [ORGANIZERS] or [SPEAKERS] (simpler syntax)
     if '[ORGANIZERS]' in content:
         organizers_html = load_organizers_html()
@@ -94,6 +157,14 @@ def process_shortcodes(content):
         speakers_html = load_speakers_html()
         content = content.replace('[SPEAKERS]', speakers_html)
     
+    if '[SCHEDULE]' in content:
+        schedule_html = load_schedule_html()
+        content = content.replace('[SCHEDULE]', schedule_html)
+    
+    if '[SIGNUP]' in content:
+        signup_html = load_signup_html()
+        content = content.replace('[SIGNUP]', signup_html)
+    
     return content
 
 def process_file(file_path):
@@ -102,7 +173,7 @@ def process_file(file_path):
         content = f.read()
     
     # Skip if no shortcodes found
-    if not any(shortcode in content for shortcode in ['[ORGANIZERS]', '[SPEAKERS]', '{{< organizers', '{{< speakers', '{{% organizers', '{{% speakers']):
+    if not any(shortcode in content for shortcode in ['[ORGANIZERS]', '[SPEAKERS]', '[SCHEDULE]', '[SIGNUP]', '{{< organizers', '{{< speakers', '{{< schedule', '{{< signup', '{{% organizers', '{{% speakers', '{{% schedule', '{{% signup']):
         return False
     
     # Process shortcodes

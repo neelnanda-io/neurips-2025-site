@@ -39,7 +39,7 @@ Example: `![Chris Olah speaking](chrisolah-talk.jpg)`
 
 ## Adding Dynamic Sections
 
-You can embed the speakers or organizers sections anywhere in your Google Docs:
+You can embed various sections anywhere in your Google Docs:
 
 ### To Add Organizers Section:
 Simply type one of these in your Google Doc:
@@ -61,6 +61,26 @@ or
 {{< speakers >}}
 ```
 
+### To Add Schedule Table:
+Simply type one of these in your Google Doc:
+```
+[SCHEDULE]
+```
+or
+```
+{{< schedule >}}
+```
+
+### To Add Signup Box:
+Simply type one of these in your Google Doc:
+```
+[SIGNUP]
+```
+or
+```
+{{< signup >}}
+```
+
 ## Example Usage
 
 Here's how you might structure your main page in Google Docs:
@@ -79,22 +99,29 @@ Mechanistic interpretability is a rapidly-growing...
 ## Key Topics for NeurIPS 2025
 
 ### Sparse Autoencoders
-...
+- Point about SAEs
+- Another point
+- Third point
 
 ### Rigorous Benchmarking
-...
+- First benchmark point
+- Second point
 
 [SPEAKERS]
 
-## Building the Community
-
-The mechanistic interpretability field...
+[SCHEDULE]
 
 [ORGANIZERS]
 
 ## Get Involved
 
-Join our mailing list...
+Stay updated on workshop announcements:
+
+[SIGNUP]
+
+## Additional Information
+
+More content here...
 ```
 
 ## How It Works

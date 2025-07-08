@@ -273,7 +273,8 @@ article thead tr:first-child:empty {
 
 /* Embedded sections from shortcodes */
 .embedded-organizers,
-.embedded-speakers {
+.embedded-speakers,
+.embedded-schedule {
   margin: 3rem 0;
   padding: 2rem;
   background: #f8f9fa;
@@ -281,9 +282,31 @@ article thead tr:first-child:empty {
 }
 
 .embedded-organizers h2,
-.embedded-speakers h2 {
+.embedded-speakers h2,
+.embedded-schedule h2 {
   margin-bottom: 2rem;
   text-align: center;
+}
+
+/* Embedded signup box */
+.embedded-signup {
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.embedded-signup h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.embedded-signup .mailing-list-form {
+  margin: 0;
+  display: block;
 }
 
 /* Content images */

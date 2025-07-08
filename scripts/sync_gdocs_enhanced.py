@@ -114,11 +114,7 @@ def convert_paragraph_to_markdown(paragraph, inline_objects=None):
             text = element['textRun']['content']
             text_style = element['textRun'].get('textStyle', {})
             
-            # Skip empty text runs
-            if not text.strip():
-                continue
-                
-            # Apply formatting
+            # Apply formatting (don't skip empty text runs as they might be part of lists)
             formatted_text = apply_text_formatting(text, text_style)
             text_content += formatted_text
             
@@ -133,6 +129,26 @@ def convert_paragraph_to_markdown(paragraph, inline_objects=None):
                 if 'title' in props:
                     text_content += f"(Original title: {props['title']})\n"
     
+    # Check for list items first (before checking if content is empty)
+    if 'bullet' in style:
+        # Process image placeholders
+        text_content = process_image_placeholders(text_content)
+        
+        # Calculate indent level
+        indent_start = style.get('indentStart', {}).get('magnitude', 0)
+        indent_level = int(indent_start / 36) if indent_start else 0
+        indent = '  ' * indent_level
+        
+        # Determine bullet type
+        nesting_level = style['bullet'].get('nestingLevel', 0)
+        if nesting_level % 2 == 0:
+            bullet = '-'
+        else:
+            bullet = '*'
+        
+        return f"{indent}{bullet} {text_content.strip()}\n"
+    
+    # Skip empty non-list paragraphs
     if not text_content.strip():
         return ''
     
@@ -153,24 +169,8 @@ def convert_paragraph_to_markdown(paragraph, inline_objects=None):
     elif named_style == 'HEADING_6':
         return f"###### {text_content.strip()}\n"
     else:
-        # Check for list items
-        if 'bullet' in style:
-            # Calculate indent level
-            indent_start = style.get('indentStart', {}).get('magnitude', 0)
-            indent_level = int(indent_start / 36) if indent_start else 0
-            indent = '  ' * indent_level
-            
-            # Determine bullet type
-            nesting_level = style['bullet'].get('nestingLevel', 0)
-            if nesting_level % 2 == 0:
-                bullet = '-'
-            else:
-                bullet = '*'
-            
-            return f"{indent}{bullet} {text_content.strip()}\n"
-        else:
-            # Regular paragraph
-            return f"{text_content.strip()}\n"
+        # Regular paragraph
+        return f"{text_content.strip()}\n"
 
 def convert_document_to_markdown(document, title):
     """Convert a Google Docs document to markdown with frontmatter"""
