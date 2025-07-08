@@ -145,17 +145,13 @@ def convert_paragraph_to_markdown(paragraph, inline_objects=None):
         # Process image placeholders
         text_content = process_image_placeholders(text_content)
         
-        # Calculate indent level
-        indent_start = style.get('indentStart', {}).get('magnitude', 0)
-        indent_level = int(indent_start / 36) if indent_start else 0
-        indent = '  ' * indent_level
-        
-        # Determine bullet type
+        # Calculate indent level based on nesting level
+        # Google Docs uses nestingLevel for actual nesting
         nesting_level = style['bullet'].get('nestingLevel', 0)
-        if nesting_level % 2 == 0:
-            bullet = '-'
-        else:
-            bullet = '*'
+        indent = '  ' * nesting_level
+        
+        # Always use - for consistency
+        bullet = '-'
         
         return f"{indent}{bullet} {text_content.strip()}\n"
     
@@ -206,6 +202,7 @@ def convert_document_to_markdown(document, title):
     markdown_content = f"---\n{yaml.dump(frontmatter, default_flow_style=False)}---\n\n"
     
     # Convert content
+    last_was_list = False
     for element in content:
         if 'paragraph' in element:
             paragraph_md = convert_paragraph_to_markdown(
@@ -213,7 +210,21 @@ def convert_document_to_markdown(document, title):
                 inline_objects
             )
             if paragraph_md:
-                markdown_content += paragraph_md + '\n'
+                # Check if this is a list item (handle any indent level)
+                stripped = paragraph_md.strip()
+                is_list = stripped.startswith('-') or stripped.startswith('*')
+                
+                # Don't add extra newline between consecutive list items
+                if last_was_list and is_list:
+                    markdown_content += paragraph_md
+                else:
+                    if last_was_list and not is_list:
+                        # Add extra newline after list ends
+                        markdown_content += '\n' + paragraph_md + '\n'
+                    else:
+                        markdown_content += paragraph_md + '\n'
+                
+                last_was_list = is_list
         elif 'table' in element:
             # Basic table support
             markdown_content += "\n| | |\n|---|---|\n"
