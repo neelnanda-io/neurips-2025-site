@@ -2,33 +2,63 @@
 title: Mechanistic Interpretability Workshop 2025
 ---
 
-# **The Workshop 1**
+## Why this workshop?
 
-This is a 1 day workshop at NeurIPS on mechanistic interpretability, held on December 6 or 7 at NeurIPS 2025 in San Diego, California. We invite submissions of short (4-pages) and long (9-pages) papers outlining new research in mechanistic interpretability, due August 22nd 2025 AoE.
+Larger and more capable models are having an increasing impact on the world, yet our ability to understand them remains highly limited. Our tools for understanding and controlling their behavior are often crude, and tend to rely on studying a model’s inputs and outputs. Further, studying behaviour alone may not be enough: there are growing warnings that models may not always act in the ways we desire, and are capable of actively misleading us about this fact. And many of the deepest scientific mysteries in machine learning may remain out of reach if we cannot look inside the black box.
 
-Even though ever larger and more capable machine learning models are being deployed in real-world settings, we still know concerningly little about how they implement their many impressive capabilities. This in turn can make it difficult to rely on these models in high-stakes situations, or to reason about or address cases where said models exhibit undesirable behavior.
+These trends highlight the urgent need for [**mechanistic interpretability**](https://arxiv.org/abs/2501.16496): the study of principled ways to use the internals of a model—its weights and activations—to gain insight into its behavior, and the underlying computations.
 
-One emerging approach for understanding the internals of neural networks is mechanistic interpretability: reverse engineering the algorithms implemented by neural networks into human-understandable mechanisms, often by examining the weights and activations of neural networks to identify circuits that implement particular behaviors.
+## Workshop Goals
 
-## **Why This Workshop?**
+The field of mechanistic interpretability has grown rapidly and now encompasses many different viewpoints and goals, with points of active debate including:
 
-Mechanistic interpretability is a rapidly-growing topic of very broad interest, and one in which important breakthroughs have recently occurred. Recent years have seen a surge in academic labs and dedicated industry teams (e.g., Google DeepMind, Anthropic, OpenAI) focusing on MI, alongside commercial applications like the $50M startup Goodfire. The ICML 2024 workshop was the first of its kind and was a huge success - filling the allotted room to capacity.
+How to prioritise between gathering evidence via rigorous qualitative analysis or performance on benchmarks/real-world tasks
 
-## **Key Topics for NeurIPS 2025**
+Whether to aim for complete reverse engineering, or achieving high-level understanding via top-down methods, or something else entirely
 
-### **Sparse Autoencoders**
+The relative merits of popular methods such as sparse autoencoders
 
-There have been substantial advances in mechanistic interpretability research since ICML 2024. The rise of sparse autoencoders (SAEs) for understanding neural networks has led to architectural diversification as well as an understanding of their flaws. These flaws, such as feature absorption and stochasticity between training runs, have motivated an interest in more theoretically grounded approaches and new methods.
+Whether to take a perspective of curiosity driven basic science vs working towards specific goals
 
-### **Rigorous Benchmarking**
+Whether we can predict the crucial concepts represented in models well enough to find them via supervised techniques such as probing, versus needing unsupervised techniques with the potential to surprise us, such as [transcoders](https://transformer-circuits.pub/2025/attribution-graphs/biology.html).
 
-Another key area we want to highlight is the importance of benchmarking, to both reinforce the need for researchers to rigorously evaluate their work, and to share recent advances in benchmarks they could apply to their own work. There have been significant strides on comprehensive interpretability benchmarks, and on directly measuring the understanding achieved by interpretability.
+Researchers at different points on these spectrums often struggle to understand the perspectives of others, or communication is hindered by differing terminology. This is exacerbated by the significant communities in academia, industry, and independent research who often lack natural venues to meet, leading to duplicated work and slowed progress.
 
-### **Diverse Methods**
+**But all are unified by the belief that there is meaning and structure to be found inside our models, and that this is worth studying**. And we believe that all have valuable insights to share.
 
-Sparse autoencoders are a popular approach to mechanistic interpretability, but far from the only viable one. In this workshop we seek to bring together researchers interested in SAE methodologies, those based in the theory of causal inference and abstraction, as well as concept-based interpretability.
+In this workshop, we hope to bring together researchers from across these many perspectives and communities—along with skeptics, experts in adjacent fields, and those simply curious to learn more—to facilitate healthy discussion and move towards a greater mutual understanding as a field.
 
-## **Building the Community**
+We invite submissions of unpublished, cutting-edge, and in-progress research. Through our call for papers, we hope to facilitate the sharing of work in this fast-moving field, across all of these axes, and especially work that helps to bridge these gaps. **We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be.**
 
-The mechanistic interpretability field is notable in that it has significant communities in academia, industry, and independent research. Historically, these communities have struggled to communicate and use different terminology, leading to duplicated work and hindering progress. Our workshop provides a common venue for these communities to interact and network, especially during poster sessions and breaks.
+Please see the [call for papers page](https://mechinterpworkshop.com/cfp/) for further details and particular topics of interest.
+
+## Learning More
+
+Here are some resources you may find useful for learning more about the mechanistic interpretability field and performing research:
+
+We recommend starting with the review paper [Open Problems in Mechanistic Interpretability](https://arxiv.org/abs/2501.16496) for an overview of the field
+
+[Ferrando et al](https://arxiv.org/abs/2405.00208) is a good primer on the key techniques of the field
+
+The [ARENA coding tutorials](https://arena-chapter1-transformer-interp.streamlit.app/) are a great place to learn how to implement these techniques in practice
+
+Popular libraries include:
+
+[TransformerLens](https://github.com/TransformerLensOrg/TransformerLens): PyTorch, best for <=9B models
+
+[nnsight](https://github.com/ndif-team/nnsight): PyTorch, good for any size models
+
+[Penzai](https://github.com/google-deepmind/penzai): Jax
+
+The [Mechanistic Interpretability Benchmark](https://mib-bench.github.io/)
+
+The [Gemma Scope Sparse Autoencoders](https://arxiv.org/abs/2408.05147) ([interactive tutorial](http://neuronpedia.org/gemma-scope))
+
+Relevant online communities:
+
+[Open Source Mechanistic Interpretability Slack](http://neelnanda.io/osmi-slack-invite)
+
+[Mechanistic Interpretability Discord](https://discord.gg/ysVfhCfCKw)
+
+[Eleuther Discord](https://discord.gg/nHS4YxmfeM)
 

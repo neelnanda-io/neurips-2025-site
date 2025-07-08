@@ -7,7 +7,7 @@ title: Schedule
 
 | | |
 |---|---|
-| Time | Activity |
+| Time |  |
 | 09:00 - 09:30 | Welcome and survey talk |
 | 09:30 - 10:00 | Talk: Been Kim |
 | 10:00 - 11:00 | Contributed talks 1 |
