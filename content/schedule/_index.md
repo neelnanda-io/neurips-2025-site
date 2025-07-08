@@ -1,30 +1,26 @@
 ---
-title: "Schedule"
+title: Schedule
 ---
 
-# **Draft Schedule**
-
-The workshop will be held on December 6 or 7, 2025, at the NeurIPS venue in San Diego, California.
-
-## **Workshop Program**
+## **Workshop Program (Provisional)**
 
 
 | | |
 |---|---|
 | Time | Activity |
 | 09:00 - 09:30 | Welcome and survey talk |
-| 09:30 - 10:00 | Invited talk: Been Kim (confirmed in-person) |
+| 09:30 - 10:00 | Talk: Been Kim |
 | 10:00 - 11:00 | Contributed talks 1 |
 | 11:00 - 12:00 | Poster session 1, coffee |
 | 12:00 - 13:00 | Lunch with organised discussions |
-| 13:00 - 13:30 | Invited talk: Sarah Schwettmann (confirmed in-person) |
+| 13:00 - 13:30 | Talk: Sarah Schwettmann |
 | 13:30 - 14:30 | Contributed talks 2 |
 | 14:30 - 15:30 | Poster session 2, coffee |
-| 15:30 - 16:00 | Invited talk: Chris Olah (confirmed in-person) |
+| 15:30 - 16:00 | Talk: Chris Olah |
 | 16:00 - 16:30 | Coffee & Networking break |
 | 16:30 - 17:20 | Panel discussion |
 | 17:20 - 17:30 | Awards & closing |
-| 19:00 - 22:00 | Evening social (hosted externally) |
+| 19:00 - 22:00 | Evening social (invite-only) |
 
 ## **Session Details**
 
