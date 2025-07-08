@@ -44,6 +44,10 @@ jobs:
         run: |
           python scripts/cleanup_menu_entries.py
 
+      - name: Process shortcodes
+        run: |
+          python scripts/process_shortcodes.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

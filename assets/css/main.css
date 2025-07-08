@@ -271,6 +271,31 @@ article thead tr:first-child:empty {
   border: 1px solid #e5e7eb;
 }
 
+/* Embedded sections from shortcodes */
+.embedded-organizers,
+.embedded-speakers {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.embedded-organizers h2,
+.embedded-speakers h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Content images */
+.content-image {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Mailing List Form */
 .mailing-list-form {
   margin: 2rem 0;
