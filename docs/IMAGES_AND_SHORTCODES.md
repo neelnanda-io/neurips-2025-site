@@ -28,6 +28,12 @@ Example: `![Chris Olah speaking](chrisolah-talk.jpg)`
 {{< image src="diagram.png" alt="Architecture diagram" >}}
 ```
 
+### Option 5: Side-by-Side Images with Caption
+```
+[IMAGE-PAIR: conference-pic.jpg | rooftop-pic.jpg | The first Mechanistic Interpretability Workshop (ICML 2024)]
+```
+This creates two images side by side with a centered caption below
+
 ## Important Notes for Images:
 1. All images must be uploaded to `/static/img/` in the GitHub repository first
 2. Use just the filename in Google Docs (not the full path)

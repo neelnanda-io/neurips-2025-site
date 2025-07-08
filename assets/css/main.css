@@ -319,6 +319,41 @@ article thead tr:first-child:empty {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Side-by-side images container */
+.image-pair {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-pair img {
+  width: calc(50% - 0.5rem);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Mobile responsiveness for image pairs */
+@media (max-width: 768px) {
+  .image-pair {
+    flex-direction: column;
+  }
+  
+  .image-pair img {
+    width: 100%;
+  }
+}
+
 /* Mailing List Form */
 .mailing-list-form {
   margin: 2rem 0;

@@ -99,6 +99,17 @@ def process_image_placeholders(text):
         text
     )
     
+    # Pattern 5: [IMAGE-PAIR: image1.jpg | image2.jpg | caption text]
+    text = re.sub(
+        r'\[IMAGE-PAIR:\s*([^|]+)\|\s*([^|]+)\|\s*([^\]]+)\]',
+        r'''<div class="image-pair">
+<img src="/img/\1" alt="Workshop photo 1">
+<img src="/img/\2" alt="Workshop photo 2">
+</div>
+<p class="image-caption">\3</p>''',
+        text
+    )
+    
     return text
 
 def convert_paragraph_to_markdown(paragraph, inline_objects=None):
