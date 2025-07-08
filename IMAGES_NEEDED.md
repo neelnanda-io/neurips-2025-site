@@ -27,3 +27,9 @@ The following images need to be added to `neurips-2025-site/static/img/` directo
 2. Place them in the `neurips-2025-site/static/img/` directory
 3. Ensure filenames match exactly (case-sensitive)
 4. Recommended size: 200x200px or 300x300px, square crop for consistency
+
+## Images Referenced in Content
+These images are referenced in your Google Docs:
+
+- `conference-pic.jpg ` - Referenced in content
+- `rooftop-pic.jpg ` - Referenced in content
