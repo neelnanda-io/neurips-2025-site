@@ -2,10 +2,10 @@
 title: "Mechanistic Interpretability Workshop 2025"
 ---
 
-Why this workshop?
-Larger and more capable models are having an increasing impact on the world, yet our ability to understand them remains highly limited. Our tools for understanding and controlling their behavior are often crude, and tend to rely on studying a model's inputs and outputs. Further, studying behaviour alone may not be enough: there are growing warnings that models may not always act in the ways we desire, and are capable of actively misleading us about this fact. And many of the deepest scientific mysteries in machine learning may remain out of reach if we cannot look inside the black box.
-
-These trends highlight the urgent need for [**mechanistic interpretability**](https://arxiv.org/abs/2501.16496): the study of principled ways to use the internals of a model—its weights and activations—to gain insight into its behavior, and the underlying computations. The mechanistic interpretability research community has experienced rapid growth in recent years, with numerous academic labs, 140+ papers submitted to our ICML 2024 workshop, $50M+ startups, and 20+ person industry research teams. Yet while the field has made significant progress, there is still a long way to go and we have much to learn from each other
+﻿Why this workshop?
+Larger and more capable models are having an increasing impact on the world, yet our ability to understand their internal mechanisms remains a fundamental scientific challenge. While we can observe what models do, we have limited insight into how they do it—their internal representations, learned algorithms, and how this all connects to their outward behavior remain largely opaque. This gap between performance and understanding limits our ability to predict model behavior, ensure reliability, and detect sophisticated adversarial or deceptive behavior. And many of the deepest scientific mysteries in machine learning may remain out of reach if we cannot look inside the black box.
+Mechanistic interpretability addresses this challenge by developing principled methods to analyze and understand a model’s internals–weights and activations–and to use this understanding to gain greater insight into its behavior, and the computation underlying it. The field has grown rapidly, attracting researchers from academia and industry, spawning dedicated startups, and producing a rich ecosystem of tools and techniques. This workshop brings together diverse perspectives from this vibrant community to share recent advances and chart future directions.
+The mechanistic interpretability research community has experienced rapid growth in recent years, with numerous academic labs, 140+ papers submitted to our ICML 2024 workshop, $50M+ startups, and 20+ person industry research teams. Yet while the field has made significant progress, there is still a long way to go and we have much to learn from each other
 
 ## 
 
@@ -28,31 +28,20 @@ These trends highlight the urgent need for [**mechanistic interpretability**](ht
 <img src="/img/rooftop-pic.jpg " alt="Workshop photo 2">
 </div>
 <p class="image-caption">The first Mechanistic  Interpretability Workshop (ICML 2024)</p>
-
-## Workshop Goals
-
+Workshop Goals
 The field of mechanistic interpretability now encompasses many different viewpoints and goals, in part due to this rapid growth and the strong communities in academia, industry and independent research. Researchers at different points on these spectrums often struggle to understand the perspectives of others, or communication is hindered by differing terminology. This can lead to duplicated work and slowed progress.
-
-**But all are unified by the belief that there is meaning and structure to be found inside our models, and that this is worth studying**. And we believe that all have valuable insights to share. A key goal of this workshop is to bridge gaps between these perspectives and communities.
-
-
+But all are unified by the belief that there is meaning and structure to be found inside our models, and that this is worth studying. And we believe that all have valuable insights to share. A key goal of this workshop is to bridge gaps between these perspectives and communities.
 We hope to explore points of active debate including:
-
-* How to prioritise between gathering evidence via rigorous qualitative analysis or performance on benchmarks/real-world tasks
-
-* Whether to aim for complete reverse engineering, or achieving high-level understanding via top-down methods, or something else entirely
-
-* The relative merits of popular methods such as sparse autoencoders
-
-* Whether to take a perspective of curiosity driven basic science vs working towards specific goals
-
-* Whether we can predict the crucial concepts represented in models well enough to find them via supervised techniques such as probing, versus needing unsupervised techniques with the potential to surprise us, such as [transcoders](https://transformer-circuits.pub/2025/attribution-graphs/biology.html).
-
+- How to prioritise between gathering evidence via rigorous qualitative analysis or performance on benchmarks/real-world tasks
+- Whether to aim for complete reverse engineering, or achieving high-level understanding via top-down methods, or something else entirely
+- The relative merits of popular methods such as sparse autoencoders
+- Whether to take a perspective of curiosity driven basic science vs working towards specific goals
+- Whether we can predict the crucial concepts represented in models well enough to find them via supervised techniques such as probing, versus needing unsupervised techniques with the potential to surprise us, such as transcoders.
 In this workshop, we hope to bring together researchers from across these many perspectives and communities—along with skeptics, experts in adjacent fields, and those simply curious to learn more—to facilitate healthy discussion and move towards a greater mutual understanding as a field.
+We invite submissions of unpublished, cutting-edge, and in-progress research. Through our call for papers, we hope to facilitate the sharing of work in this fast-moving field, across all of these axes, and especially work that helps to bridge these gaps. We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be.
+Please see the call for papers page for further details and particular topics of interest.
 
-We invite submissions of unpublished, cutting-edge, and in-progress research. Through our call for papers, we hope to facilitate the sharing of work in this fast-moving field, across all of these axes, and especially work that helps to bridge these gaps. **We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be.**
-
-Please see the [call for papers page](https://mechinterpworkshop.com/cfp/) for further details and particular topics of interest.
+## 
 
 <section class="embedded-speakers">
 <h2>Keynote Speakers</h2>
@@ -82,6 +71,8 @@ Please see the [call for papers page](https://mechinterpworkshop.com/cfp/) for f
 </section>
 
 
+## 
+
 <section class="embedded-schedule">
 <h2>Schedule (Provisional)</h2>
 <table>
@@ -110,93 +101,23 @@ Please see the [call for papers page](https://mechinterpworkshop.com/cfp/) for f
 </section>
 
 
-## Learning More
-
+Learning More
 Here are some resources you may find useful for learning more about the mechanistic interpretability field and performing research:
-* We recommend starting with the review paper Open Problems in Mechanistic Interpretability for an overview of the field
-* Ferrando et al is a good primer on the key techniques of the field
-* The ARENA coding tutorials are a great place to learn how to implement these techniques in practice
-* Popular libraries include:
-* TransformerLens: PyTorch, best for <=9B models
-* nnsight: PyTorch, good for any size models
-* Penzai: Jax
-* The Mechanistic Interpretability Benchmark
-* The Gemma Scope Sparse Autoencoders (interactive tutorial)
-
+- We recommend starting with the review paper Open Problems in Mechanistic Interpretability for an overview of the field
+- Ferrando et al is a good primer on the key techniques of the field
+  - The ARENA coding tutorials are a great place to learn how to implement these techniques in practice
+- Popular libraries include:
+  - TransformerLens: PyTorch, best for <=9B models
+  - nnsight: PyTorch, good for any size models
+  - Penzai: Jax
+- The Mechanistic Interpretability Benchmark
+- The Gemma Scope Sparse Autoencoders (interactive tutorial)
 
 Relevant online communities:
-* Open Source Mechanistic Interpretability Slack
-* Mechanistic Interpretability Discord
-* Eleuther Discord
+- Open Source Mechanistic Interpretability Slack
+- Mechanistic Interpretability Discord
+- Eleuther Discord
 
+## 
 
-## [
-
-<section class="embedded-organizers">
-<h2>Organizing Committee</h2>
-<div class="organizers speakers">
-  <div class="speaker">
-    <img src="/img/neelnanda.jpeg" alt="Neel Nanda" />
-    <div>
-      <h3><a href="https://www.neelnanda.io/about">Neel Nanda</a></h3>
-      <p>Senior Research Scientist, Google DeepMind</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/martinwattenberg.png" alt="Martin Wattenberg" />
-    <div>
-      <h3><a href="https://www.bewitched.com">Martin Wattenberg</a></h3>
-      <p>Professor, Harvard University & Principal Research Scientist, Google DeepMind</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/sarahwiegreffe.jpeg" alt="Sarah Wiegreffe" />
-    <div>
-      <h3><a href="https://sarahwie.github.io/">Sarah Wiegreffe</a></h3>
-      <p>Postdoc, Allen Institute for AI, incoming Assistant Professor, University of Maryland</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/atticusgeiger.jpeg" alt="Atticus Geiger" />
-    <div>
-      <h3><a href="https://atticusg.github.io/">Atticus Geiger</a></h3>
-      <p>Lead, Pr(Ai)²R Group</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/juliusadebayo.jpeg" alt="Julius Adebayo" />
-    <div>
-      <h3><a href="https://juliusadebayo.com">Julius Adebayo</a></h3>
-      <p>Founder and Researcher, Guide Labs</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/kayoyin.jpeg" alt="Kayo Yin" />
-    <div>
-      <h3><a href="https://kayoyin.github.io/">Kayo Yin</a></h3>
-      <p>3rd year PhD student, UC Berkeley</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/fazlbarez.jpeg" alt="Fazl Barez" />
-    <div>
-      <h3><a href="https://fbarez.github.io/">Fazl Barez</a></h3>
-      <p>Senior Research Fellow, Oxford Martin AI Governance Initiative</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/lawrencechan.jpeg" alt="Lawrence Chan" />
-    <div>
-      <h3><a href="https://chanlawrence.me/">Lawrence Chan</a></h3>
-      <p>Researcher, METR</p>
-    </div>
-  </div>
-  <div class="speaker">
-    <img src="/img/matthewwearden.jpeg" alt="Matthew Wearden" />
-    <div>
-      <h3>Matthew Wearden</h3>
-      <p>London Director, MATS</p>
-    </div>
-  </div>
-</div>
-</section>
+[

@@ -4,8 +4,6 @@ title: "Schedule"
 
 ﻿Workshop Program (Provisional)
 Time
-
-
 09:00 - 09:30
 Welcome and survey talk
 09:30 - 10:00
