@@ -38,7 +38,10 @@ jobs:
           ls -la scripts/sync_gdocs*.py || echo "No sync scripts found"
           
           # Try scripts in order of preference
-          if [ -f scripts/sync_gdocs_html.py ]; then
+          if [ -f scripts/sync_gdocs_html_fixed.py ]; then
+            echo "Using fixed HTML sync script (sync_gdocs_html_fixed.py)"
+            python scripts/sync_gdocs_html_fixed.py
+          elif [ -f scripts/sync_gdocs_html.py ]; then
             echo "Using HTML sync script (sync_gdocs_html.py)"
             python scripts/sync_gdocs_html.py
           elif [ -f scripts/sync_gdocs_robust.py ]; then
