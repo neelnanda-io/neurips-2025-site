@@ -15,6 +15,6 @@ menu:
     - name: "Call for Papers"
       url: "/cfp/"
       weight: 2
-    - name: "Draft Schedule"
+    - name: "Schedule (Provisional)"
       url: "/schedule/"
       weight: 3

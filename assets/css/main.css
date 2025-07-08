@@ -213,6 +213,64 @@ article thead tr:first-child:empty {
   display: none;
 }
 
+/* Schedule color coding */
+.schedule-page tr.contributed-talks {
+  background-color: #e0f2fe; /* Light blue */
+}
+.schedule-page tr.contributed-talks:hover {
+  background-color: #bae6fd; /* Darker blue on hover */
+}
+
+.schedule-page tr.invited-talk {
+  background-color: #dcfce7; /* Light green */
+}
+.schedule-page tr.invited-talk:hover {
+  background-color: #bbf7d0; /* Darker green on hover */
+}
+
+.schedule-page tr.poster-session {
+  background-color: #fef3c7; /* Light yellow */
+}
+.schedule-page tr.poster-session:hover {
+  background-color: #fde68a; /* Darker yellow on hover */
+}
+
+.schedule-page tr.panel-discussion {
+  background-color: #f3e8ff; /* Light purple */
+}
+.schedule-page tr.panel-discussion:hover {
+  background-color: #e9d5ff; /* Darker purple on hover */
+}
+
+.schedule-page tr.other-activity {
+  background-color: #f3f4f6; /* Light gray */
+}
+.schedule-page tr.other-activity:hover {
+  background-color: #e5e7eb; /* Darker gray on hover */
+}
+
+/* Legend for color coding */
+.schedule-legend {
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+}
+
 /* Mailing List Form */
 .mailing-list-form {
   margin: 2rem 0;

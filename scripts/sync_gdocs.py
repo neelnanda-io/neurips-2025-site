@@ -53,7 +53,7 @@ def text_to_markdown(text, title):
     elif title.lower() == 'cfp':
         display_title = "Call for Papers"
     elif title.lower() == 'schedule':
-        display_title = "Draft Schedule"
+        display_title = "Schedule"
     
     # Create frontmatter
     frontmatter = f"""---

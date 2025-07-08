@@ -184,7 +184,7 @@ def convert_document_to_markdown(document, title):
     elif title.lower() == 'cfp':
         display_title = "Call for Papers"
     elif title.lower() == 'schedule':
-        display_title = "Draft Schedule"
+        display_title = "Schedule"
     
     # Create frontmatter - only include title
     # Navigation menu is handled in config.yaml, not in content files
