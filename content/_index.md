@@ -4,7 +4,7 @@ title: "Mechanistic Interpretability Workshop 2025"
 
 ﻿Why this workshop?
 Larger and more capable models are having an increasing impact on the world, yet our ability to understand their internal mechanisms remains a fundamental scientific challenge. While we can observe what models do, we have limited insight into how they do it—their internal representations, learned algorithms, and how this all connects to their outward behavior remain largely opaque. This gap between performance and understanding limits our ability to predict model behavior, ensure reliability, and detect sophisticated adversarial or deceptive behavior. And many of the deepest scientific mysteries in machine learning may remain out of reach if we cannot look inside the black box.
-Mechanistic interpretability addresses this challenge by developing principled methods to analyze and understand a model’s internals–weights and activations–and to use this understanding to gain greater insight into its behavior, and the computation underlying it. The field has grown rapidly, with numerous researchers from academia, industry and independent research, producing dedicated startups, and producing a rich ecosystem of tools and techniques. This workshop brings together diverse perspectives from this vibrant community to share recent advances and chart future directions.
+Mechanistic interpretability addresses this challenge by developing principled methods to analyze and understand a model’s internals–weights and activations–and to use this understanding to gain greater insight into its behavior, and the computation underlying it. The field has grown rapidly, with sizable communities in academia, industry and independent research, 140+ papers submitted to our ICML 2024 workshop, dedicated startups, and producing a rich ecosystem of tools and techniques. This workshop brings together diverse perspectives from this vibrant community to share recent advances and chart future directions.
 The mechanistic interpretability research community has experienced rapid growth in recent years, with numerous academic labs, 140+ papers submitted to our ICML 2024 workshop, $50M+ startups, and 20+ person industry research teams. Yet while the field has made significant progress, there is still a long way to go and we have much to learn from each other
 
 ## 
@@ -29,6 +29,13 @@ The mechanistic interpretability research community has experienced rapid growth
 </div>
 <p class="image-caption">The first Mechanistic  Interpretability Workshop (ICML 2024)</p>
 Workshop Goals
+Mechanistic interpretability benefits from a rich diversity of approaches—from rigorous mathematical analysis to large-scale empirical studies, from bottom-up circuit discovery to reverse-engineer a model, to top-down analysis of representations to assist behavioral analysis. This diversity reflects the field's breadth and the many valid paths toward understanding neural networks.
+Our workshop aims to:
+- Showcase cutting-edge research across all approaches to mechanistic interpretability
+- Foster cross-pollination between different methodological traditions
+- Identify convergent insights emerging from diverse research programs
+- Welcome newcomers by providing clear entry points into the field
+
 The field of mechanistic interpretability now encompasses many different viewpoints and goals, in part due to this rapid growth and the strong communities in academia, industry and independent research. Researchers at different points on these spectrums often struggle to understand the perspectives of others, or communication is hindered by differing terminology. This can lead to duplicated work and slowed progress.
 But all are unified by the belief that there is meaning and structure to be found inside our models, and that this is worth studying. And we believe that all have valuable insights to share. A key goal of this workshop is to bridge gaps between these perspectives and communities.
 We hope to explore points of active debate including:
