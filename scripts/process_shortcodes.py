@@ -148,22 +148,24 @@ def process_shortcodes(content):
         content = content.replace('{{< signup >}}', signup_html)
         content = content.replace('{{% signup %}}', signup_html)
     
-    # Pattern: [ORGANIZERS] or [SPEAKERS] (simpler syntax)
-    if '[ORGANIZERS]' in content:
+    # Pattern: [ORGANIZERS] or [SPEAKERS] (simpler syntax) - case insensitive
+    content_upper = content.upper()
+    
+    if '[ORGANIZERS]' in content_upper:
         organizers_html = load_organizers_html()
-        content = content.replace('[ORGANIZERS]', organizers_html)
+        content = re.sub(r'\[ORGANIZERS\]', organizers_html, content, flags=re.IGNORECASE)
     
-    if '[SPEAKERS]' in content:
+    if '[SPEAKERS]' in content_upper:
         speakers_html = load_speakers_html()
-        content = content.replace('[SPEAKERS]', speakers_html)
+        content = re.sub(r'\[SPEAKERS\]', speakers_html, content, flags=re.IGNORECASE)
     
-    if '[SCHEDULE]' in content:
+    if '[SCHEDULE]' in content_upper:
         schedule_html = load_schedule_html()
-        content = content.replace('[SCHEDULE]', schedule_html)
+        content = re.sub(r'\[SCHEDULE\]', schedule_html, content, flags=re.IGNORECASE)
     
-    if '[SIGNUP]' in content:
+    if '[SIGNUP]' in content_upper:
         signup_html = load_signup_html()
-        content = content.replace('[SIGNUP]', signup_html)
+        content = re.sub(r'\[SIGNUP\]', signup_html, content, flags=re.IGNORECASE)
     
     return content
 
@@ -172,8 +174,10 @@ def process_file(file_path):
     with open(file_path, 'r') as f:
         content = f.read()
     
-    # Skip if no shortcodes found
-    if not any(shortcode in content for shortcode in ['[ORGANIZERS]', '[SPEAKERS]', '[SCHEDULE]', '[SIGNUP]', '{{< organizers', '{{< speakers', '{{< schedule', '{{< signup', '{{% organizers', '{{% speakers', '{{% schedule', '{{% signup']):
+    # Skip if no shortcodes found (case insensitive for bracket shortcodes)
+    content_upper = content.upper()
+    if not any(shortcode in content_upper for shortcode in ['[ORGANIZERS]', '[SPEAKERS]', '[SCHEDULE]', '[SIGNUP]']) and \
+       not any(shortcode in content for shortcode in ['{{< organizers', '{{< speakers', '{{< schedule', '{{< signup', '{{% organizers', '{{% speakers', '{{% schedule', '{{% signup']):
         return False
     
     # Process shortcodes

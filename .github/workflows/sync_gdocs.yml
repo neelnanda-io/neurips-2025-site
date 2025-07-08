@@ -26,17 +26,29 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib pyyaml
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib pyyaml python-dotenv
 
       - name: Pull Google Docs → Markdown
         env:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           GDOCS_FOLDER_ID: ${{ secrets.GDOCS_FOLDER_ID }}
         run: |
-          # Use enhanced script if it exists, otherwise fall back to basic
-          if [ -f scripts/sync_gdocs_enhanced.py ]; then
-            python scripts/sync_gdocs_enhanced.py
+          # Debug: Show which scripts exist
+          echo "=== Checking for sync scripts ==="
+          ls -la scripts/sync_gdocs*.py || echo "No sync scripts found"
+          
+          # Try scripts in order of preference
+          if [ -f scripts/sync_gdocs_robust.py ]; then
+            echo "Using robust sync script (sync_gdocs_robust.py)"
+            python scripts/sync_gdocs_robust.py
+          elif [ -f scripts/sync_gdocs_enhanced.py ]; then
+            echo "Using enhanced sync script (sync_gdocs_enhanced.py)"
+            python scripts/sync_gdocs_enhanced.py || {
+              echo "Enhanced script failed, falling back to basic"
+              python scripts/sync_gdocs.py
+            }
           else
+            echo "Using basic sync script (sync_gdocs.py)"
             python scripts/sync_gdocs.py
           fi
 
@@ -46,7 +58,13 @@ jobs:
 
       - name: Process shortcodes
         run: |
-          python scripts/process_shortcodes.py
+          if [ -f scripts/process_shortcodes_v2.py ]; then
+            echo "Using v2 shortcode processor (case-insensitive)"
+            python scripts/process_shortcodes_v2.py
+          else
+            echo "Using original shortcode processor"
+            python scripts/process_shortcodes.py
+          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
