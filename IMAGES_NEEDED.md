@@ -33,3 +33,10 @@ These images are referenced in your Google Docs:
 
 - `conference-pic.jpg ` - Referenced in content
 - `rooftop-pic.jpg ` - Referenced in content
+
+
+## Images Referenced in Content
+These images are referenced in your Google Docs:
+
+- `conference-pic.jpg ` - Referenced in content
+- `rooftop-pic.jpg ` - Referenced in content
