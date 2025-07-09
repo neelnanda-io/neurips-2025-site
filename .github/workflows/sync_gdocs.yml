@@ -33,44 +33,12 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           GDOCS_FOLDER_ID: ${{ secrets.GDOCS_FOLDER_ID }}
         run: |
-          # Debug: Show which scripts exist
-          echo "=== Checking for sync scripts ==="
-          ls -la scripts/sync_gdocs*.py || echo "No sync scripts found"
-          
-          # Try scripts in order of preference
-          if [ -f scripts/sync_gdocs_html_fixed.py ]; then
-            echo "Using fixed HTML sync script (sync_gdocs_html_fixed.py)"
-            python scripts/sync_gdocs_html_fixed.py
-          elif [ -f scripts/sync_gdocs_html.py ]; then
-            echo "Using HTML sync script (sync_gdocs_html.py)"
-            python scripts/sync_gdocs_html.py
-          elif [ -f scripts/sync_gdocs_robust.py ]; then
-            echo "Using robust sync script (sync_gdocs_robust.py)"
-            python scripts/sync_gdocs_robust.py
-          elif [ -f scripts/sync_gdocs_enhanced.py ]; then
-            echo "Using enhanced sync script (sync_gdocs_enhanced.py)"
-            python scripts/sync_gdocs_enhanced.py || {
-              echo "Enhanced script failed, falling back to basic"
-              python scripts/sync_gdocs.py
-            }
-          else
-            echo "Using basic sync script (sync_gdocs.py)"
-            python scripts/sync_gdocs.py
-          fi
+          echo "=== Running unified sync script ==="
+          python scripts/sync_gdocs_unified.py
 
       - name: Clean up menu entries
         run: |
           python scripts/cleanup_menu_entries.py
-
-      - name: Process shortcodes
-        run: |
-          if [ -f scripts/process_shortcodes_v2.py ]; then
-            echo "Using v2 shortcode processor (case-insensitive)"
-            python scripts/process_shortcodes_v2.py
-          else
-            echo "Using original shortcode processor"
-            python scripts/process_shortcodes.py
-          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

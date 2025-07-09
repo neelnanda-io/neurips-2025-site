@@ -1,0 +1,426 @@
+#!/usr/bin/env python3
+"""
+Unified Google Docs sync script for the Mechanistic Interpretability Workshop website.
+
+This script combines the best features from all previous sync scripts:
+- HTML export with formatting preservation (from sync_gdocs_html_fixed.py)
+- Robust error handling and fallback to plain text (from sync_gdocs_robust.py)
+- Support for two documents: main content and extra_content
+- Image placeholder processing
+- Debug output for troubleshooting
+
+Features:
+- Exports Google Docs as HTML to preserve formatting (bold, italic, links)
+- Falls back to plain text export if HTML parsing fails
+- Handles two documents: main content and extra_content
+- Extra content is saved to data/extra_content.yaml for Hugo data access
+- Filters out content from other pages to prevent duplication
+- Processes image placeholders
+- Creates debug files when HTML parsing fails
+"""
+
+import json
+import os
+import re
+import sys
+import yaml
+from pathlib import Path
+from datetime import datetime
+from html.parser import HTMLParser
+
+from google.oauth2.credentials import Credentials
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Configuration
+CONTENT_DIR = "content"
+DATA_DIR = "data"
+EXTRA_CONTENT_FILE = "extra_content.yaml"
+
+# Content filtering patterns to prevent duplication
+FILTER_PATTERNS = [
+    r'## Keynote Speakers.*?(?=##|\Z)',
+    r'## Organizing Committee.*?(?=##|\Z)',
+    r'<section class="embedded-signup">.*?</section>',
+    r'<section class="embedded-speakers">.*?</section>',
+    r'<section class="embedded-schedule">.*?</section>',
+    r'<section class="embedded-organizers">.*?</section>',
+    r'<div class="embedded-signup">.*?</div>',
+    r'## Schedule \(Provisional\).*?(?=##|\Z)',
+    r'## Contact.*?(?=##|\Z)',
+    r'Sign up to our mailing list.*?(?=##|\Z)',
+    r'Stay Updated.*?</form>\s*</div>',
+]
+
+class MarkdownHTMLParser(HTMLParser):
+    """Convert HTML to Markdown with error handling."""
+    
+    def __init__(self):
+        super().__init__()
+        self.markdown = []
+        self.current_text = []
+        self.in_heading = False
+        self.heading_level = 0
+        self.in_bold = False
+        self.in_italic = False
+        self.in_link = False
+        self.link_href = ""
+        self.in_list = False
+        self.in_list_item = False
+        self.list_type = None
+        self.list_depth = 0
+        
+    def handle_starttag(self, tag, attrs):
+        if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
+            self.flush_text()
+            self.in_heading = True
+            self.heading_level = int(tag[1])
+        elif tag == 'p':
+            self.flush_text()
+        elif tag == 'a':
+            self.in_link = True
+            for attr_name, attr_value in attrs:
+                if attr_name == 'href':
+                    self.link_href = attr_value
+        elif tag in ['b', 'strong']:
+            self.in_bold = True
+        elif tag in ['i', 'em']:
+            self.in_italic = True
+        elif tag in ['ul', 'ol']:
+            self.flush_text()
+            self.in_list = True
+            self.list_type = 'ordered' if tag == 'ol' else 'unordered'
+            self.list_depth += 1
+        elif tag == 'li':
+            self.flush_text()
+            self.in_list_item = True
+        elif tag == 'br':
+            self.current_text.append('\n')
+        elif tag == 'table':
+            self.flush_text()
+            self.markdown.append('\n[TABLE - Please convert manually]\n')
+            
+    def handle_endtag(self, tag):
+        if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
+            self.flush_text()
+            self.in_heading = False
+        elif tag == 'p':
+            self.flush_text()
+            self.markdown.append('\n')
+        elif tag == 'a':
+            self.in_link = False
+            self.link_href = ""
+        elif tag in ['b', 'strong']:
+            self.in_bold = False
+        elif tag in ['i', 'em']:
+            self.in_italic = False
+        elif tag in ['ul', 'ol']:
+            self.in_list = False
+            self.list_depth = max(0, self.list_depth - 1)
+        elif tag == 'li':
+            self.flush_text()
+            self.in_list_item = False
+            
+    def handle_data(self, data):
+        if data.strip():
+            if self.in_bold:
+                data = f"**{data}**"
+            if self.in_italic:
+                data = f"*{data}*"
+            if self.in_link:
+                data = f"[{data}]({self.link_href})"
+            self.current_text.append(data)
+            
+    def flush_text(self):
+        if self.current_text:
+            text = ''.join(self.current_text).strip()
+            if text:
+                if self.in_heading:
+                    prefix = '#' * self.heading_level
+                    self.markdown.append(f"{prefix} {text}\n")
+                elif self.in_list_item:
+                    indent = '  ' * (self.list_depth - 1)
+                    bullet = '* ' if self.list_type == 'unordered' else '1. '
+                    self.markdown.append(f"{indent}{bullet}{text}\n")
+                else:
+                    self.markdown.append(text)
+            self.current_text = []
+            
+    def get_markdown(self):
+        self.flush_text()
+        return '\n'.join(self.markdown)
+
+def setup_google_auth():
+    """Set up Google API authentication."""
+    creds = None
+    
+    # Try service account first (for GitHub Actions)
+    service_account_key = os.getenv('GOOGLE_SERVICE_ACCOUNT_KEY')
+    if service_account_key:
+        try:
+            service_account_info = json.loads(service_account_key)
+            creds = service_account.Credentials.from_service_account_info(
+                service_account_info,
+                scopes=['https://www.googleapis.com/auth/drive.readonly']
+            )
+            print("✓ Authenticated with service account")
+        except Exception as e:
+            print(f"✗ Service account auth failed: {e}")
+            
+    if not creds:
+        print("✗ No authentication credentials found")
+        sys.exit(1)
+        
+    return creds
+
+def export_doc_as_html(service, file_id, title):
+    """Export a Google Doc as HTML."""
+    try:
+        # Export as HTML
+        response = service.files().export(
+            fileId=file_id,
+            mimeType='text/html'
+        ).execute()
+        
+        print(f"  ✓ Exported as HTML: {title}")
+        return response.decode('utf-8')
+    except HttpError as e:
+        print(f"  ✗ Failed to export {title}: {e}")
+        return None
+
+def export_doc_as_text(service, file_id, title):
+    """Export a Google Doc as plain text (fallback)."""
+    try:
+        response = service.files().export(
+            fileId=file_id,
+            mimeType='text/plain'
+        ).execute()
+        
+        print(f"  ✓ Exported as plain text: {title}")
+        return response.decode('utf-8')
+    except HttpError as e:
+        print(f"  ✗ Failed to export {title}: {e}")
+        return None
+
+def html_to_markdown(html_content, title):
+    """Convert HTML to Markdown with error handling."""
+    try:
+        parser = MarkdownHTMLParser()
+        parser.feed(html_content)
+        markdown = parser.get_markdown()
+        
+        # Process image placeholders
+        markdown = process_image_placeholders(markdown)
+        
+        return markdown
+    except Exception as e:
+        print(f"  ⚠ HTML parsing failed for {title}: {e}")
+        # Save debug file
+        debug_file = f"debug_{title.replace('/', '_')}.html"
+        with open(debug_file, 'w') as f:
+            f.write(html_content)
+        print(f"  → Saved debug HTML to {debug_file}")
+        return None
+
+def text_to_markdown(text_content):
+    """Convert plain text to Markdown (fallback)."""
+    lines = text_content.split('\n')
+    markdown_lines = []
+    
+    for line in lines:
+        line = line.rstrip()
+        
+        # Skip empty lines
+        if not line:
+            markdown_lines.append('')
+            continue
+            
+        # Convert headers (uppercase lines < 50 chars)
+        if line.isupper() and len(line) < 50 and line.strip():
+            markdown_lines.append(f"## {line.title()}")
+            continue
+            
+        # Handle bullet points
+        if line.lstrip().startswith(('* ', '- ', '• ')):
+            # Preserve indentation for nested lists
+            indent = len(line) - len(line.lstrip())
+            content = line.lstrip()[2:].strip()
+            markdown_lines.append(' ' * indent + f"* {content}")
+            continue
+            
+        # Regular text
+        markdown_lines.append(line)
+        
+    markdown = '\n'.join(markdown_lines)
+    
+    # Process image placeholders
+    markdown = process_image_placeholders(markdown)
+    
+    return markdown
+
+def process_image_placeholders(content):
+    """Process image placeholders in content."""
+    # Pattern for {{Image: filename}} placeholders
+    pattern = r'\{\{Image:\s*([^\}]+)\}\}'
+    
+    def replace_image(match):
+        filename = match.group(1).strip()
+        # Ensure .jpg extension
+        if not filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+            filename += '.jpg'
+        return f'<img src="/img/{filename}" alt="{filename}" />'
+    
+    return re.sub(pattern, replace_image, content, flags=re.IGNORECASE)
+
+def filter_main_content(content):
+    """Filter out sections that are handled by the template."""
+    for pattern in FILTER_PATTERNS:
+        content = re.sub(pattern, '', content, flags=re.DOTALL | re.IGNORECASE)
+    return content.strip()
+
+def get_gdocs_in_folder(service, folder_id):
+    """Get all Google Docs in a folder."""
+    try:
+        results = service.files().list(
+            q=f"'{folder_id}' in parents and mimeType='application/vnd.google-apps.document'",
+            fields="files(id, name)"
+        ).execute()
+        
+        files = results.get('files', [])
+        print(f"\n✓ Found {len(files)} Google Docs in folder")
+        return files
+    except HttpError as e:
+        print(f"✗ Error accessing folder: {e}")
+        return []
+
+def sync_document(service, doc, output_path, is_extra_content=False):
+    """Sync a single document."""
+    doc_id = doc['id']
+    doc_name = doc['name']
+    
+    print(f"\n→ Processing: {doc_name}")
+    
+    # Try HTML export first
+    html_content = export_doc_as_html(service, doc_id, doc_name)
+    
+    if html_content:
+        # Try to parse HTML to Markdown
+        markdown_content = html_to_markdown(html_content, doc_name)
+        
+        if not markdown_content:
+            # Fall back to plain text
+            print(f"  → Falling back to plain text export")
+            text_content = export_doc_as_text(service, doc_id, doc_name)
+            if text_content:
+                markdown_content = text_to_markdown(text_content)
+            else:
+                print(f"  ✗ Failed to export document")
+                return False
+    else:
+        # Try plain text export
+        text_content = export_doc_as_text(service, doc_id, doc_name)
+        if text_content:
+            markdown_content = text_to_markdown(text_content)
+        else:
+            print(f"  ✗ Failed to export document")
+            return False
+    
+    # Filter main content if needed
+    if not is_extra_content:
+        markdown_content = filter_main_content(markdown_content)
+    
+    # Save the content
+    if is_extra_content:
+        # Save to data directory as YAML
+        data_path = Path(DATA_DIR) / EXTRA_CONTENT_FILE
+        data_path.parent.mkdir(exist_ok=True)
+        
+        with open(data_path, 'w') as f:
+            yaml.dump({'content': markdown_content}, f, default_flow_style=False)
+        
+        print(f"  ✓ Saved to: {data_path}")
+    else:
+        # Save to content directory as Markdown
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(output_path, 'w') as f:
+            # Preserve frontmatter if it exists
+            if output_path.exists():
+                existing_content = output_path.read_text()
+                if existing_content.startswith('---'):
+                    frontmatter_end = existing_content.find('---', 3)
+                    if frontmatter_end != -1:
+                        frontmatter = existing_content[:frontmatter_end + 3]
+                        f.write(frontmatter + '\n\n')
+            
+            f.write(markdown_content)
+        
+        print(f"  ✓ Saved to: {output_path}")
+    
+    return True
+
+def main():
+    """Main sync function."""
+    print("=== Google Docs Sync (Unified) ===")
+    print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    
+    # Set up authentication
+    creds = setup_google_auth()
+    service = build('drive', 'v3', credentials=creds)
+    
+    # Get folder ID
+    folder_id = os.getenv('GDOCS_FOLDER_ID')
+    if not folder_id:
+        print("✗ GDOCS_FOLDER_ID not set")
+        sys.exit(1)
+    
+    # Get all docs in folder
+    docs = get_gdocs_in_folder(service, folder_id)
+    
+    if not docs:
+        print("✗ No documents found")
+        sys.exit(1)
+    
+    # Track results
+    success_count = 0
+    
+    # Process each document
+    for doc in docs:
+        doc_name = doc['name'].lower()
+        
+        # Determine output path and type
+        if 'extra_content' in doc_name:
+            # Handle extra content document
+            success = sync_document(service, doc, None, is_extra_content=True)
+        else:
+            # Handle regular content documents
+            # Map document names to content paths
+            if 'schedule' in doc_name:
+                output_path = Path(CONTENT_DIR) / 'schedule' / '_index.md'
+            elif 'cfp' in doc_name or 'call' in doc_name:
+                output_path = Path(CONTENT_DIR) / 'cfp' / '_index.md'
+            elif 'faq' in doc_name:
+                output_path = Path(CONTENT_DIR) / 'faq' / '_index.md'
+            else:
+                # Default to main page
+                output_path = Path(CONTENT_DIR) / '_index.md'
+            
+            success = sync_document(service, doc, output_path, is_extra_content=False)
+        
+        if success:
+            success_count += 1
+    
+    # Summary
+    print(f"\n=== Sync Complete ===")
+    print(f"✓ Successfully synced: {success_count}/{len(docs)} documents")
+    
+    if success_count < len(docs):
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
