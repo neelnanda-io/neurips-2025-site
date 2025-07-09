@@ -22,7 +22,7 @@ We also welcome work that furthers the field of mechanistic interpretability in 
 
 ## Reviewing and Submission Policy
 
-[All submissions must be made via OpenReview (link forthcoming). Please use the NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752066772933249&usg=AOvVaw1LOSZt7IFK7f6ik3vQodiJ) for all submissions (no need for a .
+[All submissions must be made via OpenReview (link forthcoming). Please use the NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752070630159950&usg=AOvVaw0U2KAJfeRKwTE45ipTc5xz) for all submissions (no need for a .
 
 Submissions are non-archival. We are happy to receive submissions that are also undergoing peer review elsewhere at the time of submission, but we will not accept submissions that have already been previously published or accepted for publication at peer-reviewed conferences or journals. Submission is permitted for papers presented or to be presented at other non-archival venues (e.g. other workshops).
 
