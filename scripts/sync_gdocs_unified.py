@@ -74,6 +74,11 @@ class MarkdownHTMLParser(HTMLParser):
         self.in_list_item = False
         self.list_type = None
         self.list_depth = 0
+        self.in_table = False
+        self.in_table_row = False
+        self.in_table_cell = False
+        self.table_rows = []
+        self.current_row = []
         
     def handle_starttag(self, tag, attrs):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
@@ -103,7 +108,16 @@ class MarkdownHTMLParser(HTMLParser):
             self.current_text.append('\n')
         elif tag == 'table':
             self.flush_text()
-            self.markdown.append('\n[TABLE - Please convert manually]\n')
+            self.in_table = True
+            self.table_rows = []
+        elif tag == 'tr':
+            if self.in_table:
+                self.in_table_row = True
+                self.current_row = []
+        elif tag in ['td', 'th']:
+            if self.in_table:
+                self.flush_text()
+                self.in_table_cell = True
             
     def handle_endtag(self, tag):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
@@ -125,6 +139,18 @@ class MarkdownHTMLParser(HTMLParser):
         elif tag == 'li':
             self.flush_text()
             self.in_list_item = False
+        elif tag == 'table':
+            if self.in_table:
+                self.format_table()
+                self.in_table = False
+        elif tag == 'tr':
+            if self.in_table_row:
+                self.table_rows.append(self.current_row)
+                self.in_table_row = False
+        elif tag in ['td', 'th']:
+            if self.in_table_cell:
+                self.flush_text(is_table_cell=True)
+                self.in_table_cell = False
             
     def handle_data(self, data):
         if data.strip():
@@ -136,11 +162,13 @@ class MarkdownHTMLParser(HTMLParser):
                 data = f"[{data}]({self.link_href})"
             self.current_text.append(data)
             
-    def flush_text(self):
+    def flush_text(self, is_table_cell=False):
         if self.current_text:
             text = ''.join(self.current_text).strip()
             if text:
-                if self.in_heading:
+                if is_table_cell:
+                    self.current_row.append(text)
+                elif self.in_heading:
                     prefix = '#' * self.heading_level
                     self.markdown.append(f"{prefix} {text}\n")
                 elif self.in_list_item:
@@ -150,6 +178,29 @@ class MarkdownHTMLParser(HTMLParser):
                 else:
                     self.markdown.append(text)
             self.current_text = []
+    
+    def format_table(self):
+        """Format table rows as a markdown table."""
+        if not self.table_rows:
+            return
+            
+        # Create markdown table
+        self.markdown.append('\n')
+        
+        # First row is header
+        if len(self.table_rows) > 0:
+            headers = self.table_rows[0]
+            self.markdown.append('| ' + ' | '.join(headers) + ' |\n')
+            self.markdown.append('|' + '---|' * len(headers) + '\n')
+            
+            # Remaining rows are data
+            for row in self.table_rows[1:]:
+                # Ensure row has same number of columns as header
+                while len(row) < len(headers):
+                    row.append('')
+                self.markdown.append('| ' + ' | '.join(row[:len(headers)]) + ' |\n')
+        
+        self.markdown.append('\n')
             
     def get_markdown(self):
         self.flush_text()
@@ -207,9 +258,29 @@ def export_doc_as_text(service, file_id, title):
         print(f"  ✗ Failed to export {title}: {e}")
         return None
 
+def remove_css_styles(html_content):
+    """Remove CSS styles and style tags from HTML content."""
+    # Remove style tags and their contents
+    html_content = re.sub(r'<style[^>]*>.*?</style>', '', html_content, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Remove @import statements that might be outside style tags
+    html_content = re.sub(r'@import\s+url\([^)]+\);[^<]*', '', html_content, flags=re.IGNORECASE)
+    
+    # Remove the specific CSS pattern you're seeing (ul.lst-kix_... etc)
+    html_content = re.sub(r'ul\.lst-[a-zA-Z0-9_-]+\{[^}]+\}', '', html_content, flags=re.MULTILINE)
+    html_content = re.sub(r'\.lst-[a-zA-Z0-9_-]+\s*>\s*li:before\{[^}]+\}', '', html_content, flags=re.MULTILINE)
+    
+    # Remove any remaining CSS rules
+    html_content = re.sub(r'[a-zA-Z0-9\-_\.#]+\s*\{[^}]+\}', '', html_content)
+    
+    return html_content
+
 def html_to_markdown(html_content, title):
     """Convert HTML to Markdown with error handling."""
     try:
+        # Remove CSS styles first
+        html_content = remove_css_styles(html_content)
+        
         parser = MarkdownHTMLParser()
         parser.feed(html_content)
         markdown = parser.get_markdown()
@@ -281,6 +352,13 @@ def filter_main_content(content):
     """Filter out sections that are handled by the template."""
     for pattern in FILTER_PATTERNS:
         content = re.sub(pattern, '', content, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Fix malformed links that have triple brackets [[[text](url)
+    content = re.sub(r'\[\[\[([^\]]+)\]\(([^)]+)\)', r'[\1](\2)', content)
+    
+    # Fix broken list formatting
+    content = re.sub(r'\n\*\s+\n+([A-Z\[])', r'\n* \1', content)
+    
     return content.strip()
 
 def get_gdocs_in_folder(service, folder_id):
