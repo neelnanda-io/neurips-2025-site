@@ -1,0 +1,9 @@
+fix: Improve HTML sync to handle parsing errors gracefully
+
+- Add error handling to HTML parser to prevent truncation
+- Save debug HTML files for troubleshooting
+- Ensure shortcodes are properly preserved with spacing
+- Update GitHub Actions to use fixed HTML sync script
+
+The previous HTML parser would fail and truncate content when encountering
+certain HTML structures. This version continues parsing even on errors.
