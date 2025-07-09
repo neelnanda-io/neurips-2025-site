@@ -1,10 +1,8 @@
----
-title: "Call for Papers"
----
-
+@import url(https://themes.googleusercontent.com/fonts/css?kit=mW_CIZvkcW1i7Mw9mVo5Pw1nGhQimsDuvOKTiJCJG5Q); .lst-kix_kslll6m95hsx-7 > li:before{content:"○  "}.lst-kix_kslll6m95hsx-6 > li:before{content:"●  "}.lst-kix_kslll6m95hsx-3 > li:before{content:"●  "}.lst-kix_kslll6m95hsx-4 > li:before{content:"○  "}.lst-kix_kslll6m95hsx-5 > li:before{content:"■  "}.lst-kix_7zfcqs1uk5rq-1 > li:before{content:"○  "}.lst-kix_7zfcqs1uk5rq-2 > li:before{content:"■  "}ul.lst-kix_kslll6m95hsx-6{list-style-type:none}.lst-kix_7zfcqs1uk5rq-3 > li:before{content:"●  "}ul.lst-kix_kslll6m95hsx-5{list-style-type:none}ul.lst-kix_kslll6m95hsx-4{list-style-type:none}ul.lst-kix_kslll6m95hsx-3{list-style-type:none}ul.lst-kix_kslll6m95hsx-8{list-style-type:none}.lst-kix_7zfcqs1uk5rq-4 > li:before{content:"○  "}ul.lst-kix_kslll6m95hsx-7{list-style-type:none}.lst-kix_7zfcqs1uk5rq-6 > li:before{content:"●  "}.lst-kix_7zfcqs1uk5rq-7 > li:before{content:"○  "}ul.lst-kix_kslll6m95hsx-2{list-style-type:none}ul.lst-kix_kslll6m95hsx-1{list-style-type:none}.lst-kix_7zfcqs1uk5rq-5 > li:before{content:"■  "}ul.lst-kix_kslll6m95hsx-0{list-style-type:none}.lst-kix_kslll6m95hsx-8 > li:before{content:"■  "}.lst-kix_7zfcqs1uk5rq-8 > li:before{content:"■  "}ul.lst-kix_7zfcqs1uk5rq-1{list-style-type:none}ul.lst-kix_7zfcqs1uk5rq-0{list-style-type:none}ul.lst-kix_7zfcqs1uk5rq-5{list-style-type:none}.lst-kix_kslll6m95hsx-0 > li:before{content:"●  "}ul.lst-kix_7zfcqs1uk5rq-4{list-style-type:none}ul.lst-kix_7zfcqs1uk5rq-3{list-style-type:none}ul.lst-kix_7zfcqs1uk5rq-2{list-style-type:none}.lst-kix_kslll6m95hsx-2 > li:before{content:"■  "}ul.lst-kix_7zfcqs1uk5rq-8{list-style-type:none}.lst-kix_7zfcqs1uk5rq-0 > li:before{content:"●  "}ul.lst-kix_7zfcqs1uk5rq-7{list-style-type:none}ul.lst-kix_7zfcqs1uk5rq-6{list-style-type:none}.lst-kix_kslll6m95hsx-1 > li:before{content:"○  "}
 # Call for Papers
 
 We are inviting submissions of short (4 pages) and long (9 pages) papers outlining new research, due August 22, 2025. We welcome papers on any of the following topics (see the Topics for Discussion section for more details and example papers), or anything else where the authors convincingly argue that it moves forward the field of mechanistic interpretability.
+
 
 * Techniques: Work inventing new mechanistic interpretability techniques, evaluating the quality of existing techniques, or proposing benchmarks and tools for future evaluations.
 
@@ -20,13 +18,17 @@ We are inviting submissions of short (4 pages) and long (9 pages) papers outlini
 
 We also welcome work that furthers the field of mechanistic interpretability in less standard ways, such as by providing rigorous negative results, or open source software, models or datasets that may be of value to the community, coding tutorials, distillations of key and poorly explained concepts, or position pieces discussing future use cases of mechanistic interpretability or that bring clarification to complex topics such as "what is a feature?".
 
+
 ## Reviewing and Submission Policy
 
-[All submissions must be made via OpenReview (link forthcoming). Please use the NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752106037695252&usg=AOvVaw3de6G35gfinAwc9mzfSALf) for all submissions (no need for a .
+All submissions must be made via OpenReview (link forthcoming). Please use the [NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752106200961958&usg=AOvVaw3-vk40_DfVqex--uokrGDC) for all submissions (no need for a .
+
 
 Submissions are non-archival. We are happy to receive submissions that are also undergoing peer review elsewhere at the time of submission, but we will not accept submissions that have already been previously published or accepted for publication at peer-reviewed conferences or journals. Submission is permitted for papers presented or to be presented at other non-archival venues (e.g. other workshops).
 
+
 Reviewing for our workshop is double blind: reviewers will not know the authors' identity (and vice versa). Both short (max 4 page) and long (max 8 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these. Evaluation of submissions will be based on the originality and novelty, the technical strength, and relevance to the workshop topics. Notifications of acceptance will be sent to applicants by email.
+
 
 ## Prizes
 
