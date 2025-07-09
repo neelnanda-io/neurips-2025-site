@@ -1,8 +1,4 @@
-@import url(https://themes.googleusercontent.com/fonts/css?kit=mW_CIZvkcW1i7Mw9mVo5Pw1nGhQimsDuvOKTiJCJG5Q);
 ## Workshop Program (Provisional)
-
-
-[TABLE - Please convert manually]
 
 Time
 
@@ -85,6 +81,40 @@ Awards & closing
 
 
 Evening social (invite-only)
+
+
+
+
+|  |
+
+|
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
+|  |
+
 
 
 ## Session Details
