@@ -290,24 +290,18 @@ article thead tr:first-child:empty {
 
 /* Embedded signup box */
 .embedded-signup {
-  margin: 2rem auto;
-  padding: 1.5rem;
-  max-width: 500px;
+  margin: 1.5rem auto;
+  padding: 0.75rem 1rem;
+  max-width: 450px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 8px;
   text-align: center;
   color: white;
 }
 
-.embedded-signup h2 {
-  color: white;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.embedded-signup .mailing-list-form {
+.embedded-signup .embeddable-buttondown-form {
   margin: 0;
-  display: block;
+  gap: 0.75rem;
 }
 
 /* Content images */
@@ -324,14 +318,17 @@ article thead tr:first-child:empty {
 .image-pair {
   display: flex;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 1.5rem auto;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
 }
 
 .image-pair img {
   width: calc(50% - 0.5rem);
   height: auto;
+  max-height: 250px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -340,8 +337,9 @@ article thead tr:first-child:empty {
   text-align: center;
   font-style: italic;
   color: #666;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 }
 
 /* Mobile responsiveness for image pairs */
@@ -364,8 +362,9 @@ article thead tr:first-child:empty {
 
 .embeddable-buttondown-form {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
+  justify-content: center;
 }
 
 .embeddable-buttondown-form input[type="email"] {
