@@ -72,6 +72,8 @@ class MarkdownHTMLParser(HTMLParser):
         self.link_href = ""
         self.link_text = ""
         self.in_list = False
+        self.bold_depth = 0  # Track nesting of bold formatting
+        self.italic_depth = 0  # Track nesting of italic formatting
         self.in_list_item = False
         self.list_type = None
         self.list_depth = 0
@@ -95,8 +97,12 @@ class MarkdownHTMLParser(HTMLParser):
                 if attr_name == 'href':
                     self.link_href = attr_value
         elif tag in ['b', 'strong']:
+            self.flush_text()  # Flush before changing formatting
+            self.bold_depth += 1
             self.in_bold = True
         elif tag in ['i', 'em']:
+            self.flush_text()  # Flush before changing formatting
+            self.italic_depth += 1
             self.in_italic = True
         elif tag == 'span':
             # Google Docs sometimes uses spans with font-weight for bold
@@ -107,8 +113,12 @@ class MarkdownHTMLParser(HTMLParser):
                     break
             if style:
                 if 'font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style:
+                    self.flush_text()  # Flush before changing formatting
+                    self.bold_depth += 1
                     self.in_bold = True
                 if 'font-style:italic' in style or 'font-style: italic' in style:
+                    self.flush_text()  # Flush before changing formatting
+                    self.italic_depth += 1
                     self.in_italic = True
         elif tag in ['ul', 'ol']:
             self.flush_text()
@@ -152,23 +162,24 @@ class MarkdownHTMLParser(HTMLParser):
             self.markdown.append('\n')
         elif tag == 'a':
             if self.link_text:
-                # Format the link with any bold/italic formatting
-                link_formatted = self.link_text
-                if self.in_italic:
-                    link_formatted = f"*{link_formatted}*"
-                if self.in_bold:
-                    link_formatted = f"**{link_formatted}**"
-                self.current_text.append(f"[{link_formatted}]({self.link_href})")
+                # Just create the link without extra formatting
+                # The formatting will be applied when we flush
+                self.current_text.append(f"[{self.link_text}]({self.link_href})")
                 self.link_text = ""
             self.in_link = False
             self.link_href = ""
         elif tag in ['b', 'strong']:
-            self.in_bold = False
+            self.flush_text()  # Flush before changing formatting
+            self.bold_depth = max(0, self.bold_depth - 1)
+            if self.bold_depth == 0:
+                self.in_bold = False
         elif tag in ['i', 'em']:
-            self.in_italic = False
+            self.flush_text()  # Flush before changing formatting
+            self.italic_depth = max(0, self.italic_depth - 1)
+            if self.italic_depth == 0:
+                self.in_italic = False
         elif tag == 'span':
-            # Reset formatting that might have been set by span
-            # This is a simplification - ideally we'd track a stack
+            # Don't automatically reset - we track depth now
             pass
         elif tag in ['ul', 'ol']:
             # Only decrease depth if we're actually in a list
@@ -195,24 +206,25 @@ class MarkdownHTMLParser(HTMLParser):
     def handle_data(self, data):
         # Don't strip whitespace completely - preserve spaces between words
         if data:
-            formatted_data = data
-            
-            # Apply formatting in correct order
-            if self.in_italic and not self.in_link:
-                formatted_data = f"*{formatted_data}*"
-            if self.in_bold and not self.in_link:
-                formatted_data = f"**{formatted_data}**"
+            # For links, accumulate text without formatting
             if self.in_link:
-                # For links, store the text and format it when we close the tag
-                self.link_text = data
+                self.link_text += data
                 return
                 
-            self.current_text.append(formatted_data)
+            # For regular text, just append without formatting
+            # We'll apply formatting when we flush
+            self.current_text.append(data)
             
     def flush_text(self, is_table_cell=False):
         if self.current_text:
             text = ''.join(self.current_text).strip()
             if text:
+                # Apply formatting to the complete text
+                if self.in_bold and not self.in_heading:  # Don't bold headings
+                    text = f"**{text}**"
+                if self.in_italic:
+                    text = f"*{text}*"
+                
                 if is_table_cell:
                     self.current_row.append(text)
                 elif self.in_heading:
