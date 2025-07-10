@@ -26,7 +26,7 @@ Contributed talks 1
 11:00 - 12:00
 
 
-Poster session 1, coffee
+Poster session 1
 
 
 12:00 - 13:00
@@ -50,7 +50,7 @@ Contributed talks 2
 14:30 - 15:30
 
 
-Poster session 2, coffee
+Poster session 2
 
 
 15:30 - 16:00
