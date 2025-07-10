@@ -1,45 +1,46 @@
 # Call for Papers
 
-We are inviting submissions of short (4 pages) and long (9 pages) papers outlining new research, due August 22, 2025. The workshop is non-archival. We do not accept submissions of work that has been accepted to an archival venue. Submissions undergoing peer review on August 22 are welcome, including works under review at the main NeurIPS conference.
+We are inviting submissions of short (max 4 pages) and long (max 9 pages) papers outlining new research, due August 22, 2025. We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://www.google.com/url?q=https://docs.google.com/forms/d/e/1FAIpQLSdiw1SJllzoTz_nqzDTzTOGb9DV3W_truQyh-WvYj_QGIi7Mg/viewform?usp%3Ddialog&sa=D&source=editors&ust=1752120875701096&usg=AOvVaw2Op6T6anuEMwpaBafzD12W).
 
 
+Details:
 
 
+* The workshop is non-archival.
 
+* Authors will be notified of acceptance by September 19
 
-We welcome papers on any of the following topics (see the Topics for Discussion section for more details and example papers), or anything else where the authors convincingly argue that it moves forward the field of mechanistic interpretability.
+* We do not accept submissions of work that has been accepted to an archival venue.
 
+* Submissions undergoing peer review (on August 22) are welcome, including works under review at the main NeurIPS conference.
 
-* Techniques: Work inventing new mechanistic interpretability techniques, evaluating the quality of existing techniques, or proposing benchmarks and tools for future evaluations.
+* All submissions must be made via OpenReview (link forthcoming).
 
-* Exploratory analysis: Qualitative, biologically-inspired analysis of components, circuits or phenomena inside neural networks.
+* Note: If you do not have an institutional email, be aware that it can take up to 2 weeks to get an OpenReview account approved. [Let us know](mailto:neurips2025@mechinterpworkshop.com) if this prevents you from submitting.
 
-* Decoding superposition: Work that deepens our understanding of the hypothesis that models activations are represented in superposition, and explores techniques to decode superposed activations, such as sparse autoencoders.
+* Please use the [NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752120875702281&usg=AOvVaw2-q9UAfpzGXAh_5ABAnKkj) for all submissions (no need for a checklist).
 
-* Applications of interpretability: Can we study jailbreaks/hallucinations/other interesting real-world phenomena of LLMs? Where are places where mech interp provides value, in a fair comparison with e.g. linear probing or finetuning baselines?
+* Both short (max 4 page) and long (max 9 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these.
 
-* Scaling and automation: How can we reduce the dependence of mechanistic interpretability on slow, subjective and expensive human labor? How much do our current techniques scale?
+* Accepted papers will be allowed one additional page in the camera ready version, to integrate reviewer feedback.
 
-* Basic science: There are many fundamental mysteries of model internals, and we welcome work that can shed any light on them: Are activations sparse linear combinations of features? Are features universal? Are circuits and features even the right way to think about models?
+* Long works will be held to a higher standard of rigour and depth than short works.
 
-We also welcome work that furthers the field of mechanistic interpretability in less standard ways, such as by providing rigorous negative results, or open source software, models or datasets that may be of value to the community, coding tutorials, distillations of key and poorly explained concepts, or position pieces discussing future use cases of mechanistic interpretability or that bring clarification to complex topics such as "what is a feature?".
+* We welcome any work that furthers the field of mechanistic interpretability, even if in unconventional ways. This includes:
 
+* Rigorous negative results
 
-## Reviewing and Submission Policy
+* Rigorous replications of important results
 
-All submissions must be made via OpenReview (link forthcoming). Please use the [NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752118866668195&usg=AOvVaw3I2-YPEzZhsitxYC2hioCJ) for all submissions (no need for a .
+* Open source software and tools (e.g. [TransformerLens](https://www.google.com/url?q=https://github.com/neelnanda-io/TransformerLens&sa=D&source=editors&ust=1752120875703144&usg=AOvVaw2f31YTxSZlrhpiCiz6nyWh), [Neuronpedia](https://www.google.com/url?q=http://neuronpedia.org&sa=D&source=editors&ust=1752120875703233&usg=AOvVaw372m91yMKUvHqSozWYZUpT), [nnsight](https://www.google.com/url?q=https://github.com/ndif-team/nnsight&sa=D&source=editors&ust=1752120875703353&usg=AOvVaw0X7IeuWHbkKH6hv4B2t2uW) or [Penzai](https://www.google.com/url?q=https://github.com/google-deepmind/penzai&sa=D&source=editors&ust=1752120875703461&usg=AOvVaw2NZdFgyvwTlqus40HNtznD))
 
+* Models or datasets that may be of value to the community (e.g. [Pythia](https://www.google.com/url?q=https://arxiv.org/abs/2304.01373&sa=D&source=editors&ust=1752120875703661&usg=AOvVaw0hjFSZSyPVpxWd-Jo0Iyqr), [MultiBERTs](https://www.google.com/url?q=https://arxiv.org/abs/2106.16163&sa=D&source=editors&ust=1752120875703729&usg=AOvVaw0VVQ28ScdtUOPCPfUAABfU) or [Gemma Scope](https://www.google.com/url?q=https://arxiv.org/abs/2408.05147&sa=D&source=editors&ust=1752120875703791&usg=AOvVaw1ZA7gAhwcIHP0GUyLQsql0))
 
-Submissions are non-archival. We are happy to receive submissions that are also undergoing peer review elsewhere at the time of submission, but we will not accept submissions that have already been previously published or accepted for publication at peer-reviewed conferences or journals. Submission is permitted for papers presented or to be presented at other non-archival venues (e.g. other workshops).
+* Educational materials (e.g. [the ARENA materials](https://www.google.com/url?q=https://arena3-chapter1-transformer-interp.streamlit.app/&sa=D&source=editors&ust=1752120875703932&usg=AOvVaw2Yn60dZMs1Pa1dQ5Xr6D6w))
 
+* [Distillations](https://www.google.com/url?q=https://distill.pub/2017/research-debt/&sa=D&source=editors&ust=1752120875704021&usg=AOvVaw0EsVjmSz5jBZFTtzkOUNhN) of key and poorly explained concepts (e.g. [Ferrando et al](https://www.google.com/url?q=https://arxiv.org/abs/2405.00208&sa=D&source=editors&ust=1752120875704175&usg=AOvVaw2b6PLkeQAYmKCKLJVkB1a-))
 
-Reviewing for our workshop is double blind: reviewers will not know the authors' identity (and vice versa). Both short (max 4 page) and long (max 8 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these. Evaluation of submissions will be based on the originality and novelty, the technical strength, and relevance to the workshop topics. Notifications of acceptance will be sent to applicants by email.
-
-
-## Important Information
-
-Note: You will require an OpenReview account to submit. If you do not have an institutional email (e.g. a .edu address), OpenReview moderation can take up to 2 weeks. Please make an account well before the deadline if this applies to you.
-
+* Position pieces that bring clarity to complex topics and debates (e.g. [the ‘strong’ feature hypothesis could be wrong](https://www.google.com/url?q=https://www.alignmentforum.org/posts/tojtPCCRpKLSHBdpn/the-strong-feature-hypothesis-could-be-wrong&sa=D&source=editors&ust=1752120875704525&usg=AOvVaw3hRmew_cInoxIY258qABaJ))
 
 ### Topics of Interest
 
@@ -48,23 +49,27 @@ We welcome submissions on any topic that furthers our understanding of models by
 
 * Model Biology & Cognition
 
-* What can we understand about the high-level properties of models? Can we find evidence for cognitive phenomena like implicit planning, search algorithms, or internal world models?
+* What can we understand about the high-level properties of models? Can we find evidence for cognitive phenomena like [implicit planning](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html%23dives-poems&sa=D&source=editors&ust=1752120875705377&usg=AOvVaw3-KDLFhdK9FjH6iGnpXfVe), search algorithms, or [internal world models](https://www.google.com/url?q=https://arxiv.org/abs/2210.13382&sa=D&source=editors&ust=1752120875705481&usg=AOvVaw0R4N1ZFMxYjjZsFgSynG8K)?
 
-* What does it look like for a model to "believe" something? Can we find and manipulate these beliefs?
+* What does it look like for a model to "believe" something? Can we find and manipulate these beliefs? Or is the entire notion of a model’s beliefs confused?
 
-* Do models internally represent different personas or simulators that drive their behavior, and how are these selected from context?
+* Do models internally represent different [personas](https://www.google.com/url?q=https://arxiv.org/abs/2406.12094&sa=D&source=editors&ust=1752120875705885&usg=AOvVaw35geFGdwu9YtdSPhkztC1u) or [simulators](https://www.google.com/url?q=https://www.nature.com/articles/s41586-023-06647-8&sa=D&source=editors&ust=1752120875705986&usg=AOvVaw2SnZDm2uF6wYSFsI4P6-yb) that drive their behavior, and how are these selected from context?
 
 * Circuits and Causal Analysis
 
-* Circuit analysis is a core part of mech interp, but our methods are still nascent. What are the best ways to find and validate circuits?
+* [Circuit analysis](https://www.google.com/url?q=https://distill.pub/2020/circuits/zoom-in/&sa=D&source=editors&ust=1752120875706249&usg=AOvVaw3AJFqWcqrpmBi_b0wwXPJm) is a core part of mech interp, but our methods are still nascent. What are the best ways to find and validate circuits?
 
-* How can we improve existing approaches like attribution graphs? What can we learn from the field of causal inference to make our analysis more rigorous?
+* How can we improve existing approaches like [attribution](https://www.google.com/url?q=https://arxiv.org/abs/2406.11944&sa=D&source=editors&ust=1752120875706530&usg=AOvVaw23WNeThpzRidyUQhYS_Ym1)[graphs](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/methods.html&sa=D&source=editors&ust=1752120875706613&usg=AOvVaw3N10fcXUqEd170hjJ0a00a)?
 
-* What are the failure modes of current causal methods, and what alternative approaches might bear fruit?
+* What can we learn from [the field of causal inference](https://www.google.com/url?q=https://arxiv.org/abs/2407.04690&sa=D&source=editors&ust=1752120875706828&usg=AOvVaw0nme4aHhMhWKLlKGjJlCWR) to make our analysis more rigorous?
+
+* What are the [failure modes](https://www.google.com/url?q=https://arxiv.org/abs/2307.15771&sa=D&source=editors&ust=1752120875707001&usg=AOvVaw2a1V7E7_pHH00y_yd_8JGv) of current causal methods, and what alternative approaches might bear fruit?
+
+* How far can we push [weight-based](https://www.google.com/url?q=https://arxiv.org/abs/2301.05217&sa=D&source=editors&ust=1752120875707264&usg=AOvVaw0-ncr2Cs1t9kCnN2WAQgRo)[analysis](https://www.google.com/url?q=https://arxiv.org/abs/2410.08417&sa=D&source=editors&ust=1752120875707349&usg=AOvVaw0n5sivhLy-ypXH6Ci5Ceh0)?
 
 * Unsupervised Discovery & Dictionary Learning
 
-* A key promise of interpretability is its potential to surprise us by revealing unexpected structure. How well do unsupervised methods like SAEs, patch-scopes, or training data attribution actually work for this?
+* A key promise of interpretability is its potential to surprise us by revealing unexpected structure. How well do unsupervised methods like [sparse](https://www.google.com/url?q=https://arxiv.org/abs/2103.15949&sa=D&source=editors&ust=1752120875707780&usg=AOvVaw2VP1hyFSEPiFenLC-H2Dni)[autoencoders](https://www.google.com/url?q=https://transformer-circuits.pub/2023/monosemantic-features&sa=D&source=editors&ust=1752120875707897&usg=AOvVaw0olIIX_Z-K-n3EWOwl5J7N), [patch](https://www.google.com/url?q=https://arxiv.org/abs/2401.06102&sa=D&source=editors&ust=1752120875707988&usg=AOvVaw3Oef5Kfm6qAnYo9MnkfrD_)[scopes](https://www.google.com/url?q=https://arxiv.org/abs/2403.10949v2&sa=D&source=editors&ust=1752120875708053&usg=AOvVaw3XS9xmUq9NkUmTfbtDg6a4), or training [data](https://www.google.com/url?q=https://arxiv.org/abs/2308.03296&sa=D&source=editors&ust=1752120875708148&usg=AOvVaw0usB74qvhkQlpE81GvzE6p)[attribution](https://www.google.com/url?q=https://arxiv.org/abs/2205.11482&sa=D&source=editors&ust=1752120875708239&usg=AOvVaw2lM77YDLIJa502X9AgI3_H) actually work for this?
 
 * These methods have shown great promise, but their utility on downstream tasks remains an open question. We welcome work that rigorously tests their practical value against strong baselines.
 
