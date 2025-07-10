@@ -70,6 +70,7 @@ class MarkdownHTMLParser(HTMLParser):
         self.in_italic = False
         self.in_link = False
         self.link_href = ""
+        self.link_text = ""
         self.in_list = False
         self.in_list_item = False
         self.list_type = None
@@ -88,6 +89,7 @@ class MarkdownHTMLParser(HTMLParser):
         elif tag == 'p':
             self.flush_text()
         elif tag == 'a':
+            # Don't override bold/italic state
             self.in_link = True
             for attr_name, attr_value in attrs:
                 if attr_name == 'href':
@@ -96,11 +98,33 @@ class MarkdownHTMLParser(HTMLParser):
             self.in_bold = True
         elif tag in ['i', 'em']:
             self.in_italic = True
+        elif tag == 'span':
+            # Google Docs sometimes uses spans with font-weight for bold
+            style = None
+            for attr_name, attr_value in attrs:
+                if attr_name == 'style':
+                    style = attr_value
+                    break
+            if style:
+                if 'font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style:
+                    self.in_bold = True
+                if 'font-style:italic' in style or 'font-style: italic' in style:
+                    self.in_italic = True
         elif tag in ['ul', 'ol']:
             self.flush_text()
             self.in_list = True
             self.list_type = 'ordered' if tag == 'ol' else 'unordered'
-            self.list_depth += 1
+            # Check for Google Docs list classes to determine depth
+            for attr_name, attr_value in attrs:
+                if attr_name == 'class' and 'lst-' in attr_value:
+                    # Google Docs uses classes like lst-kix_xxxxx-0, lst-kix_xxxxx-1 for nesting
+                    match = re.search(r'-(\d+)(?:\s|$)', attr_value)
+                    if match:
+                        self.list_depth = int(match.group(1))
+                        break
+            else:
+                # If no class found, increment normally
+                self.list_depth += 1
         elif tag == 'li':
             self.flush_text()
             self.in_list_item = True
@@ -127,15 +151,31 @@ class MarkdownHTMLParser(HTMLParser):
             self.flush_text()
             self.markdown.append('\n')
         elif tag == 'a':
+            if self.link_text:
+                # Format the link with any bold/italic formatting
+                link_formatted = self.link_text
+                if self.in_italic:
+                    link_formatted = f"*{link_formatted}*"
+                if self.in_bold:
+                    link_formatted = f"**{link_formatted}**"
+                self.current_text.append(f"[{link_formatted}]({self.link_href})")
+                self.link_text = ""
             self.in_link = False
             self.link_href = ""
         elif tag in ['b', 'strong']:
             self.in_bold = False
         elif tag in ['i', 'em']:
             self.in_italic = False
+        elif tag == 'span':
+            # Reset formatting that might have been set by span
+            # This is a simplification - ideally we'd track a stack
+            pass
         elif tag in ['ul', 'ol']:
-            self.in_list = False
-            self.list_depth = max(0, self.list_depth - 1)
+            # Only decrease depth if we're actually in a list
+            if self.in_list:
+                self.list_depth = max(0, self.list_depth - 1)
+                if self.list_depth == 0:
+                    self.in_list = False
         elif tag == 'li':
             self.flush_text()
             self.in_list_item = False
@@ -153,14 +193,21 @@ class MarkdownHTMLParser(HTMLParser):
                 self.in_table_cell = False
             
     def handle_data(self, data):
-        if data.strip():
-            if self.in_bold:
-                data = f"**{data}**"
-            if self.in_italic:
-                data = f"*{data}*"
+        # Don't strip whitespace completely - preserve spaces between words
+        if data:
+            formatted_data = data
+            
+            # Apply formatting in correct order
+            if self.in_italic and not self.in_link:
+                formatted_data = f"*{formatted_data}*"
+            if self.in_bold and not self.in_link:
+                formatted_data = f"**{formatted_data}**"
             if self.in_link:
-                data = f"[{data}]({self.link_href})"
-            self.current_text.append(data)
+                # For links, store the text and format it when we close the tag
+                self.link_text = data
+                return
+                
+            self.current_text.append(formatted_data)
             
     def flush_text(self, is_table_cell=False):
         if self.current_text:
@@ -172,7 +219,8 @@ class MarkdownHTMLParser(HTMLParser):
                     prefix = '#' * self.heading_level
                     self.markdown.append(f"{prefix} {text}\n")
                 elif self.in_list_item:
-                    indent = '  ' * (self.list_depth - 1)
+                    # Use 2 spaces per indent level for better compatibility
+                    indent = '  ' * max(0, self.list_depth)
                     bullet = '* ' if self.list_type == 'unordered' else '1. '
                     self.markdown.append(f"{indent}{bullet}{text}\n")
                 else:
@@ -302,8 +350,10 @@ def text_to_markdown(text_content):
     """Convert plain text to Markdown (fallback)."""
     lines = text_content.split('\n')
     markdown_lines = []
+    list_indent_stack = []  # Track indentation levels for lists
     
     for line in lines:
+        original_line = line
         line = line.rstrip()
         
         # Skip empty lines
@@ -317,12 +367,39 @@ def text_to_markdown(text_content):
             continue
             
         # Handle bullet points
-        if line.lstrip().startswith(('* ', '- ', '• ')):
-            # Preserve indentation for nested lists
-            indent = len(line) - len(line.lstrip())
-            content = line.lstrip()[2:].strip()
-            markdown_lines.append(' ' * indent + f"* {content}")
+        stripped = line.lstrip()
+        if stripped and stripped[0] in ['*', '-', '•', '○', '■', '▪', '▫', '◦']:
+            # Calculate indent level
+            indent = len(original_line) - len(stripped)
+            
+            # Determine list depth based on indentation
+            depth = 0
+            if list_indent_stack:
+                for i, prev_indent in enumerate(list_indent_stack):
+                    if indent > prev_indent:
+                        depth = i + 1
+                    elif indent == prev_indent:
+                        depth = i
+                        break
+                
+                # Update stack
+                if depth == len(list_indent_stack):
+                    list_indent_stack.append(indent)
+                elif depth < len(list_indent_stack):
+                    list_indent_stack = list_indent_stack[:depth+1]
+            else:
+                list_indent_stack = [indent]
+            
+            # Extract content after bullet
+            content = stripped[1:].strip() if len(stripped) > 1 else ''
+            
+            # Apply proper markdown indentation (2 spaces per level)
+            md_indent = '  ' * depth
+            markdown_lines.append(f"{md_indent}* {content}")
             continue
+        else:
+            # Not a list item, reset stack
+            list_indent_stack = []
             
         # Regular text
         markdown_lines.append(line)
