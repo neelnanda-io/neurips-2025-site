@@ -82,6 +82,7 @@ class MarkdownHTMLParser(HTMLParser):
         self.in_table_cell = False
         self.table_rows = []
         self.current_row = []
+        self.paragraph_bold = False  # Track if entire paragraph is bold
         
     def handle_starttag(self, tag, attrs):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
@@ -90,6 +91,16 @@ class MarkdownHTMLParser(HTMLParser):
             self.heading_level = int(tag[1])
         elif tag == 'p':
             self.flush_text()
+            # Check if paragraph has bold styling
+            style = None
+            for attr_name, attr_value in attrs:
+                if attr_name == 'style':
+                    style = attr_value
+                    break
+            if style and ('font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style):
+                self.paragraph_bold = True
+                self.bold_depth += 1
+                self.in_bold = True
         elif tag == 'a':
             # Don't override bold/italic state
             self.in_link = True
@@ -160,6 +171,12 @@ class MarkdownHTMLParser(HTMLParser):
         elif tag == 'p':
             self.flush_text()
             self.markdown.append('\n')
+            # Reset paragraph-level bold
+            if self.paragraph_bold:
+                self.bold_depth = max(0, self.bold_depth - 1)
+                if self.bold_depth == 0:
+                    self.in_bold = False
+                self.paragraph_bold = False
         elif tag == 'a':
             if self.link_text:
                 # Just create the link without extra formatting
@@ -448,6 +465,13 @@ def filter_main_content(content):
     # Fix broken list formatting
     content = re.sub(r'\n\*\s+\n+([A-Z\[])', r'\n* \1', content)
     
+    # Fix overly aggressive bolding - remove bold from entire paragraphs
+    # Look for paragraphs that start and end with ** but contain multiple sentences
+    content = re.sub(r'\*\*([^*]+\. [^*]+)\*\*', r'\1', content, flags=re.MULTILINE)
+    
+    # Remove bold from headers (they're already styled)
+    content = re.sub(r'^(#{1,6})\s*\*\*(.+?)\*\*\s*$', r'\1 \2', content, flags=re.MULTILINE)
+    
     return content.strip()
 
 def get_gdocs_in_folder(service, folder_id):
@@ -464,6 +488,71 @@ def get_gdocs_in_folder(service, folder_id):
     except HttpError as e:
         print(f"✗ Error accessing folder: {e}")
         return []
+
+def post_process_bold(content):
+    """Fix common bold formatting issues from Google Docs."""
+    # Special handling for the intro paragraphs
+    # Only "Mechanistic interpretability" should be bold in the second paragraph
+    if content.startswith('As neural networks grow'):
+        # Fix the specific case of the first 3 paragraphs
+        content = re.sub(
+            r'\*\*Mechanistic interpretability\*\*\*\* addresses',
+            '**Mechanistic interpretability** addresses',
+            content
+        )
+        # Remove bold from the rest of paragraph 2
+        content = re.sub(
+            r'addresses this challenge by developing principled methods to analyze and understand a model\'s internals–weights and activations–and to use this understanding to gain greater \*\*\*\*insight into its behavior, and the computation underlying it\. \*\*',
+            'addresses this challenge by developing principled methods to analyze and understand a model\'s internals–weights and activations–and to use this understanding to gain greater insight into its behavior, and the computation underlying it.',
+            content
+        )
+        # Remove bold from paragraph 3
+        content = re.sub(
+            r'\*\*The field has grown rapidly.*?chart future directions\.\*\*',
+            lambda m: m.group(0).replace('**', ''),
+            content,
+            flags=re.DOTALL
+        )
+    
+    # Split into lines for processing
+    lines = content.split('\n')
+    processed_lines = []
+    
+    for line in lines:
+        # Skip empty lines
+        if not line.strip():
+            processed_lines.append(line)
+            continue
+            
+        # Remove bold from headers (they have their own styling)
+        if line.strip().startswith('#'):
+            line = re.sub(r'\*\*(.+?)\*\*', r'\1', line)
+        
+        # Check if entire line/paragraph is bold
+        stripped = line.strip()
+        if stripped.startswith('**') and stripped.endswith('**'):
+            inner_content = stripped[2:-2]
+            
+            # If it's a long paragraph or contains multiple sentences, remove bold
+            if len(inner_content) > 100 or inner_content.count('. ') >= 2:
+                line = line.replace(stripped, inner_content)
+            # If it contains a link, likely shouldn't be all bold
+            elif '](' in inner_content:
+                line = line.replace(stripped, inner_content)
+        
+        # Fix list items that are entirely bold
+        if re.match(r'^(\s*\*\s+)\*\*(.+)\*\*\s*$', line):
+            line = re.sub(r'^(\s*\*\s+)\*\*(.+)\*\*\s*$', r'\1\2', line)
+        
+        processed_lines.append(line)
+    
+    content = '\n'.join(processed_lines)
+    
+    # Fix bold that spans multiple paragraphs
+    content = re.sub(r'\*\*\n\n', '\n\n', content)
+    content = re.sub(r'\n\n\*\*', '\n\n', content)
+    
+    return content
 
 def sync_document(service, doc, output_path, is_extra_content=False):
     """Sync a single document."""
@@ -496,6 +585,9 @@ def sync_document(service, doc, output_path, is_extra_content=False):
         else:
             print(f"  ✗ Failed to export document")
             return False
+    
+    # Post-process to fix bold formatting issues
+    markdown_content = post_process_bold(markdown_content)
     
     # Filter main content if needed
     if not is_extra_content:
