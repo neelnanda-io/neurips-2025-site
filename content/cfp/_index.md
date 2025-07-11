@@ -1,154 +1,72 @@
 # Call for Papers
-
-We are inviting submissions of short (max 4 pages) and long (max 9 pages) papers outlining new research, due August 22, 2025. We welcome all submissions that convincingly argue for why they further the field, i.e. our understanding of models by leveraging their internal states. We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://www.google.com/url?q=https://docs.google.com/forms/d/e/1FAIpQLSdiw1SJllzoTz_nqzDTzTOGb9DV3W_truQyh-WvYj_QGIi7Mg/viewform?usp%3Ddialog&sa=D&source=editors&ust=1752275226214545&usg=AOvVaw0aq-c5815lbLx0BdGAkZ3x). We request (but do not require) that (co-)first authors of submitted papers volunteer. Details:
-
-
-* The workshop is
-
-* non-archival.
-
-* Authors will be notified of acceptance by
-
-* September 19
-
-* We
-
-* do not accept submissions of work that has been accepted to an
-
-* archival venue.
-
-* Submissions
-
-* undergoing peer review (on August 22) are
-
-* welcome, including works under review at the main NeurIPS conference.
-
+We are inviting submissions of **short** (max 4 pages) and **long** (max 9 pages) papers outlining new research, due** August 22, 2025. We welcome all submissions that convincingly argue for why they further the field, i.e. our understanding of models by leveraging their internal states. 
+We are extremely grateful to all who volunteer as reviewers**, you can [express interest here](https://www.google.com/url?q=https://docs.google.com/forms/d/e/1FAIpQLSdiw1SJllzoTz_nqzDTzTOGb9DV3W_truQyh-WvYj_QGIi7Mg/viewform?usp%3Ddialog&sa=D&source=editors&ust=1752278349802835&usg=AOvVaw3mAdRBkLPTbPMvyzBEPj4g). We request (but do not require) that (co-)first authors of submitted papers volunteer. 
+Details: 
+* The workshop is **non-archival**.
+* Authors will be notified of acceptance by **September 19**
+* We **do not accept** submissions of work that has been accepted to an **archival** venue.
+* Submissions **undergoing peer review** (on August 22) are **welcome**, including works under review at the main NeurIPS conference.
 * All submissions must be made via OpenReview (link forthcoming).
-
-  * Note: If you do not have an institutional email, be aware that it can take
-
-  * up to 2 weeks to get an OpenReview account approved. [Let us know](mailto:neurips2025@mechinterpworkshop.com) if this prevents you from submitting.
-
-* Please use the [NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752275226215687&usg=AOvVaw2jGFR-aK6t7KD4GPEkOE6l) for all submissions (no need for a checklist).
-
+  * **Note**: If you do not have an institutional email, be aware that it can take **up to 2 weeks** to get an OpenReview account approved. [Let us know](mailto:neurips2025@mechinterpworkshop.com) if this prevents you from submitting.
+* Please use the [NeurIPS 2025 LaTeX Template](https://www.google.com/url?q=https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip&sa=D&source=editors&ust=1752278349804583&usg=AOvVaw0XbIASOZ1R_QintmEhVzv3) for all submissions (no need for a checklist).
 * Both short (max 4 page) and long (max 9 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these.
-
 * Accepted papers will be allowed one additional page in the camera ready version, to integrate reviewer feedback.
-
 * Long works will be held to a higher standard of rigour and depth than short works.
-
 * We welcome any work that furthers the field of mechanistic interpretability, even if in unconventional ways. In addition to standard empirical work, this includes:
-
   * Rigorous negative results
-
   * Rigorous replications of important results
-
-  * Open source software (e.g. [TransformerLens](https://www.google.com/url?q=https://github.com/neelnanda-io/TransformerLens&sa=D&source=editors&ust=1752275226216468&usg=AOvVaw1nUQHa_xI6XiuKuwFfUwEm), [nnsight](https://www.google.com/url?q=https://github.com/ndif-team/nnsight&sa=D&source=editors&ust=1752275226216529&usg=AOvVaw0pcNTxrqSBmS_QuBJN9lLX), [pyvene](https://www.google.com/url?q=https://github.com/stanfordnlp/pyvene/tree/main/pyvene/models/mlp&sa=D&source=editors&ust=1752275226216603&usg=AOvVaw1qCXAV_lN4s8SO2Qj2irfH), or [Penzai](https://www.google.com/url?q=https://github.com/google-deepmind/penzai&sa=D&source=editors&ust=1752275226216700&usg=AOvVaw1L7G9wQzlU1f0tyX_9Q0RQ)) and tools (e.g. [Neuronpedia](https://www.google.com/url?q=http://neuronpedia.org&sa=D&source=editors&ust=1752275226216771&usg=AOvVaw2miKeWDWTPu_VmPEr3rIwY) or [Docent](https://www.google.com/url?q=https://transluce.org/introducing-docent&sa=D&source=editors&ust=1752275226216841&usg=AOvVaw3LAWSMriOrrRJ6F5T7TXgR))
-
-  * Models or datasets that may be of value to the community (e.g. [Pythia](https://www.google.com/url?q=https://arxiv.org/abs/2304.01373&sa=D&source=editors&ust=1752275226216975&usg=AOvVaw141cG2GcLN3dmWO0jkUBVC), [MultiBERTs](https://www.google.com/url?q=https://arxiv.org/abs/2106.16163&sa=D&source=editors&ust=1752275226217033&usg=AOvVaw09rL8fWe09GLok8TDEr3ug) or [Gemma Scope](https://www.google.com/url?q=https://arxiv.org/abs/2408.05147&sa=D&source=editors&ust=1752275226217091&usg=AOvVaw1XI1D0OLn9PuaFZwul7fUz))
-
-  * Educational materials (e.g. [the ARENA materials](https://www.google.com/url?q=https://arena3-chapter1-transformer-interp.streamlit.app/&sa=D&source=editors&ust=1752275226217224&usg=AOvVaw3W3R0IbOH_NrMI1SGvzF4h))
-
-  * [Distillations](https://www.google.com/url?q=https://distill.pub/2017/research-debt/&sa=D&source=editors&ust=1752275226217317&usg=AOvVaw1Gy59_mytYxmqKwThgmghg) of key and poorly explained concepts (e.g. [Ferrando et al](https://www.google.com/url?q=https://arxiv.org/abs/2405.00208&sa=D&source=editors&ust=1752275226217421&usg=AOvVaw1mEf2ShHvPx9XpIJ5FGtPP))
-
-  * Position pieces that bring clarity to complex topics and debates (e.g. [the ‘strong’ feature hypothesis could be wrong](https://www.google.com/url?q=https://www.alignmentforum.org/posts/tojtPCCRpKLSHBdpn/the-strong-feature-hypothesis-could-be-wrong&sa=D&source=editors&ust=1752275226217626&usg=AOvVaw0HrdVsUFFrJfioFyRu9BSr)) Strong empirical works will clearly articulate (i) specific falsifiable hypotheses, and how the evidence provided does and does not support them; or (ii) convincingly show clear practical benefits. Works that clearly document the strengths and weaknesses of their evidence, and what we can learn from this are welcomed, even if it weakens the narrative or conclusions remain inconclusive. Works that downplay or omit significant limitations will not be accepted.
-
-
+  * Open source software (e.g. [TransformerLens](https://www.google.com/url?q=https://github.com/neelnanda-io/TransformerLens&sa=D&source=editors&ust=1752278349805963&usg=AOvVaw1Aczokk9e291AKwYgd8j-2), [nnsight](https://www.google.com/url?q=https://github.com/ndif-team/nnsight&sa=D&source=editors&ust=1752278349806089&usg=AOvVaw1qSk5tVn3_aKawgDf-Zol2), [pyvene](https://www.google.com/url?q=https://github.com/stanfordnlp/pyvene/tree/main/pyvene/models/mlp&sa=D&source=editors&ust=1752278349806207&usg=AOvVaw3sKn6AL8Swf87nPmjQ3JO2), or [Penzai](https://www.google.com/url?q=https://github.com/google-deepmind/penzai&sa=D&source=editors&ust=1752278349806341&usg=AOvVaw1vtyRuAhfP2Tw2vprAnpEL)) and tools (e.g. [Neuronpedia](https://www.google.com/url?q=http://neuronpedia.org&sa=D&source=editors&ust=1752278349806483&usg=AOvVaw3lFQ8Y_bS3q9ix-m9DNK7c) or [Docent](https://www.google.com/url?q=https://transluce.org/introducing-docent&sa=D&source=editors&ust=1752278349806610&usg=AOvVaw3ye6n5KkhRupExvHuILccK))
+  * Models or datasets that may be of value to the community (e.g. [Pythia](https://www.google.com/url?q=https://arxiv.org/abs/2304.01373&sa=D&source=editors&ust=1752278349806981&usg=AOvVaw1jc8qpxajgkSYKnqSax5fm), [MultiBERTs](https://www.google.com/url?q=https://arxiv.org/abs/2106.16163&sa=D&source=editors&ust=1752278349807096&usg=AOvVaw2ZJrOuGTpPMXTZKbQS7gHN) or [Gemma Scope](https://www.google.com/url?q=https://arxiv.org/abs/2408.05147&sa=D&source=editors&ust=1752278349807200&usg=AOvVaw2Eb0YYvuSZgZqNMXvBM4pm))
+  * Educational materials (e.g. [the ARENA materials](https://www.google.com/url?q=https://arena3-chapter1-transformer-interp.streamlit.app/&sa=D&source=editors&ust=1752278349807466&usg=AOvVaw1A5-js6xRdJfeTIRdeoHz0))
+  * [Distillations](https://www.google.com/url?q=https://distill.pub/2017/research-debt/&sa=D&source=editors&ust=1752278349807627&usg=AOvVaw3wdPN79fH1m-ZAeXJbXhPx) of key and poorly explained concepts (e.g. [Ferrando et al](https://www.google.com/url?q=https://arxiv.org/abs/2405.00208&sa=D&source=editors&ust=1752278349807819&usg=AOvVaw0eJndfhE5nL0O1oXQqkdbv))
+  * Position pieces that bring clarity to complex topics and debates (e.g. [the ‘strong’ feature hypothesis could be wrong](https://www.google.com/url?q=https://www.alignmentforum.org/posts/tojtPCCRpKLSHBdpn/the-strong-feature-hypothesis-could-be-wrong&sa=D&source=editors&ust=1752278349808187&usg=AOvVaw13mgtL9vFPVO5PQ5uXGQe5))
+Strong empirical works will clearly articulate (i) specific falsifiable hypotheses, and how the evidence provided does and does not support them; or (ii) convincingly show clear practical benefits. Works that clearly document the strengths and weaknesses of their evidence, and what we can learn from this are welcomed, even if it weakens the narrative or conclusions remain inconclusive. Works that downplay or omit significant limitations will not be accepted. 
 ### Topics of Interest
-
-The field is young, and there are many exciting open questions. We are particularly interested in, but not limited to, the following directions:
-
-
-* Model Biology & Cognition
-
-  * What can we understand about the high-level properties of models? Can we find evidence for cognitive phenomena like [implicit planning](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html%23dives-poems&sa=D&source=editors&ust=1752275226218509&usg=AOvVaw3rXeaidns71-7bAZJLo8HJ), search algorithms, or [internal world models](https://www.google.com/url?q=https://arxiv.org/abs/2210.13382&sa=D&source=editors&ust=1752275226218602&usg=AOvVaw3mtq02sBXKB6vDKWcWMxSs)?
-
+The field is young, and there are many exciting open questions. We are particularly interested in, but not limited to, the following directions: 
+* **Model Biology & Cognition**:
+  * What can we understand about the high-level properties of models? Can we find evidence for cognitive phenomena like [implicit planning](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html%23dives-poems&sa=D&source=editors&ust=1752278349809811&usg=AOvVaw23IVPJhp7v8z-Lo8WgvJos), search algorithms, or [internal world models](https://www.google.com/url?q=https://arxiv.org/abs/2210.13382&sa=D&source=editors&ust=1752278349810007&usg=AOvVaw2jMu9E_POQ8QDRVCoqQ09u)?
   * What does it look like for a model to "believe" something? Can we find and manipulate these beliefs? Or is the entire notion of a model’s beliefs confused?
-
-  * Do models internally represent different [personas](https://www.google.com/url?q=https://arxiv.org/abs/2406.12094&sa=D&source=editors&ust=1752275226218887&usg=AOvVaw2qoN_jphxwDZmubJe8vRie) or [simulators](https://www.google.com/url?q=https://www.nature.com/articles/s41586-023-06647-8&sa=D&source=editors&ust=1752275226218954&usg=AOvVaw22Ij3JUsikOCUbntswa571) that drive their behavior, and how are these selected from context?
-
+  * Do models internally represent different [personas](https://www.google.com/url?q=https://arxiv.org/abs/2406.12094&sa=D&source=editors&ust=1752278349810494&usg=AOvVaw1JsXORhFi6F5s_gE4CT4Sw) or [simulators](https://www.google.com/url?q=https://www.nature.com/articles/s41586-023-06647-8&sa=D&source=editors&ust=1752278349810630&usg=AOvVaw3NAmveFKJcLhwBwag49iM9) that drive their behavior, and how are these selected from context?
 * Circuits and Causal Analysis
-
-  * [Circuit analysis](https://www.google.com/url?q=https://distill.pub/2020/circuits/zoom-in/&sa=D&source=editors&ust=1752275226219150&usg=AOvVaw0XzRK1C86VoUUQvP6AU98n) is a core part of mech interp, but our methods are still nascent. What are the best ways to find and validate circuits?
-
-  * How can we improve existing approaches like [attribution](https://www.google.com/url?q=https://arxiv.org/abs/2406.11944&sa=D&source=editors&ust=1752275226219369&usg=AOvVaw3GzzLOa34pcHM_PzWkBhb7) [graphs](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/methods.html&sa=D&source=editors&ust=1752275226219442&usg=AOvVaw2Dv3gcciaH0BKBSnNzcH2D)?
-
-  * What can we learn from [the field of causal inference](https://www.google.com/url?q=https://arxiv.org/abs/2407.04690&sa=D&source=editors&ust=1752275226219579&usg=AOvVaw3RYpZbWEMCkcsi3k9hYazq) to make our analysis more rigorous?
-
-  * What are the [failure modes](https://www.google.com/url?q=https://arxiv.org/abs/2307.15771&sa=D&source=editors&ust=1752275226219703&usg=AOvVaw1CXOHBworhz8QljPiVChpK) of current causal methods, and what alternative approaches might bear fruit?
-
-  * How far can we push [weight-based](https://www.google.com/url?q=https://arxiv.org/abs/2301.05217&sa=D&source=editors&ust=1752275226219861&usg=AOvVaw1oAQuP0Eu5pHXuYGKdd0IE) [analysis](https://www.google.com/url?q=https://arxiv.org/abs/2410.08417&sa=D&source=editors&ust=1752275226219915&usg=AOvVaw1QNcPX5We-2B2fopC1TSLD)?
-
+  * [Circuit analysis](https://www.google.com/url?q=https://distill.pub/2020/circuits/zoom-in/&sa=D&source=editors&ust=1752278349810986&usg=AOvVaw3SFkJHp0nqdnCwG0qFWR5c) is a core part of mech interp, but our methods are still nascent. What are the best ways to find and validate circuits?
+  * How can we improve existing approaches like [attribution](https://www.google.com/url?q=https://arxiv.org/abs/2406.11944&sa=D&source=editors&ust=1752278349811351&usg=AOvVaw0pd2ZeJcqv14UKM3isOTXo) [graphs](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/methods.html&sa=D&source=editors&ust=1752278349811476&usg=AOvVaw1N2tdzcx8dqt599vYKDqp5)?
+  * What can we learn from [the field of causal inference](https://www.google.com/url?q=https://arxiv.org/abs/2407.04690&sa=D&source=editors&ust=1752278349811683&usg=AOvVaw1kyfWdf3DrW_m5zzoorN5T) to make our analysis more rigorous?
+  * What are the [failure modes](https://www.google.com/url?q=https://arxiv.org/abs/2307.15771&sa=D&source=editors&ust=1752278349811895&usg=AOvVaw3bqGwDubX_YYrHF26nxC95) of current causal methods, and what alternative approaches might bear fruit?
+  * How far can we push [weight-based](https://www.google.com/url?q=https://arxiv.org/abs/2301.05217&sa=D&source=editors&ust=1752278349812164&usg=AOvVaw2gNIz2FTS4fw2veuukg08P) [analysis](https://www.google.com/url?q=https://arxiv.org/abs/2410.08417&sa=D&source=editors&ust=1752278349812256&usg=AOvVaw0bBEJyb3x1gQMoogMLuKa3)?
 * Unsupervised Discovery & Dictionary Learning
-
-  * A key promise of interpretability is its potential to surprise us by revealing unexpected structure. How well do unsupervised methods like [sparse](https://www.google.com/url?q=https://arxiv.org/abs/2103.15949&sa=D&source=editors&ust=1752275226220209&usg=AOvVaw1CQ4vSvWXnJnISTXXGE45z) [autoencoders](https://www.google.com/url?q=https://transformer-circuits.pub/2023/monosemantic-features&sa=D&source=editors&ust=1752275226220291&usg=AOvVaw1qowZ1DmNbWYdB31iHeGI5), [patch](https://www.google.com/url?q=https://arxiv.org/abs/2401.06102&sa=D&source=editors&ust=1752275226220346&usg=AOvVaw3oTM2FzzYYZ_pQ8Vi-dtXS)[scopes](https://www.google.com/url?q=https://arxiv.org/abs/2403.10949v2&sa=D&source=editors&ust=1752275226220388&usg=AOvVaw1JUCBiiQ70G9rDCj3Cgi7T), or [training](https://www.google.com/url?q=https://proceedings.mlr.press/v70/koh17a?ref%3Dhttps://githubhelp.com&sa=D&source=editors&ust=1752275226220460&usg=AOvVaw0nsgJTfyIm3XDysukcpJrB) [data](https://www.google.com/url?q=https://arxiv.org/abs/2308.03296&sa=D&source=editors&ust=1752275226220520&usg=AOvVaw329QyyOWf_GgcuHiwPM9zj) [attribution](https://www.google.com/url?q=https://arxiv.org/abs/2205.11482&sa=D&source=editors&ust=1752275226220588&usg=AOvVaw1nXN0Sgbi_vdGFfwAmbKbW) actually work for this?
-
-  * These methods have [shown](https://www.google.com/url?q=https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html&sa=D&source=editors&ust=1752275226220724&usg=AOvVaw3OQ5pLvKig9pYuhfTKv5dA) [great](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html&sa=D&source=editors&ust=1752275226220795&usg=AOvVaw2UDv_2iY5K_pQ3JhizNllf) [promise](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752275226220850&usg=AOvVaw2GvBPbOBhd1Zz8EpO_-YfP), but their [utility](https://www.google.com/url?q=https://arxiv.org/abs/2502.16681&sa=D&source=editors&ust=1752275226220914&usg=AOvVaw0U1APN_b0CD68Y-C1Vzx0O) [on](https://www.google.com/url?q=https://www.tilderesearch.com/blog/sieve&sa=D&source=editors&ust=1752275226220969&usg=AOvVaw3jQu6ax5m-VypAcke1kgVL) [downstream](https://www.google.com/url?q=https://arxiv.org/abs/2501.17148&sa=D&source=editors&ust=1752275226221024&usg=AOvVaw1WafZgQJgnQo-yVvCs_Ftc) [tasks](https://www.google.com/url?q=https://transformer-circuits.pub/2024/features-as-classifiers/index.html&sa=D&source=editors&ust=1752275226221093&usg=AOvVaw2Tei3woOJaUhvGIM_Z0SDQ) [remains](https://www.google.com/url?q=https://arxiv.org/abs/2502.04382&sa=D&source=editors&ust=1752275226221147&usg=AOvVaw1muWFKllw0TErOOGzW4V8x) [unclear](https://www.google.com/url?q=https://www.alignmentforum.org/posts/4uXCAJNuPKtKBsi28/negative-results-for-saes-on-downstream-tasks&sa=D&source=editors&ust=1752275226221229&usg=AOvVaw2CgH0grtEhrfnbPTCdEh9C). We welcome work that rigorously tests their practical value against strong baselines.
-
+  * A key promise of interpretability is its potential to surprise us by revealing unexpected structure. How well do unsupervised methods like [sparse](https://www.google.com/url?q=https://arxiv.org/abs/2103.15949&sa=D&source=editors&ust=1752278349812697&usg=AOvVaw1mWvhfFJW6kLWQ3WxKTWzI) [autoencoders](https://www.google.com/url?q=https://transformer-circuits.pub/2023/monosemantic-features&sa=D&source=editors&ust=1752278349812823&usg=AOvVaw2S1hLDV7G2EggaICVgLEWH), [patch](https://www.google.com/url?q=https://arxiv.org/abs/2401.06102&sa=D&source=editors&ust=1752278349812922&usg=AOvVaw1D7PbJ47kLdFP7iRm31u-J)[scopes](https://www.google.com/url?q=https://arxiv.org/abs/2403.10949v2&sa=D&source=editors&ust=1752278349812993&usg=AOvVaw2mpOHRcVSJg5UyM4d7sqHO), or [training](https://www.google.com/url?q=https://proceedings.mlr.press/v70/koh17a?ref%3Dhttps://githubhelp.com&sa=D&source=editors&ust=1752278349813127&usg=AOvVaw1EbALTCQ2Y265qOlmvJDxG) [data](https://www.google.com/url?q=https://arxiv.org/abs/2308.03296&sa=D&source=editors&ust=1752278349813217&usg=AOvVaw0DzUXwsPrCxYudNwnj-OKk) [attribution](https://www.google.com/url?q=https://arxiv.org/abs/2205.11482&sa=D&source=editors&ust=1752278349813312&usg=AOvVaw0rTNk6mUjHupvX7-LtFOx9) actually work for this?
+  * These methods have [shown](https://www.google.com/url?q=https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html&sa=D&source=editors&ust=1752278349813545&usg=AOvVaw0dcveo-pKEtFWPreoB53ZE) [great](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html&sa=D&source=editors&ust=1752278349813672&usg=AOvVaw0XwbcL-0TmrY9AijEh-CJT) [promise](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752278349813765&usg=AOvVaw3TECczI9hbjhliNfLUJFYK), but their [utility](https://www.google.com/url?q=https://arxiv.org/abs/2502.16681&sa=D&source=editors&ust=1752278349813873&usg=AOvVaw2Ltep5_LClEXgu_bb0vz5g) [on](https://www.google.com/url?q=https://www.tilderesearch.com/blog/sieve&sa=D&source=editors&ust=1752278349813965&usg=AOvVaw2-tzLkeOZuGDrjrWaMRNbZ) [downstream](https://www.google.com/url?q=https://arxiv.org/abs/2501.17148&sa=D&source=editors&ust=1752278349814060&usg=AOvVaw2g1_k66jMb7bnsWYYeNOYH) [tasks](https://www.google.com/url?q=https://transformer-circuits.pub/2024/features-as-classifiers/index.html&sa=D&source=editors&ust=1752278349814180&usg=AOvVaw39GXDEBNvLmH1xxGAekl58) [remains](https://www.google.com/url?q=https://arxiv.org/abs/2502.04382&sa=D&source=editors&ust=1752278349814273&usg=AOvVaw07WZArKTMvx2iIG26a_vlj) [unclear](https://www.google.com/url?q=https://www.alignmentforum.org/posts/4uXCAJNuPKtKBsi28/negative-results-for-saes-on-downstream-tasks&sa=D&source=editors&ust=1752278349814419&usg=AOvVaw2New7-OMLZUZS5ZEjETlK7). We welcome work that rigorously tests their practical value against strong baselines.
 * Practical Applications & Benchmarking
-
-  * If our interpretability tools are teaching us something real, they should be useful. How well do they perform on real-world downstream [tasks](https://www.google.com/url?q=https://www.lesswrong.com/posts/wGRnzCFcowRCrpX4Y/downstream-applications-as-validation-of-interpretability&sa=D&source=editors&ust=1752275226221593&usg=AOvVaw1mqc6YoOS86fXpAkaqQZHc) against well-implemented baselines?
-
-  * How can we develop objective benchmarks that require genuine understanding to solve, such as eliciting [secret knowledge](https://www.google.com/url?q=https://arxiv.org/abs/2505.14352&sa=D&source=editors&ust=1752275226221792&usg=AOvVaw25YwAlgQvwFxroNT3PmHs8) or [hidden goals](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752275226221858&usg=AOvVaw3j0tvm0DsaUI0WR1pYNYDP)?
-
-  * Can we move beyond proxies and find ways to objectively measure what we actually care about, like the ["understanding" captured by a natural language hypothesis](https://www.google.com/url?q=https://arxiv.org/abs/2502.04382&sa=D&source=editors&ust=1752275226222078&usg=AOvVaw02Uge_ljG15u9PHtlw-dfL)?
-
-  * Can we develop other compelling benchmarks for our mech interp capabilities? (e.g. [Mueller et al](https://www.google.com/url?q=https://arxiv.org/abs/2504.13151&sa=D&source=editors&ust=1752275226222235&usg=AOvVaw3Db-F9LsogjyxT70sffDdJ))
-
+  * If our interpretability tools are teaching us something real, they should be useful. How well do they perform on real-world downstream [tasks](https://www.google.com/url?q=https://www.lesswrong.com/posts/wGRnzCFcowRCrpX4Y/downstream-applications-as-validation-of-interpretability&sa=D&source=editors&ust=1752278349815036&usg=AOvVaw1LI9IjNqeD9hUpfcmR6lLA) against well-implemented baselines?
+  * How can we develop objective benchmarks that require genuine understanding to solve, such as eliciting [secret knowledge](https://www.google.com/url?q=https://arxiv.org/abs/2505.14352&sa=D&source=editors&ust=1752278349815410&usg=AOvVaw3LPjJnhM6VBO2eeB-0-ccP) or [hidden goals](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752278349815578&usg=AOvVaw2KexcfHiAeCqWtJUmJHuEQ)?
+  * Can we move beyond proxies and find ways to objectively measure what we actually care about, like the ["understanding" captured by a natural language hypothesis](https://www.google.com/url?q=https://arxiv.org/abs/2502.04382&sa=D&source=editors&ust=1752278349815980&usg=AOvVaw1JW8N3hAYri26rzmEk6k__)?
+  * Can we develop other compelling benchmarks for our mech interp capabilities? (e.g. [Mueller et al](https://www.google.com/url?q=https://arxiv.org/abs/2504.13151&sa=D&source=editors&ust=1752278349816287&usg=AOvVaw1A87tLdeTYVvjU4w1qhrvK))
 * Interpreting Reasoning & Chain of Thought
-
   * Reasoning models are a big deal, we understand very little about them, and they introduce significant new challenges for interpretability. What should the paradigm for reasoning model interpretability look like?
-
-  * Are black box methods performing causal interventions on the steps in a reasoning trace [a valuable tool](https://www.google.com/url?q=https://arxiv.org/abs/2506.19143&sa=D&source=editors&ust=1752275226222658&usg=AOvVaw2beOdXrJqZHm0SWEv323ij), or fundamentally flawed?
-
-  * When is a model's Chain of Thought a [faithful representation](https://www.google.com/url?q=https://arxiv.org/abs/2305.04388&sa=D&source=editors&ust=1752275226222805&usg=AOvVaw10XSZGbYpQP1n0UlUo1wXZ) of its computation, and when is it [post-hoc rationalization](https://www.google.com/url?q=https://arxiv.org/abs/2503.08679&sa=D&source=editors&ust=1752275226222904&usg=AOvVaw3dE0G7L57T090irx8lyOPk)? How can we determine what role it actually plays in the model's final output?
-
-  * How might we interpret [latent reasoning models](https://www.google.com/url?q=https://arxiv.org/abs/2412.06769&sa=D&source=editors&ust=1752275226223085&usg=AOvVaw3OtKFhsQACAG76pQDcI3Ro) that replace transparent text-based thoughts with opaque vectors?
-
+  * Are black box methods performing causal interventions on the steps in a reasoning trace [a valuable tool](https://www.google.com/url?q=https://arxiv.org/abs/2506.19143&sa=D&source=editors&ust=1752278349817028&usg=AOvVaw1gBw0YQf6HKJHBlJceGwdq), or fundamentally flawed?
+  * When is a model's Chain of Thought a [faithful representation](https://www.google.com/url?q=https://arxiv.org/abs/2305.04388&sa=D&source=editors&ust=1752278349817300&usg=AOvVaw03zEUSTq_ohGt83zopukw8) of its computation, and when is it [post-hoc rationalization](https://www.google.com/url?q=https://arxiv.org/abs/2503.08679&sa=D&source=editors&ust=1752278349817466&usg=AOvVaw2EBMWFoIdkbyvXIdZWs1FP)? How can we determine what role it actually plays in the model's final output?
+  * How might we interpret [latent reasoning models](https://www.google.com/url?q=https://arxiv.org/abs/2412.06769&sa=D&source=editors&ust=1752278349817816&usg=AOvVaw0Q098Xc4FFN51j6LrqpP5M) that replace transparent text-based thoughts with opaque vectors?
 * Auditing & Evaluating Safety-Relevant Behaviors
-
-  * Recent work has shown sophisticated and sometimes concerning behaviors in models, like [alignment faking](https://www.google.com/url?q=https://arxiv.org/abs/2412.14093&sa=D&source=editors&ust=1752275226223371&usg=AOvVaw02ugqclIQuqdxLUdI5Y9SW) or [blackmailing](https://www.google.com/url?q=https://www.anthropic.com/research/agentic-misalignment&sa=D&source=editors&ust=1752275226223445&usg=AOvVaw2actEd1iKv0XSSlMQc-YTq). What's really going on here? Is this just anthropomorphism, or can interpretability tools help us determine if this is concerning?
-
-  * Can we build and interpret model organisms exhibiting hypothesised properties, such as [hidden goals](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752275226223731&usg=AOvVaw20lPVq8-WOQawnzEtCTgtY)? Do our techniques work in a realistic simulation?
-
+  * Recent work has shown sophisticated and sometimes concerning behaviors in models, like [alignment faking](https://www.google.com/url?q=https://arxiv.org/abs/2412.14093&sa=D&source=editors&ust=1752278349818386&usg=AOvVaw1pCKYo2Vp7X-KFc1UObDAY) or [blackmailing](https://www.google.com/url?q=https://www.anthropic.com/research/agentic-misalignment&sa=D&source=editors&ust=1752278349818525&usg=AOvVaw1qNkkIj9m0HrPEj9Ktatwg). What's really going on here? Is this just anthropomorphism, or can interpretability tools help us determine if this is concerning?
+  * Can we build and interpret model organisms exhibiting hypothesised properties, such as [hidden goals](https://www.google.com/url?q=https://arxiv.org/abs/2503.10965&sa=D&source=editors&ust=1752278349818986&usg=AOvVaw3it5elqY-4Vj9zLIjKDAoZ)? Do our techniques work in a realistic simulation?
   * Can we use interpretability to improve our ability to red team models, and find the conditions that induce harmful behavior?
-
 * Debugging & Fixing Models
-
-  * How can we apply the interpretability toolkit to understand and ideally fix unexpected model behaviors, from simple logical errors (e.g., [thinking 9.8 < 9.11](https://www.google.com/url?q=https://transluce.org/observability-interface&sa=D&source=editors&ust=1752275226224187&usg=AOvVaw3wJ2vl_c4VIvFYb4DlqhiP)) to complex real-world problems like [jailbreaks](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html%23dives-jailbreak&sa=D&source=editors&ust=1752275226224307&usg=AOvVaw0iC8uoaIsWeFfJn4zdAaZ8) and [hallucinations](https://www.google.com/url?q=https://arxiv.org/abs/2411.14257&sa=D&source=editors&ust=1752275226224376&usg=AOvVaw1kDSmveFFu_3Aw1JPGW2n0)?
-
+  * How can we apply the interpretability toolkit to understand and ideally fix unexpected model behaviors, from simple logical errors (e.g., [thinking 9.8 < 9.11](https://www.google.com/url?q=https://transluce.org/observability-interface&sa=D&source=editors&ust=1752278349819835&usg=AOvVaw0dyJbt-_wQ6FFHFNoXmS3x)) to complex real-world problems like [jailbreaks](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html%23dives-jailbreak&sa=D&source=editors&ust=1752278349820032&usg=AOvVaw2_P7YqAJft8tM1BMZ_at2i) and [hallucinations](https://www.google.com/url?q=https://arxiv.org/abs/2411.14257&sa=D&source=editors&ust=1752278349820158&usg=AOvVaw3Sk0zQ1NG6RSJL4zLQdCRo)?
 * Monitoring & Inference-Time Interventions
-
-  * How can we use interpretability techniques ([probes](https://www.google.com/url?q=https://arxiv.org/abs/2102.12452&sa=D&source=editors&ust=1752275226224576&usg=AOvVaw0JfYMBLz6R4Y4NrWwiA2SB), anomaly detection, sparse autoencoders) to monitor models in deployment?
-
-  * Do these methods actually beat simple, strong baselines like just prompting or fine-tuning another language model? (e.g. [Cunningham et al](https://www.google.com/url?q=https://alignment.anthropic.com/2025/cheap-monitors/&sa=D&source=editors&ust=1752275226224835&usg=AOvVaw1Kszhw2hAbycviCnfi4K2Q))
-
+  * How can we use interpretability techniques ([probes](https://www.google.com/url?q=https://arxiv.org/abs/2102.12452&sa=D&source=editors&ust=1752278349820476&usg=AOvVaw2E4kCkoibXq0jyXLkEr6wS), anomaly detection, sparse autoencoders) to monitor models in deployment?
+  * Do these methods actually beat simple, strong baselines like just prompting or fine-tuning another language model? (e.g. [Cunningham et al](https://www.google.com/url?q=https://alignment.anthropic.com/2025/cheap-monitors/&sa=D&source=editors&ust=1752278349820936&usg=AOvVaw3HWRWDPHnNNbcluT12FsUo))
   * How well do cheap methods like probing work on frontier models, including in more complex situations like 1M+ token context windows, and multi-modal inputs? How can they be made more effective and efficient?
-
 * Developmental Interpretability
-
   * What can we learn about what happens during training? How and why do models and their circuits form the way they do?
-
 * Scaling & Generalizing Interpretability
-
-  * How do findings and techniques from prior work on small models hold up at the frontier? What breaks and what scales? (e.g. [Lieberum et al](https://www.google.com/url?q=https://arxiv.org/abs/2307.09458&sa=D&source=editors&ust=1752275226225487&usg=AOvVaw3H6tJJhSiw329t4BtGFBtz))
-
-  * How do multimodal models represent, and combine information from different modalities? What [problems](https://www.google.com/url?q=https://openreview.net/pdf?id%3DVUhRdZp8ke&sa=D&source=editors&ust=1752275226225673&usg=AOvVaw1lPI8S0B_J8K3yLmv8_yjU) can this introduce?
-
+  * How do findings and techniques from prior work on small models hold up at the frontier? What breaks and what scales? (e.g. [Lieberum et al](https://www.google.com/url?q=https://arxiv.org/abs/2307.09458&sa=D&source=editors&ust=1752278349822006&usg=AOvVaw0pLucc0hLWRzlQtFYIIKSQ))
+  * How do multimodal models represent, and combine information from different modalities? What [problems](https://www.google.com/url?q=https://openreview.net/pdf?id%3DVUhRdZp8ke&sa=D&source=editors&ust=1752278349822312&usg=AOvVaw0e1eTbzd4a9gAnvsXCwesi) can this introduce?
   * What can we learn by interpreting alternative architectures like diffusion models, state space models, or graph neural networks?
-
 * Conceptual & Foundational Work
-
-  * Our field is built on concepts like "features", "[circuits](https://www.google.com/url?q=https://distill.pub/2020/circuits/zoom-in/&sa=D&source=editors&ust=1752275226225995&usg=AOvVaw0_yBu3zyOqCGBDMbbgGpxi)" and “[linear representations](https://www.google.com/url?q=https://transformer-circuits.pub/2024/july-update/index.html%23linear-representations&sa=D&source=editors&ust=1752275226226091&usg=AOvVaw0WJ3zMYftXhqRrMuExQCmX)” that remain poorly defined. We welcome position papers that bring conceptual clarity and rigor to these foundational questions.
-
+  * Our field is built on concepts like "features", "[circuits](https://www.google.com/url?q=https://distill.pub/2020/circuits/zoom-in/&sa=D&source=editors&ust=1752278349822878&usg=AOvVaw19Yz0T64MByv2Y7X0F5AAm)" and “[linear representations](https://www.google.com/url?q=https://transformer-circuits.pub/2024/july-update/index.html%23linear-representations&sa=D&source=editors&ust=1752278349823036&usg=AOvVaw20Qb80lf7QCl8fibsrkUav)” that remain poorly defined. We welcome position papers that bring conceptual clarity and rigor to these foundational questions.
 * Automating Interpretability
-
-  * How much of the interpretability research process can be automated using LLMs? How does automated analysis compare to human performance? This includes both automating specific steps like [interpreting maximum activating dataset examples](https://www.google.com/url?q=https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html&sa=D&source=editors&ust=1752275226226553&usg=AOvVaw0ZzLZNadhgkUkP0x4__0hL), and [building an agent](https://www.google.com/url?q=https://arxiv.org/abs/2404.14394&sa=D&source=editors&ust=1752275226226625&usg=AOvVaw33AL-Lo6pA-2h37jT6YtgN) to perform some of the research work autonomously
-
+  * How much of the interpretability research process can be automated using LLMs? How does automated analysis compare to human performance? This includes both automating specific steps like [interpreting maximum activating dataset examples](https://www.google.com/url?q=https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html&sa=D&source=editors&ust=1752278349823817&usg=AOvVaw2t-z6kVoMsSrmE2ZyJwaaK), and [building an agent](https://www.google.com/url?q=https://arxiv.org/abs/2404.14394&sa=D&source=editors&ust=1752278349823944&usg=AOvVaw0COXr8m9pW1KiPabGZqF7I) to perform some of the research work autonomously
 * Basic science
-
-  * There are many fundamental mysteries of model internals, and we welcome work that can shed any light on them: Are activations [sparse linear](https://www.google.com/url?q=https://arxiv.org/abs/1601.03764&sa=D&source=editors&ust=1752275226226896&usg=AOvVaw2Oj557ph6oTX58hjWy3mLa) [combinations of features](https://www.google.com/url?q=https://transformer-circuits.pub/2022/toy_model/index.html&sa=D&source=editors&ust=1752275226226991&usg=AOvVaw0c4z5NKP0GkNdZCDXv_K58)? Are features universal? Are circuits and features even the right way to think about models?
-
+  * There are many fundamental mysteries of model internals, and we welcome work that can shed any light on them: Are activations [sparse linear](https://www.google.com/url?q=https://arxiv.org/abs/1601.03764&sa=D&source=editors&ust=1752278349824445&usg=AOvVaw1sGAoe2EB_SyeOVGfhdEiy) [combinations of features](https://www.google.com/url?q=https://transformer-circuits.pub/2022/toy_model/index.html&sa=D&source=editors&ust=1752278349824591&usg=AOvVaw13KhQLPMsxGgumwds-8xmy)? Are features universal? Are circuits and features even the right way to think about models?
 * Rigorous Case Studies
-
-  * We welcome rigorous, "[biology-inspired](https://www.google.com/url?q=https://distill.pub/2020/circuits/curve-circuits/&sa=D&source=editors&ust=1752275226227241&usg=AOvVaw3X1HuoiJJRktAq9LRdNp3H)" analyses of [specific model](https://www.google.com/url?q=https://arxiv.org/abs/2310.04625&sa=D&source=editors&ust=1752275226227322&usg=AOvVaw037WB-FipapoQG6bbEFqqQ) [components](https://www.google.com/url?q=https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html&sa=D&source=editors&ust=1752275226227396&usg=AOvVaw1lzoIaPm727m7kMQwzo1gK) [or](https://www.google.com/url?q=https://arxiv.org/abs/2305.01610&sa=D&source=editors&ust=1752275226227455&usg=AOvVaw3dGIfvthBdBPHfLuEYax10) [phenomena](https://www.google.com/url?q=https://arxiv.org/abs/2306.09346&sa=D&source=editors&ust=1752275226227527&usg=AOvVaw2HuCTTD14pQ5RFioBFoCv3). Strong works here will combine deep qualitative case studies with quantitative sanity checks and falsifiable hypotheses.
+  * We welcome rigorous, "[biology-inspired](https://www.google.com/url?q=https://distill.pub/2020/circuits/curve-circuits/&sa=D&source=editors&ust=1752278349825052&usg=AOvVaw3FVi0blivnUZz_yDZ6PFDj)" analyses of [specific model](https://www.google.com/url?q=https://arxiv.org/abs/2310.04625&sa=D&source=editors&ust=1752278349825169&usg=AOvVaw2iYNItrGno-dPvDf724Dio) [components](https://www.google.com/url?q=https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html&sa=D&source=editors&ust=1752278349825291&usg=AOvVaw0VX8MrQu3y2gak2cjl0oRk) [or](https://www.google.com/url?q=https://arxiv.org/abs/2305.01610&sa=D&source=editors&ust=1752278349825403&usg=AOvVaw0bFR98PClsj1Tjl40KXEsB) [phenomena](https://www.google.com/url?q=https://arxiv.org/abs/2306.09346&sa=D&source=editors&ust=1752278349825498&usg=AOvVaw2u2mjyTCG2AjnxDpCFM0aw). Strong works here will combine deep qualitative case studies with quantitative sanity checks and falsifiable hypotheses.

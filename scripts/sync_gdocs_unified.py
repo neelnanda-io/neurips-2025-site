@@ -57,23 +57,39 @@ FILTER_PATTERNS = [
     r'Stay Updated.*?</form>\s*</div>',
 ]
 
+class FormatSegment:
+    """Represents a text segment with its formatting."""
+    def __init__(self, text, bold=False, italic=False):
+        self.text = text
+        self.bold = bold
+        self.italic = italic
+    
+    def to_markdown(self):
+        """Convert segment to markdown with proper formatting."""
+        result = self.text
+        if self.bold:
+            result = f"**{result}**"
+        if self.italic:
+            result = f"*{result}*"
+        return result
+
 class MarkdownHTMLParser(HTMLParser):
     """Convert HTML to Markdown with error handling."""
     
     def __init__(self):
         super().__init__()
         self.markdown = []
-        self.current_text = []
+        self.current_segments = []  # List of FormatSegments for current element
         self.in_heading = False
         self.heading_level = 0
-        self.in_bold = False
-        self.in_italic = False
+        self.current_bold = False
+        self.current_italic = False
         self.in_link = False
         self.link_href = ""
         self.link_text = ""
         self.in_list = False
-        self.bold_depth = 0  # Track nesting of bold formatting
-        self.italic_depth = 0  # Track nesting of italic formatting
+        self.bold_depth = 0
+        self.italic_depth = 0
         self.in_list_item = False
         self.list_type = None
         self.list_depth = 0
@@ -82,15 +98,16 @@ class MarkdownHTMLParser(HTMLParser):
         self.in_table_cell = False
         self.table_rows = []
         self.current_row = []
-        self.ignore_paragraph_bold = False  # Ignore paragraph-level bold
+        self.ignore_paragraph_bold = False
+        self.span_format_stack = []  # Track formatting applied by each span
         
     def handle_starttag(self, tag, attrs):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
-            self.flush_text()
+            self.flush_current_element()
             self.in_heading = True
             self.heading_level = int(tag[1])
         elif tag == 'p':
-            self.flush_text()
+            self.flush_current_element()
             # Check if paragraph has bold styling (we want to ignore this)
             style = None
             for attr_name, attr_value in attrs:
@@ -98,23 +115,22 @@ class MarkdownHTMLParser(HTMLParser):
                     style = attr_value
                     break
             if style and ('font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style):
-                # Set flag to ignore paragraph-level bold
                 self.ignore_paragraph_bold = True
         elif tag == 'a':
-            # Don't override bold/italic state
             self.in_link = True
             for attr_name, attr_value in attrs:
                 if attr_name == 'href':
                     self.link_href = attr_value
         elif tag in ['b', 'strong']:
-            self.flush_text()  # Flush before changing formatting
             self.bold_depth += 1
-            self.in_bold = True
+            self.current_bold = True
         elif tag in ['i', 'em']:
-            self.flush_text()  # Flush before changing formatting
             self.italic_depth += 1
-            self.in_italic = True
+            self.current_italic = True
         elif tag == 'span':
+            # Track what formatting this span applies
+            applied_formatting = {"bold": False, "italic": False}
+            
             # Google Docs sometimes uses spans with font-weight for bold
             style = None
             for attr_name, attr_value in attrs:
@@ -123,15 +139,18 @@ class MarkdownHTMLParser(HTMLParser):
                     break
             if style:
                 if 'font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style:
-                    self.flush_text()  # Flush before changing formatting
                     self.bold_depth += 1
-                    self.in_bold = True
+                    self.current_bold = True
+                    applied_formatting["bold"] = True
                 if 'font-style:italic' in style or 'font-style: italic' in style:
-                    self.flush_text()  # Flush before changing formatting
                     self.italic_depth += 1
-                    self.in_italic = True
+                    self.current_italic = True
+                    applied_formatting["italic"] = True
+            
+            # Push to stack so we know what to undo when we close this span
+            self.span_format_stack.append(applied_formatting)
         elif tag in ['ul', 'ol']:
-            self.flush_text()
+            self.flush_current_element()
             self.in_list = True
             self.list_type = 'ordered' if tag == 'ol' else 'unordered'
             # Check for Google Docs list classes to determine depth
@@ -146,12 +165,16 @@ class MarkdownHTMLParser(HTMLParser):
                 # If no class found, increment normally
                 self.list_depth += 1
         elif tag == 'li':
-            self.flush_text()
+            self.flush_current_element()
             self.in_list_item = True
         elif tag == 'br':
-            self.current_text.append('\n')
+            if self.in_list_item:
+                # Add a newline within the list item
+                self.current_segments.append(FormatSegment('\n', self.current_bold, self.current_italic))
+            else:
+                self.current_segments.append(FormatSegment('\n', False, False))
         elif tag == 'table':
-            self.flush_text()
+            self.flush_current_element()
             self.in_table = True
             self.table_rows = []
         elif tag == 'tr':
@@ -160,39 +183,45 @@ class MarkdownHTMLParser(HTMLParser):
                 self.current_row = []
         elif tag in ['td', 'th']:
             if self.in_table:
-                self.flush_text()
+                self.flush_current_element()
                 self.in_table_cell = True
             
     def handle_endtag(self, tag):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
-            self.flush_text()
+            self.flush_current_element()
             self.in_heading = False
         elif tag == 'p':
-            self.flush_text()
+            self.flush_current_element()
             self.markdown.append('\n')
             # Reset ignore flag
             self.ignore_paragraph_bold = False
         elif tag == 'a':
             if self.link_text:
-                # Just create the link without extra formatting
-                # The formatting will be applied when we flush
-                self.current_text.append(f"[{self.link_text}]({self.link_href})")
+                # Add link as a segment
+                self.current_segments.append(FormatSegment(f"[{self.link_text}]({self.link_href})", self.current_bold, self.current_italic))
                 self.link_text = ""
             self.in_link = False
             self.link_href = ""
         elif tag in ['b', 'strong']:
-            self.flush_text()  # Flush before changing formatting
             self.bold_depth = max(0, self.bold_depth - 1)
             if self.bold_depth == 0:
-                self.in_bold = False
+                self.current_bold = False
         elif tag in ['i', 'em']:
-            self.flush_text()  # Flush before changing formatting
             self.italic_depth = max(0, self.italic_depth - 1)
             if self.italic_depth == 0:
-                self.in_italic = False
+                self.current_italic = False
         elif tag == 'span':
-            # Don't automatically reset - we track depth now
-            pass
+            # Pop formatting that this span applied
+            if self.span_format_stack:
+                applied = self.span_format_stack.pop()
+                if applied.get("bold"):
+                    self.bold_depth = max(0, self.bold_depth - 1)
+                    if self.bold_depth == 0:
+                        self.current_bold = False
+                if applied.get("italic"):
+                    self.italic_depth = max(0, self.italic_depth - 1)
+                    if self.italic_depth == 0:
+                        self.current_italic = False
         elif tag in ['ul', 'ol']:
             # Only decrease depth if we're actually in a list
             if self.in_list:
@@ -200,7 +229,7 @@ class MarkdownHTMLParser(HTMLParser):
                 if self.list_depth == 0:
                     self.in_list = False
         elif tag == 'li':
-            self.flush_text()
+            self.flush_current_element()
             self.in_list_item = False
         elif tag == 'table':
             if self.in_table:
@@ -212,44 +241,51 @@ class MarkdownHTMLParser(HTMLParser):
                 self.in_table_row = False
         elif tag in ['td', 'th']:
             if self.in_table_cell:
-                self.flush_text(is_table_cell=True)
+                self.flush_current_element()
                 self.in_table_cell = False
             
     def handle_data(self, data):
-        # Don't strip whitespace completely - preserve spaces between words
         if data:
-            # For links, accumulate text without formatting
+            # Replace non-breaking spaces with regular spaces
+            data = data.replace('\xa0', ' ')
+            
             if self.in_link:
                 self.link_text += data
                 return
-                
-            # For regular text, just append without formatting
-            # We'll apply formatting when we flush
-            self.current_text.append(data)
             
-    def flush_text(self, is_table_cell=False):
-        if self.current_text:
-            text = ''.join(self.current_text).strip()
-            if text:
-                # Apply formatting to the complete text
-                if self.in_bold and not self.in_heading and not self.ignore_paragraph_bold:  # Don't bold headings or paragraph-level bold
-                    text = f"**{text}**"
-                if self.in_italic:
-                    text = f"*{text}*"
-                
-                if is_table_cell:
-                    self.current_row.append(text)
-                elif self.in_heading:
-                    prefix = '#' * self.heading_level
-                    self.markdown.append(f"{prefix} {text}\n")
-                elif self.in_list_item:
-                    # Use 2 spaces per indent level for better compatibility
-                    indent = '  ' * max(0, self.list_depth)
-                    bullet = '* ' if self.list_type == 'unordered' else '1. '
-                    self.markdown.append(f"{indent}{bullet}{text}\n")
-                else:
-                    self.markdown.append(text)
-            self.current_text = []
+            # Add as a segment with current formatting
+            bold = self.current_bold and not self.ignore_paragraph_bold
+            self.current_segments.append(FormatSegment(data, bold, self.current_italic))
+    
+    def flush_current_element(self):
+        """Flush accumulated segments to markdown."""
+        if not self.current_segments:
+            return
+            
+        # Combine segments into formatted text
+        formatted_parts = []
+        for segment in self.current_segments:
+            formatted_parts.append(segment.to_markdown())
+        
+        text = ''.join(formatted_parts).strip()
+        
+        if text:
+            if self.in_heading:
+                prefix = '#' * self.heading_level
+                self.markdown.append(f"{prefix} {text}\n")
+            elif self.in_list_item:
+                # Use 2 spaces per indent level for better compatibility
+                indent = '  ' * max(0, self.list_depth)
+                bullet = '* ' if self.list_type == 'unordered' else '1. '
+                self.markdown.append(f"{indent}{bullet}{text}\n")
+            elif self.in_table_cell:
+                self.current_row.append(text)
+            else:
+                self.markdown.append(text)
+                if not self.in_table_cell:
+                    self.markdown.append(' ')
+        
+        self.current_segments = []
     
     def format_table(self):
         """Format table rows as a markdown table."""
@@ -275,8 +311,12 @@ class MarkdownHTMLParser(HTMLParser):
         self.markdown.append('\n')
             
     def get_markdown(self):
-        self.flush_text()
-        return '\n'.join(self.markdown)
+        self.flush_current_element()
+        content = ''.join(self.markdown)
+        # Clean up excessive newlines
+        content = re.sub(r'\n{3,}', '\n\n', content)
+        return content.strip()
+
 
 def setup_google_auth():
     """Set up Google API authentication."""
