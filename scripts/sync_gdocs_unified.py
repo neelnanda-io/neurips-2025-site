@@ -82,7 +82,7 @@ class MarkdownHTMLParser(HTMLParser):
         self.in_table_cell = False
         self.table_rows = []
         self.current_row = []
-        self.paragraph_bold = False  # Track if entire paragraph is bold
+        self.ignore_paragraph_bold = False  # Ignore paragraph-level bold
         
     def handle_starttag(self, tag, attrs):
         if tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
@@ -91,16 +91,15 @@ class MarkdownHTMLParser(HTMLParser):
             self.heading_level = int(tag[1])
         elif tag == 'p':
             self.flush_text()
-            # Check if paragraph has bold styling
+            # Check if paragraph has bold styling (we want to ignore this)
             style = None
             for attr_name, attr_value in attrs:
                 if attr_name == 'style':
                     style = attr_value
                     break
             if style and ('font-weight:700' in style or 'font-weight: 700' in style or 'font-weight:bold' in style):
-                self.paragraph_bold = True
-                self.bold_depth += 1
-                self.in_bold = True
+                # Set flag to ignore paragraph-level bold
+                self.ignore_paragraph_bold = True
         elif tag == 'a':
             # Don't override bold/italic state
             self.in_link = True
@@ -171,12 +170,8 @@ class MarkdownHTMLParser(HTMLParser):
         elif tag == 'p':
             self.flush_text()
             self.markdown.append('\n')
-            # Reset paragraph-level bold
-            if self.paragraph_bold:
-                self.bold_depth = max(0, self.bold_depth - 1)
-                if self.bold_depth == 0:
-                    self.in_bold = False
-                self.paragraph_bold = False
+            # Reset ignore flag
+            self.ignore_paragraph_bold = False
         elif tag == 'a':
             if self.link_text:
                 # Just create the link without extra formatting
@@ -237,7 +232,7 @@ class MarkdownHTMLParser(HTMLParser):
             text = ''.join(self.current_text).strip()
             if text:
                 # Apply formatting to the complete text
-                if self.in_bold and not self.in_heading:  # Don't bold headings
+                if self.in_bold and not self.in_heading and not self.ignore_paragraph_bold:  # Don't bold headings or paragraph-level bold
                     text = f"**{text}**"
                 if self.in_italic:
                     text = f"*{text}*"
@@ -491,6 +486,18 @@ def get_gdocs_in_folder(service, folder_id):
 
 def post_process_bold(content):
     """Fix common bold formatting issues from Google Docs."""
+    # Fix schedule formatting where bold splits across lines
+    # Pattern: "Talk:**\n**Speaker Name" should be "Talk: **Speaker Name**"
+    content = re.sub(
+        r'Talk:\*\*\s*\n\s*\*\*([^\n]+)',
+        r'Talk: **\1**',
+        content,
+        flags=re.MULTILINE
+    )
+    
+    # Fix cases where ** appear at start/end of lines due to line breaks
+    content = re.sub(r'\*\*\s*\n\s*\*\*', ' ', content)
+    
     # Special handling for the intro paragraphs
     # Only "Mechanistic interpretability" should be bold in the second paragraph
     if content.startswith('As neural networks grow'):
@@ -551,6 +558,22 @@ def post_process_bold(content):
     # Fix bold that spans multiple paragraphs
     content = re.sub(r'\*\*\n\n', '\n\n', content)
     content = re.sub(r'\n\n\*\*', '\n\n', content)
+    
+    # Fix call for papers formatting issues
+    # Pattern: "of**\n**short" should be "of **short**"
+    content = re.sub(
+        r'of\*\*\s*\n\s*\*\*short',
+        'of **short**',
+        content,
+        flags=re.MULTILINE
+    )
+    # Pattern: "and**\n**long" should be "and **long**"
+    content = re.sub(
+        r'and\*\*\s*\n\s*\*\*long',
+        'and **long**',
+        content,
+        flags=re.MULTILINE
+    )
     
     return content
 
