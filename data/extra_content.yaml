@@ -17,22 +17,22 @@ content: "## Workshop Goals\nThe mechanistic interpretability field benefits fro
   * What are the implications of new paradigms like reasoning models for the field\u2019\
   s priorities?\n* Whether the field\u2019s north star should be complete reverse\
   \ engineering, achieving high-level understanding, or something else entirely\n\
-  * How reliable or useful are popular methods such as [sparse](https://www.google.com/url?q=https://transformer-circuits.pub/2023/monosemantic-features/index.html&sa=D&source=editors&ust=1752278623407626&usg=AOvVaw33yyRvElptK6hniyh3Lssy)\
-  \ [autoencoders](https://www.google.com/url?q=https://adamkarvonen.github.io/machine_learning/2024/06/11/sae-intuitions.html&sa=D&source=editors&ust=1752278623407773&usg=AOvVaw3uISTWreK6U3Ue3MNeFPR8),\
-  \ and how much should we [prioritize](https://www.google.com/url?q=https://deepmindsafetyresearch.medium.com/negative-results-for-sparse-autoencoders-on-downstream-tasks-and-deprioritising-sae-research-6cadcfc125b9&sa=D&source=editors&ust=1752278623407910&usg=AOvVaw2QZJ-FFbEORTNnvuhTRwfa)\
+  * How reliable or useful are popular methods such as [sparse](https://www.google.com/url?q=https://transformer-circuits.pub/2023/monosemantic-features/index.html&sa=D&source=editors&ust=1752278835081054&usg=AOvVaw06LSPKJIIrSdUuNpSVpzPQ)\
+  \ [autoencoders](https://www.google.com/url?q=https://adamkarvonen.github.io/machine_learning/2024/06/11/sae-intuitions.html&sa=D&source=editors&ust=1752278835081297&usg=AOvVaw20MtYkP0eYdh8HbqBxLZpp),\
+  \ and how much should we [prioritize](https://www.google.com/url?q=https://deepmindsafetyresearch.medium.com/negative-results-for-sparse-autoencoders-on-downstream-tasks-and-deprioritising-sae-research-6cadcfc125b9&sa=D&source=editors&ust=1752278835081583&usg=AOvVaw0tW_Gvet6GRDREGxFtPd0s)\
   \ them compared to other research directions?\n* The relative merits of a perspective\
   \ of curiosity driven basic science vs working towards specific goals\n* How important\
-  \ are unsupervised techniques with the potential to surprise us, such as [transcoders](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html&sa=D&source=editors&ust=1752278623408288&usg=AOvVaw3f2zWC4MDv1MhYsZuml5QS),\
-  \ compared to simple supervised techniques such as [probing](https://www.google.com/url?q=https://arxiv.org/abs/2102.12452&sa=D&source=editors&ust=1752278623408402&usg=AOvVaw3kvMiyRFEG1_D7pEmyl0f4).\n\
+  \ are unsupervised techniques with the potential to surprise us, such as [transcoders](https://www.google.com/url?q=https://transformer-circuits.pub/2025/attribution-graphs/biology.html&sa=D&source=editors&ust=1752278835082266&usg=AOvVaw2TVj0mT47qkQplpfRoijT0),\
+  \ compared to simple supervised techniques such as [probing](https://www.google.com/url?q=https://arxiv.org/abs/2102.12452&sa=D&source=editors&ust=1752278835082512&usg=AOvVaw0RuKLLHxMXcjZVcnOkUp7I).\n\
   In this workshop, we hope to bring together researchers from across these many perspectives\
   \ and communities\u2014along with skeptics, experts in adjacent fields, and those\
   \ simply curious to learn more\u2014to facilitate healthy discussion and move towards\
-  \ a greater mutual understanding as a field. \nThrough our [call for papers](https://www.google.com/url?q=https://mechinterpworkshop.com/cfp/&sa=D&source=editors&ust=1752278623408766&usg=AOvVaw2X31SXSFdardfSO9VNm9od),\
+  \ a greater mutual understanding as a field. \nThrough our [call for papers](https://www.google.com/url?q=https://mechinterpworkshop.com/cfp/&sa=D&source=editors&ust=1752278835083272&usg=AOvVaw2LQ_B1cazZjk9t8cugzLaY),\
   \ we hope to facilitate the sharing of work in this fast-moving field, across all\
   \ of these axes, and especially work that helps to bridge these gaps. **We welcome\
   \ any submissions that seek to further our ability to use the internals of models\
   \ to achieve understanding, regardless of how unconventional the approach may be.\
-  \ **Please see the [call for papers page](https://www.google.com/url?q=https://mechinterpworkshop.com/cfp/&sa=D&source=editors&ust=1752278623409131&usg=AOvVaw14PBc6JXaOI8H7F5jNi_0d)\
+  \ **Please see the [call for papers page](https://www.google.com/url?q=https://mechinterpworkshop.com/cfp/&sa=D&source=editors&ust=1752278835084134&usg=AOvVaw1lMJS0rHCLrqvbJqpeK5KH)\
   \ for further details and particular topics of interest. \nWe welcome attendees\
   \ from all backgrounds, regardless of your prior research experience or if you have\
   \ work published at this workshop. Note that while you do not need to be registered\
@@ -41,16 +41,16 @@ content: "## Workshop Goals\nThe mechanistic interpretability field benefits fro
   \ first-served. \n## Learning More\nHere are some resources you may find useful\
   \ for learning more about the mechanistic interpretability field and performing\
   \ research: \n* We recommend starting with the review paper [Open Problems in Mechanistic\
-  \ Interpretability](https://www.google.com/url?q=https://arxiv.org/abs/2501.16496&sa=D&source=editors&ust=1752278623410189&usg=AOvVaw22LecILa0cl0UAECYkYE34)\
-  \ for an overview of the field\n* [Ferrando et al](https://www.google.com/url?q=https://arxiv.org/abs/2405.00208&sa=D&source=editors&ust=1752278623410449&usg=AOvVaw32cHZ_3P7sOqpqzw-IVVjx)\
-  \ is a good primer on the key techniques of the field\n* The [ARENA coding tutorials](https://www.google.com/url?q=https://arena-chapter1-transformer-interp.streamlit.app/&sa=D&source=editors&ust=1752278623410755&usg=AOvVaw2FGcf28cScUeS0rX7wyZxo)\
+  \ Interpretability](https://www.google.com/url?q=https://arxiv.org/abs/2501.16496&sa=D&source=editors&ust=1752278835085633&usg=AOvVaw2GozF0piqslF6POGAjzpU6)\
+  \ for an overview of the field\n* [Ferrando et al](https://www.google.com/url?q=https://arxiv.org/abs/2405.00208&sa=D&source=editors&ust=1752278835085871&usg=AOvVaw2feOia-OG3O4WwQ1ZGZfkJ)\
+  \ is a good primer on the key techniques of the field\n* The [ARENA coding tutorials](https://www.google.com/url?q=https://arena-chapter1-transformer-interp.streamlit.app/&sa=D&source=editors&ust=1752278835086197&usg=AOvVaw2EycW0RenLSJZhZvgCxkqu)\
   \ are a great place to learn how to implement these techniques in practice\n\nResources\
-  \ for doing research \n* Popular libraries include: [TransformerLens](https://www.google.com/url?q=https://github.com/TransformerLensOrg/TransformerLens&sa=D&source=editors&ust=1752278623411239&usg=AOvVaw1AAH4EI8FA9m5ZoBWmqH6h)\
-  \ (PyTorch, best for <=9B models), [nnsight](https://www.google.com/url?q=https://github.com/ndif-team/nnsight&sa=D&source=editors&ust=1752278623411389&usg=AOvVaw3I_EA-o3rR2XGI7sSfnct4)\
-  \ (PyTorch, more flexible and scales better), [Penzai](https://www.google.com/url?q=https://github.com/google-deepmind/penzai&sa=D&source=editors&ust=1752278623411545&usg=AOvVaw2wXdzllrUdTHXLgkILws-x)\
-  \ (Jax)\n* The [Mechanistic Interpretability Benchmark](https://www.google.com/url?q=https://mib-bench.github.io/&sa=D&source=editors&ust=1752278623411747&usg=AOvVaw3OTHm0O9uQxBNjcFIJ6R2P)\n\
-  * The [Gemma Scope Sparse Autoencoders](https://www.google.com/url?q=https://arxiv.org/abs/2408.05147&sa=D&source=editors&ust=1752278623411857&usg=AOvVaw1rwZyC2pRevZqWfTb-yQqY)\
-  \ ([interactive tutorial](https://www.google.com/url?q=http://neuronpedia.org/gemma-scope&sa=D&source=editors&ust=1752278623411929&usg=AOvVaw2XW2F1iCrNzAl3QVJo_uyR))\n\
-  \nRelevant online communities: \n* [Open Source Mechanistic Interpretability Slack](https://www.google.com/url?q=http://neelnanda.io/osmi-slack-invite&sa=D&source=editors&ust=1752278623412178&usg=AOvVaw0yw2XI4NAaUx0svxZ0pcuK)\n\
-  * [Mechanistic Interpretability Discord](https://www.google.com/url?q=https://discord.gg/ysVfhCfCKw&sa=D&source=editors&ust=1752278623412287&usg=AOvVaw2yRsJjTorIJ_iZRmc0KJkX)\n\
-  * [Eleuther Discord](https://www.google.com/url?q=https://discord.gg/nHS4YxmfeM&sa=D&source=editors&ust=1752278623412368&usg=AOvVaw3cZd7OAZFzqi7zm2WrGDt-)"
+  \ for doing research \n* Popular libraries include: [TransformerLens](https://www.google.com/url?q=https://github.com/TransformerLensOrg/TransformerLens&sa=D&source=editors&ust=1752278835086739&usg=AOvVaw1RxHtYb4zz4BoHPOWBHv5D)\
+  \ (PyTorch, best for <=9B models), [nnsight](https://www.google.com/url?q=https://github.com/ndif-team/nnsight&sa=D&source=editors&ust=1752278835086943&usg=AOvVaw1H6iRJ_RbmbMhUbzlG4iP6)\
+  \ (PyTorch, more flexible and scales better), [Penzai](https://www.google.com/url?q=https://github.com/google-deepmind/penzai&sa=D&source=editors&ust=1752278835087160&usg=AOvVaw097_Mhv5iapDxHhvUab3FW)\
+  \ (Jax)\n* The [Mechanistic Interpretability Benchmark](https://www.google.com/url?q=https://mib-bench.github.io/&sa=D&source=editors&ust=1752278835087437&usg=AOvVaw34OAm2XVeX1XOda9uGrZFF)\n\
+  * The [Gemma Scope Sparse Autoencoders](https://www.google.com/url?q=https://arxiv.org/abs/2408.05147&sa=D&source=editors&ust=1752278835087675&usg=AOvVaw3Z68LieWX1ZpEqbycmcN0k)\
+  \ ([interactive tutorial](https://www.google.com/url?q=http://neuronpedia.org/gemma-scope&sa=D&source=editors&ust=1752278835087823&usg=AOvVaw2zN5Sylu4ZrweCSb64bq4j))\n\
+  \nRelevant online communities: \n* [Open Source Mechanistic Interpretability Slack](https://www.google.com/url?q=http://neelnanda.io/osmi-slack-invite&sa=D&source=editors&ust=1752278835088258&usg=AOvVaw3G8C_bvQuiuTjCvzDTJZxn)\n\
+  * [Mechanistic Interpretability Discord](https://www.google.com/url?q=https://discord.gg/ysVfhCfCKw&sa=D&source=editors&ust=1752278835088461&usg=AOvVaw3sW3wVIi-OykVtUFHZ9Dun)\n\
+  * [Eleuther Discord](https://www.google.com/url?q=https://discord.gg/nHS4YxmfeM&sa=D&source=editors&ust=1752278835088627&usg=AOvVaw3n-dvp6RUqBdmEYwDs8Gqn)"
