@@ -526,7 +526,7 @@ def get_gdocs_in_folder(service, folder_id):
 
 def post_process_bold(content):
     """Fix common bold formatting issues from Google Docs."""
-    
+
     # Fix schedule formatting where bold splits across lines
     # Pattern: "Talk:**\n**Speaker Name" should be "Talk: **Speaker Name**"
     content = re.sub(
@@ -535,25 +535,25 @@ def post_process_bold(content):
         content,
         flags=re.MULTILINE
     )
-    
+
     # Fix "Build understanding **between" -> "**Build understanding** between"
     content = re.sub(
         r'\*\*Build understanding \*\*between',
         '**Build understanding** between',
         content
     )
-    
+
     # Fix "Mechanistic interpretability** addresses" with missing opening **
     # Simple string replacement approach
     content = content.replace('Mechanistic interpretability**', '**Mechanistic interpretability**')
-    
+
     # Fix "due** August" -> "due **August**"
     content = re.sub(
         r'due\*\* (August \d+, \d+)',
         r'due **\1**',
         content
     )
-    
+
     # Fix "We request** (but do not require)" -> "We request (but do not require)"
     # More general pattern to catch any "We request**" regardless of what follows
     content = re.sub(
@@ -561,35 +561,47 @@ def post_process_bold(content):
         r'We request',
         content
     )
-    
+
     # Also fix the reverse pattern where ** comes before the closing paren
     content = re.sub(
         r'\. We request\*\*',
         r'. We request',
         content
     )
-    
+
     # Fix "submitted papers **volunteer as reviewers**" -> "submitted papers volunteer as reviewers"
     content = re.sub(
         r'submitted papers \*\*volunteer as reviewers\*\*',
         r'submitted papers volunteer as reviewers',
         content
     )
-    
+
     # Fix "We welcome any submissions..." pattern
     content = re.sub(
         r'\*\*We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be\. \*\*Please',
         '**We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be.** Please',
         content
     )
-    
+
+    content = re.sub(
+        r"Works that downplay or omit significant limitations will not be accepted\*\*.",
+        "Works that downplay or omit significant limitations **will not be accepted**.",
+        content,
+    )
+
+    content = re.sub(
+        r"\*\*clear practical benefits over",
+        "**clear practical benefits** over",
+        content,
+    )
+
     # Fix any remaining orphaned ** at the start or end of lines
     content = re.sub(r'^\*\*\s*$', '', content, flags=re.MULTILINE)
     content = re.sub(r'\s*\*\*$', '', content, flags=re.MULTILINE)
-    
+
     # Fix cases where ** appear at start/end of lines due to line breaks
     content = re.sub(r'\*\*\s*\n\s*\*\*', ' ', content)
-    
+
     # Special handling for the intro paragraphs
     # Only "Mechanistic interpretability" should be bold in the second paragraph
     if content.startswith('As neural networks grow'):
@@ -612,45 +624,45 @@ def post_process_bold(content):
             content,
             flags=re.DOTALL
         )
-    
+
     # Split into lines for processing
     lines = content.split('\n')
     processed_lines = []
-    
+
     for line in lines:
         # Skip empty lines
         if not line.strip():
             processed_lines.append(line)
             continue
-            
+
         # Remove bold from headers (they have their own styling)
         if line.strip().startswith('#'):
             line = re.sub(r'\*\*(.+?)\*\*', r'\1', line)
-        
+
         # Check if entire line/paragraph is bold
         stripped = line.strip()
         if stripped.startswith('**') and stripped.endswith('**'):
             inner_content = stripped[2:-2]
-            
+
             # If it's a long paragraph or contains multiple sentences, remove bold
             if len(inner_content) > 100 or inner_content.count('. ') >= 2:
                 line = line.replace(stripped, inner_content)
             # If it contains a link, likely shouldn't be all bold
             elif '](' in inner_content:
                 line = line.replace(stripped, inner_content)
-        
+
         # Fix list items that are entirely bold
         if re.match(r'^(\s*\*\s+)\*\*(.+)\*\*\s*$', line):
             line = re.sub(r'^(\s*\*\s+)\*\*(.+)\*\*\s*$', r'\1\2', line)
-        
+
         processed_lines.append(line)
-    
+
     content = '\n'.join(processed_lines)
-    
+
     # Fix bold that spans multiple paragraphs
     content = re.sub(r'\*\*\n\n', '\n\n', content)
     content = re.sub(r'\n\n\*\*', '\n\n', content)
-    
+
     # Fix call for papers formatting issues
     # Pattern: "of**\n**short" should be "of **short**"
     content = re.sub(
@@ -666,7 +678,7 @@ def post_process_bold(content):
         content,
         flags=re.MULTILINE
     )
-    
+
     return content
 
 def transform_open_problems_link(content):
