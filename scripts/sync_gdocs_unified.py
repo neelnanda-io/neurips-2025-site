@@ -526,6 +526,7 @@ def get_gdocs_in_folder(service, folder_id):
 
 def post_process_bold(content):
     """Fix common bold formatting issues from Google Docs."""
+    
     # Fix schedule formatting where bold splits across lines
     # Pattern: "Talk:**\n**Speaker Name" should be "Talk: **Speaker Name**"
     content = re.sub(
@@ -542,13 +543,9 @@ def post_process_bold(content):
         content
     )
     
-    # Fix "Mechanistic interpretability** addresses" -> "**Mechanistic interpretability** addresses"
-    content = re.sub(
-        r'^(Mechanistic interpretability)\*\* addresses',
-        r'**\1** addresses',
-        content,
-        flags=re.MULTILINE
-    )
+    # Fix "Mechanistic interpretability** addresses" with missing opening **
+    # Simple string replacement approach
+    content = content.replace('Mechanistic interpretability**', '**Mechanistic interpretability**')
     
     # Fix "due** August" -> "due **August**"
     content = re.sub(
@@ -558,9 +555,17 @@ def post_process_bold(content):
     )
     
     # Fix "We request** (but do not require)" -> "We request (but do not require)"
+    # More general pattern to catch any "We request**" regardless of what follows
     content = re.sub(
-        r'We request\*\* \(but',
-        r'We request (but',
+        r'We request\*\*',
+        r'We request',
+        content
+    )
+    
+    # Also fix the reverse pattern where ** comes before the closing paren
+    content = re.sub(
+        r'\. We request\*\*',
+        r'. We request',
         content
     )
     
@@ -707,8 +712,6 @@ def sync_document(service, doc, output_path, is_extra_content=False):
             print(f"  ✗ Failed to export document")
             return False
     
-    # Post-process to fix bold formatting issues
-    markdown_content = post_process_bold(markdown_content)
     
     # Transform the Open Problems link if this is extra content
     if is_extra_content:
@@ -717,6 +720,11 @@ def sync_document(service, doc, output_path, is_extra_content=False):
     # Filter main content if needed
     if not is_extra_content:
         markdown_content = filter_main_content(markdown_content)
+        
+    
+    # Post-process to fix bold formatting issues AFTER filtering
+    markdown_content = post_process_bold(markdown_content)
+    
     
     # Save the content
     if is_extra_content:
