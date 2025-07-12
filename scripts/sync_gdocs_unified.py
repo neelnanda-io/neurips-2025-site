@@ -535,6 +535,53 @@ def post_process_bold(content):
         flags=re.MULTILINE
     )
     
+    # Fix "Build understanding **between" -> "**Build understanding** between"
+    content = re.sub(
+        r'\*\*Build understanding \*\*between',
+        '**Build understanding** between',
+        content
+    )
+    
+    # Fix "Mechanistic interpretability** addresses" -> "**Mechanistic interpretability** addresses"
+    content = re.sub(
+        r'^(Mechanistic interpretability)\*\* addresses',
+        r'**\1** addresses',
+        content,
+        flags=re.MULTILINE
+    )
+    
+    # Fix "due** August" -> "due **August**"
+    content = re.sub(
+        r'due\*\* (August \d+, \d+)',
+        r'due **\1**',
+        content
+    )
+    
+    # Fix "We request** (but do not require)" -> "We request (but do not require)"
+    content = re.sub(
+        r'We request\*\* \(but',
+        r'We request (but',
+        content
+    )
+    
+    # Fix "submitted papers **volunteer as reviewers**" -> "submitted papers volunteer as reviewers"
+    content = re.sub(
+        r'submitted papers \*\*volunteer as reviewers\*\*',
+        r'submitted papers volunteer as reviewers',
+        content
+    )
+    
+    # Fix "We welcome any submissions..." pattern
+    content = re.sub(
+        r'\*\*We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be\. \*\*Please',
+        '**We welcome any submissions that seek to further our ability to use the internals of models to achieve understanding, regardless of how unconventional the approach may be.** Please',
+        content
+    )
+    
+    # Fix any remaining orphaned ** at the start or end of lines
+    content = re.sub(r'^\*\*\s*$', '', content, flags=re.MULTILINE)
+    content = re.sub(r'\s*\*\*$', '', content, flags=re.MULTILINE)
+    
     # Fix cases where ** appear at start/end of lines due to line breaks
     content = re.sub(r'\*\*\s*\n\s*\*\*', ' ', content)
     
@@ -617,6 +664,17 @@ def post_process_bold(content):
     
     return content
 
+def transform_open_problems_link(content):
+    """Transform the 'Open Problems in Mechanistic Interpretability' link to only link 'Open'."""
+    # Pattern to find the specific link
+    content = re.sub(
+        r'\[Open Problems in Mechanistic Interpretability\]\(([^)]+)\)',
+        r'<span class="open-problems-text">[Open](\1) Problems in Mechanistic Interpretability</span>',
+        content
+    )
+    
+    return content
+
 def sync_document(service, doc, output_path, is_extra_content=False):
     """Sync a single document."""
     doc_id = doc['id']
@@ -651,6 +709,10 @@ def sync_document(service, doc, output_path, is_extra_content=False):
     
     # Post-process to fix bold formatting issues
     markdown_content = post_process_bold(markdown_content)
+    
+    # Transform the Open Problems link if this is extra content
+    if is_extra_content:
+        markdown_content = transform_open_problems_link(markdown_content)
     
     # Filter main content if needed
     if not is_extra_content:

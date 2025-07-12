@@ -151,6 +151,18 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Special styling for "Open Problems" link */
+.extra-content .open-problems-text a {
+  color: rgba(51, 51, 51, 0.5); /* Faded gray */
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.extra-content .open-problems-text a:hover {
+  color: rgba(51, 51, 51, 0.7); /* Slightly darker on hover */
+  text-decoration: underline;
+}
+
 /* Container */
 .container {
   max-width: 1200px;
