@@ -41,6 +41,7 @@ load_dotenv()
 CONTENT_DIR = "content"
 DATA_DIR = "data"
 EXTRA_CONTENT_FILE = "extra_content.yaml"
+LAYOUTS_DIR = "layouts"
 
 # Content filtering patterns to prevent duplication
 FILTER_PATTERNS = [
@@ -48,10 +49,8 @@ FILTER_PATTERNS = [
     r'## Organizing Committee.*?(?=##|\Z)',
     r'<section class="embedded-signup">.*?</section>',
     r'<section class="embedded-speakers">.*?</section>',
-    r'<section class="embedded-schedule">.*?</section>',
     r'<section class="embedded-organizers">.*?</section>',
     r'<div class="embedded-signup">.*?</div>',
-    r'## Schedule \(Provisional\).*?(?=##|\Z)',
     r'## Contact.*?(?=##|\Z)',
     r'Sign up to our mailing list.*?(?=##|\Z)',
     r'Stay Updated.*?</form>\s*</div>',
@@ -120,7 +119,7 @@ class MarkdownHTMLParser(HTMLParser):
             self.in_link = True
             for attr_name, attr_value in attrs:
                 if attr_name == 'href':
-                    self.link_href = attr_value
+                    self.link_href = _clean_google_redirect_url(attr_value)
         elif tag in ['b', 'strong']:
             self.bold_depth += 1
             self.current_bold = True
@@ -317,6 +316,18 @@ class MarkdownHTMLParser(HTMLParser):
         content = re.sub(r'\n{3,}', '\n\n', content)
         return content.strip()
 
+
+
+def _clean_google_redirect_url(url):
+    """
+    Cleans Google redirect URLs to get the actual target URL.
+    e.g., https://www.google.com/url?q=https://example.com&... -> https://example.com
+    """
+    if url and 'google.com/url' in url:
+        match = re.search(r'q=([^&]+)', url)
+        if match:
+            return match.group(1)
+    return url
 
 def setup_google_auth():
     """Set up Google API authentication."""
@@ -692,7 +703,7 @@ def transform_open_problems_link(content):
     
     return content
 
-def sync_document(service, doc, output_path, is_extra_content=False):
+def sync_document(service, doc, output_path, is_extra_content=False, is_schedule=False):
     """Sync a single document."""
     doc_id = doc['id']
     doc_name = doc['name']
@@ -730,7 +741,7 @@ def sync_document(service, doc, output_path, is_extra_content=False):
         markdown_content = transform_open_problems_link(markdown_content)
     
     # Filter main content if needed
-    if not is_extra_content:
+    if not is_extra_content and not is_schedule:
         markdown_content = filter_main_content(markdown_content)
         
     
@@ -796,6 +807,7 @@ def main():
     # Process each document
     for doc in docs:
         doc_name = doc['name'].lower()
+        is_schedule = 'schedule' in doc_name
         
         # Determine output path and type
         if 'extra_content' in doc_name:
@@ -814,7 +826,7 @@ def main():
                 # Default to main page
                 output_path = Path(CONTENT_DIR) / '_index.md'
             
-            success = sync_document(service, doc, output_path, is_extra_content=False)
+            success = sync_document(service, doc, output_path, is_extra_content=False, is_schedule=is_schedule)
         
         if success:
             success_count += 1
