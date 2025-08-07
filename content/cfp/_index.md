@@ -5,7 +5,7 @@ We are extremely grateful to all who volunteer as reviewers, you can [express in
 
 Details: 
 * The workshop is **non-archival**.
-* Authors will be notified of acceptance by **September 19**.
+* Authors will be notified of acceptance by **September 22**.
 * We **do not accept** submissions of work that has been accepted to an **archival** venue.
 * Submissions **undergoing peer review** (on August 22) are **welcome**, including works under review at the main NeurIPS conference.
 * All submissions must be made via OpenReview (link forthcoming).
