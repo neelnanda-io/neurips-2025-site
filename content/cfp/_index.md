@@ -56,6 +56,7 @@ The field is young, and there are many exciting open questions. We are particula
   * How can we develop objective benchmarks that require genuine understanding to solve, such as eliciting [secret knowledge](https://arxiv.org/abs/2505.14352) or [hidden goals](https://arxiv.org/abs/2503.10965)?
   * Can we move beyond proxies and find ways to objectively measure what we actually care about, like the ["understanding" captured by a natural language hypothesis](https://arxiv.org/abs/2502.04382)?
   * Can we develop other compelling benchmarks for our mech interp capabilities? (e.g. [Mueller et al](https://arxiv.org/abs/2504.13151))
+  * Can we achieve outcomes with interpretability that may not be practical with purely black box methods, like [convincing models that they are not being tested](https://arxiv.org/abs/2505.14617v2)?
 * **Interpreting Reasoning & Chain of Thought**:
   * Reasoning models are a big deal, we understand very little about them, and they introduce significant new challenges for interpretability. What should the paradigm for reasoning model interpretability look like?
   * Are black box methods performing causal interventions on the steps in a reasoning trace [a valuable tool](https://arxiv.org/abs/2506.19143), or fundamentally flawed?
