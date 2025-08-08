@@ -27,3 +27,6 @@ Thumbs.db
 # Google service account key (keep this secure!)
 gdocs-sa.json
 *-sa-key.json
+
+# Bonus
+/neurips-2025-site/
