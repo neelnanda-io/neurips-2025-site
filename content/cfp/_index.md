@@ -1,5 +1,5 @@
 # Call for Papers
-We are inviting submissions of **short** (max 4 pages) and **long** (max 9 pages) papers outlining new research, due **August 22, 2025**. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. 
+We are inviting submissions of **short** (max 4 pages) and **long** (max 9 pages) papers outlining new research, due **August 22, 2025**. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. [Submit here](https://openreview.net/group?id%3DNeurIPS.cc/2025/Workshop/MechInterp). 
 
 We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://docs.google.com/forms/d/e/1FAIpQLSdiw1SJllzoTz_nqzDTzTOGb9DV3W_truQyh-WvYj_QGIi7Mg/viewform?usp%3Ddialog). We request but do not require that (co-)first authors of submitted papers volunteer as reviewers. 
 
@@ -8,7 +8,7 @@ Details:
 * Authors will be notified of acceptance by **September 22**.
 * We **do not accept** submissions of work that has been accepted to an **archival** venue.
 * Submissions **undergoing peer review** (on August 22) are **welcome**, including works under review at the main NeurIPS conference.
-* All submissions must be made via OpenReview (link forthcoming).
+* All submissions must be made [via OpenReview](https://openreview.net/group?id%3DNeurIPS.cc/2025/Workshop/MechInterp)
   * **Note**: If you do not have an institutional email, be aware that it can take **up to 2 weeks** to get an OpenReview account approved. [Let us know](mailto:neurips2025@mechinterpworkshop.com) if this prevents you from submitting.
 * Please use the [NeurIPS 2025 LaTeX Template](https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip) for all submissions (no need for a checklist).
 * Both short (max 4 page) and long (max 9 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these.
