@@ -326,7 +326,8 @@ def _clean_google_redirect_url(url):
     if url and 'google.com/url' in url:
         match = re.search(r'q=([^&]+)', url)
         if match:
-            return match.group(1)
+            url = match.group(1)
+    url = re.sum(r'%3D', r'=', url)
     return url
 
 def setup_google_auth():
