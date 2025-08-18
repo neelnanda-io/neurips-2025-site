@@ -1,4 +1,4 @@
-*Submit papers **[here](https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/MechInterp)** by Aug 22*! 
+*Submit papers **[here](https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/MechInterp)** by Aug 22*. 
 
 As neural networks grow in influence and capability, understanding the mechanisms behind their decisions remains a fundamental scientific challenge. This gap between performance and understanding limits our ability to predict model behavior, ensure reliability, and detect sophisticated adversarial or deceptive behavior. Many of the deepest scientific mysteries in machine learning may remain out of reach if we cannot look inside the black box. 
 
