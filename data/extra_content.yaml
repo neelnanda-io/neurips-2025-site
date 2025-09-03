@@ -44,8 +44,10 @@ content: "## Workshop Goals\nThe mechanistic interpretability field benefits fro
   >[Open](https://arxiv.org/abs/2501.16496) Problems in Mechanistic Interpretability</span>\
   \ for an overview of the field\n* [Ferrando et al](https://arxiv.org/abs/2405.00208)\
   \ is a good primer on the key techniques of the field\n* The [ARENA coding tutorials](https://arena-chapter1-transformer-interp.streamlit.app/)\
-  \ are a great place to learn how to implement these techniques in practice\n\nResources\
-  \ for doing research \n* Popular libraries include: [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens)\
+  \ are a great place to learn how to implement these techniques in practice\n* Neel\
+  \ Nanda\u2019s [guide](https://www.alignmentforum.org/posts/jP9KDyMkchuv6tHwm/how-to-become-a-mechanistic-interpretability-researcher)\
+  \ on how to skill up, learn how to do research, and pursue a career as a researcher\
+  \ in the field\n\nResources for doing research \n* Popular libraries include: [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens)\
   \ (PyTorch, best for <=9B models), [nnsight](https://github.com/ndif-team/nnsight)\
   \ (PyTorch, more flexible and scales better), [Penzai](https://github.com/google-deepmind/penzai)\
   \ (Jax)\n* The [Mechanistic Interpretability Benchmark](https://mib-bench.github.io/)\n\
