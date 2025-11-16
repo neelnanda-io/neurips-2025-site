@@ -1,5 +1,6 @@
 # Call for Papers
-We are inviting submissions of **short** (max 4 pages) and **long** (max 9 pages) papers outlining new research, due **August 22, 2025**. (To answer a commonly asked question, no we do not plan to extend this deadline and cannot offer extensions). We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. [Submit here](https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/MechInterp). 
+### EDIT: The call for papers is now closed, thanks all for your submissions!
+We are inviting submissions of **short** (max 4 pages) and **long** (max 9 pages) papers outlining new research, due **August 22, 2025** (EDIT: Call for papers closed). We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. [Submit here](https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/MechInterp). 
 
 We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://docs.google.com/forms/d/e/1FAIpQLSdiw1SJllzoTz_nqzDTzTOGb9DV3W_truQyh-WvYj_QGIi7Mg/viewform?usp=dialog). We request but do not require that (co-)first authors of submitted papers volunteer as reviewers. 
 
