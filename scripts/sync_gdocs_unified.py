@@ -809,6 +809,7 @@ def main():
     for doc in docs:
         doc_name = doc['name'].lower()
         is_schedule = 'schedule' in doc_name
+        if is_schedule: continue  # Skip schedule - managed manually
         
         # Determine output path and type
         if 'extra_content' in doc_name:

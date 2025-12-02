@@ -1,0 +1,108 @@
+{{ define "title" }}Accepted Posters{{ end }}
+
+{{ define "main" }}
+<div class="container posters-page">
+  <article>
+    <h1>Accepted Posters</h1>
+    <p>COMING SOON</p>
+    <!-- <p>All accepted papers will be presented as posters. Spotlight papers will give a short oral presentation in addition to their poster.</p> -->
+
+    <div class="session-tabs">
+      <button class="session-tab active" data-session="early">Early Session (11am–12pm)</button>
+      <button class="session-tab" data-session="late">Late Session (2:30pm–3:30pm)</button>
+      <button class="session-tab" data-session="virtual">Not Presenting</button>
+    </div>
+
+    <!-- EARLY SESSION -->
+    <div class="session-content active" id="session-early">
+      {{ if .Site.Data.early_spotlight }}
+      <h3>Spotlight Posters</h3>
+      <div class="poster-list spotlight">
+        {{ range .Site.Data.early_spotlight }}
+        <div class="poster-item">
+          <a href="{{ .openreview }}">{{ .title }}</a>
+          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ if .Site.Data.early_poster }}
+      <h3>Posters</h3>
+      <div class="poster-list">
+        {{ range .Site.Data.early_poster }}
+        <div class="poster-item">
+          <a href="{{ .openreview }}">{{ .title }}</a>
+          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- LATE SESSION -->
+    <div class="session-content" id="session-late">
+      {{ if .Site.Data.late_spotlight }}
+      <h3>Spotlight Posters</h3>
+      <div class="poster-list spotlight">
+        {{ range .Site.Data.late_spotlight }}
+        <div class="poster-item">
+          <a href="{{ .openreview }}">{{ .title }}</a>
+          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ if .Site.Data.late_poster }}
+      <h3>Posters</h3>
+      <div class="poster-list">
+        {{ range .Site.Data.late_poster }}
+        <div class="poster-item">
+          <a href="{{ .openreview }}">{{ .title }}</a>
+          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- NOT PRESENTING -->
+    <div class="session-content" id="session-virtual">
+      <p class="virtual-intro">The following papers were accepted but the authors are unable to present in person.</p>
+      
+      {{ if .Site.Data.absent }}
+      <div class="poster-list not-presenting">
+        {{ range .Site.Data.absent }}
+        <div class="poster-item">
+          <a href="{{ .openreview }}">{{ .title }}</a>
+          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+  </article>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.session-tab');
+  const contents = document.querySelectorAll('.session-content');
+  
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active from all tabs and contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      
+      // Add active to clicked tab and corresponding content
+      this.classList.add('active');
+      const sessionId = 'session-' + this.dataset.session;
+      document.getElementById(sessionId).classList.add('active');
+    });
+  });
+});
+</script>
+{{ end }}

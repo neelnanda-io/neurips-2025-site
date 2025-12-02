@@ -12,6 +12,9 @@ menu:
     - name: "Home"
       url: "/"
       weight: 1
-    - name: "Call for Papers"
-      url: "/cfp/"
+    - name: "Schedule"
+      url: "/schedule/"
       weight: 2
+    - name: "Accepted Posters"
+      url: "/posters/"
+      weight: 3
