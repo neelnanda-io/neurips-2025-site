@@ -1,0 +1,104 @@
+[
+  {
+    "title": "Robustly Improving LLM Fairness in Realistic Settings via Interpretability",
+    "authors": [
+      "Adam Karvonen",
+      "Samuel Marks"
+    ],
+    "openreview": "https://openreview.net/forum?id=fHBb8BisyW"
+  },
+  {
+    "title": "Universal Neurons in GPT-2: Emergence, Persistence, and Functional Impact",
+    "authors": [
+      "Advey Nandan",
+      "Cheng-Ting Chou",
+      "Amrit Kurakula",
+      "Cole Blondin",
+      "Kevin Zhu",
+      "Vasu Sharma",
+      "Sean O'Brien"
+    ],
+    "openreview": "https://openreview.net/forum?id=iZjhiwRiHD"
+  },
+  {
+    "title": "Don't Believe the Belief Hype!",
+    "authors": [
+      "Alessandro Corona Mendozza"
+    ],
+    "openreview": "https://openreview.net/forum?id=mCPn3aqf5U"
+  },
+  {
+    "title": "Adaptive Task Vectors for Large Language Models",
+    "authors": [
+      "Joonseong Kang",
+      "Soojeong Lee",
+      "Sumin Park",
+      "Subeen Park",
+      "Taero Kim",
+      "Jihee Kim",
+      "Ryunyi LEE",
+      "Kyungwoo Song"
+    ],
+    "openreview": "https://openreview.net/forum?id=HaAW356Htr"
+  },
+  {
+    "title": "Three Desiderata for Faithfulness in Machine Learning Explanations: The Case for Causal Abstraction",
+    "authors": [
+      "Mette Friis Andersen",
+      "Maria Heuss",
+      "Ana Lucic"
+    ],
+    "openreview": "https://openreview.net/forum?id=b0rXC856Sm"
+  },
+  {
+    "title": "Localizing Reasoning Training-Induced Changes in Large Language Models",
+    "authors": [
+      "Max Klabunde",
+      "Florian Lemmerich"
+    ],
+    "openreview": "https://openreview.net/forum?id=WDlhBhceGZ"
+  },
+  {
+    "title": "Learned Structure in Cartridges: Keys as Shareable Routers in Self-Studied Representations",
+    "authors": [
+      "Mauri Diaz"
+    ],
+    "openreview": "https://openreview.net/forum?id=8pWoQFW7pY"
+  },
+  {
+    "title": "Dual Mechanisms of Value Expression: Decomposing Intrinsic and Prompted Values in Language Models",
+    "authors": [
+      "Jongwook Han",
+      "Jongwon Lim",
+      "InJin Kong",
+      "Yohan Jo"
+    ],
+    "openreview": "https://openreview.net/forum?id=0fxch5C1nc"
+  },
+  {
+    "title": "PII Jailbreaking in LLMs via Activation Steering Reveals Personal Information Leakage",
+    "authors": [
+      "Krishna Kanth Nakka",
+      "Dmitrii Usynin",
+      "Xue Jiang",
+      "Xuebing Zhou"
+    ],
+    "openreview": "https://openreview.net/forum?id=zOXYnJQ2Tx"
+  },
+  {
+    "title": "Symbolic vs. Continuous Features in Transformers: A Digital Communication System's Explanation",
+    "authors": [
+      "Kan Deng"
+    ],
+    "openreview": "https://openreview.net/forum?id=ARRzwn8MAH"
+  },
+  {
+    "title": "Reverse Engineering a Stateful Reasoning Circuit",
+    "authors": [
+      "Akshit Kumar",
+      "Dipti Sharma",
+      "Parameswari Krishnamurthy"
+    ],
+    "openreview": "https://openreview.net/forum?id=bIF9C682xB"
+  }
+]

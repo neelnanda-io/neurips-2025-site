@@ -1,12 +1,183 @@
 [
   {
-    "title": "Paper Title",
-    "authors": ["Author 1", "Author 2"],
-    "openreview": "https://openreview.net/forum?id=XXXXX"
+    "title": "Position: Mechanistic Interpretability Should Prioritize Feature Consistency in SAEs",
+    "authors": [
+      "Xiangchen Song",
+      "Aashiq Muhamed",
+      "Yujia Zheng",
+      "Lingjing Kong",
+      "Zeyu Tang",
+      "Mona T. Diab",
+      "Virginia Smith",
+      "Kun Zhang"
+    ],
+    "openreview": "https://openreview.net/forum?id=d9ACURK6bI"
   },
   {
-    "title": "Paper Title",
-    "authors": ["Author 1", "Author 2", "Author 3"],
-    "openreview": "https://openreview.net/forum?id=XXXXX"
+    "title": "ReflCtrl: Controlling LLM Reflection via Representation Engineering",
+    "authors": [
+      "Ge Yan",
+      "Chung-En Sun",
+      "Tsui-Wei Weng"
+    ],
+    "openreview": "https://openreview.net/forum?id=ungnJ4O0AD"
+  },
+  {
+    "title": "Interpretable Embeddings with Sparse Autoencoders: A Data Analysis Toolkit",
+    "authors": [
+      "Nicholas Jiang",
+      "Xiaoqing Sun",
+      "Lisa Dunlap",
+      "Lewis Smith",
+      "Neel Nanda"
+    ],
+    "openreview": "https://openreview.net/forum?id=mqJbhBMFm5"
+  },
+  {
+    "title": "Finding Manifolds with Bilinear Autoencoders",
+    "authors": [
+      "Thomas Dooms",
+      "Ward Gauderis"
+    ],
+    "openreview": "https://openreview.net/forum?id=ybJXIh4vcF"
+  },
+  {
+    "title": "The Anatomy of Alignment: Decomposing Preference Optimization by Steering Sparse Features",
+    "authors": [
+      "Jeremias Lino Ferrao",
+      "Matthijs van der Lende",
+      "Ilija Lichkovski",
+      "Clement Neo"
+    ],
+    "openreview": "https://openreview.net/forum?id=CoaaltVlx7"
+  },
+  {
+    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
+    "authors": [
+      "Dat Minh Hong",
+      "Bruno Kacper Mlodozeniec",
+      "Runa Eschenhagen",
+      "Richard E. Turner"
+    ],
+    "openreview": "https://openreview.net/forum?id=383i8264it"
+  },
+  {
+    "title": "Dense SAE Latents Are Features, Not Bugs",
+    "authors": [
+      "Xiaoqing Sun",
+      "Alessandro Stolfo",
+      "Joshua Engels",
+      "Ben Peng Wu",
+      "Senthooran Rajamanoharan",
+      "Mrinmaya Sachan",
+      "Max Tegmark"
+    ],
+    "openreview": "https://openreview.net/forum?id=R65Ez0Uo8h"
+  },
+  {
+    "title": "Unsupervised decoding of encoded reasoning using language model interpretability",
+    "authors": [
+      "Ching Fang",
+      "Samuel Marks"
+    ],
+    "openreview": "https://openreview.net/forum?id=OEDW0lmJTv"
+  },
+  {
+    "title": "Narrow Finetuning Leaves Clearly Readable Traces in the Activation Differences",
+    "authors": [
+      "Julian Minder",
+      "Clément Dumas",
+      "Stewart Slocum",
+      "Helena Casademunt",
+      "Cameron Holmes",
+      "Robert West",
+      "Neel Nanda"
+    ],
+    "openreview": "https://openreview.net/forum?id=pxaCoKZWVf"
+  },
+  {
+    "title": "Where's the Bug? Attention Probing for Scalable Fault Localization",
+    "authors": [
+      "Adam Stein",
+      "Arthur Wayne",
+      "Aaditya Naik",
+      "Mayur Naik",
+      "Eric Wong"
+    ],
+    "openreview": "https://openreview.net/forum?id=5sSZn0SGGO"
+  },
+  {
+    "title": "Instruction Following by Boosting Attention of Large Language Models",
+    "authors": [
+      "Vitoria Guardieiro",
+      "Avishree Khare",
+      "Adam Stein",
+      "Eric Wong"
+    ],
+    "openreview": "https://openreview.net/forum?id=xDyJVMnab8"
+  },
+  {
+    "title": "Better World Models Can Lead to Better Post-Training Performance",
+    "authors": [
+      "Prakhar Gupta",
+      "Henry Conklin",
+      "Sarah-Jane Leslie",
+      "Andrew Lee"
+    ],
+    "openreview": "https://openreview.net/forum?id=ldMcQn7Z2Q"
+  },
+  {
+    "title": "Scratchpad Thinking: Alternation Between Storage and Computation in Latent Reasoning Models",
+    "authors": [
+      "Brad Peters",
+      "Sayam Goyal",
+      "María Emilia Granda",
+      "Akshath Vijayakumar Narmadha",
+      "Dharunish Yugeswardeenoo",
+      "Callum Stuart McDougall",
+      "Sean O'Brien",
+      "Ashwinee Panda",
+      "Kevin Zhu",
+      "Cole Blondin"
+    ],
+    "openreview": "https://openreview.net/forum?id=EV30qkZXrR"
+  },
+  {
+    "title": "Cross-Architecture Model Diffing with Crosscoders: Unsupervised Discovery of Differences Between LLMs",
+    "authors": [
+      "Thomas Jiralerspong",
+      "Trenton Bricken"
+    ],
+    "openreview": "https://openreview.net/forum?id=ZB84SvrZB8"
+  },
+  {
+    "title": "Towards a Mechanistic Understanding of Robustness in Finetuned Reasoning Models",
+    "authors": [
+      "Aashiq Muhamed",
+      "Xuandong Zhao",
+      "Mona T. Diab",
+      "Virginia Smith",
+      "Dawn Song"
+    ],
+    "openreview": "https://openreview.net/forum?id=rqe4zQCURe"
+  },
+  {
+    "title": "Correlations in the Data Lead to Semantically Rich Feature Geometry Under Superposition",
+    "authors": [
+      "Lucas Prieto",
+      "Edward Stevinson",
+      "Melih Barsbey",
+      "Tolga Birdal",
+      "Pedro A. M. Mediano"
+    ],
+    "openreview": "https://openreview.net/forum?id=dGHlIOcQtX"
+  },
+  {
+    "title": "Activation Transport Operators",
+    "authors": [
+      "Andrzej Szablewski",
+      "Marek Masiak"
+    ],
+    "openreview": "https://openreview.net/forum?id=CLg5P5m4E1"
   }
 ]

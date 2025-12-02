@@ -10,15 +10,15 @@ NOTE: This is a provisional schedule and may be subject to change.
 
 | Time | Activity |
 |------|----------|
-| 09:00 - 09:30 | Opening remarks |
-| 09:30 - 10:00 | Keynote speaker: **Been Kim** |
-| 10:00 - 10:30 | Keynote speaker: **Chris Olah** |
-| 10:30 - 11:00 | *Coffee break* |
-| 11:00 - 11:30 | Spotlight talks (early session) |
-| 11:30 - 12:30 | Posters (early session) |
-| 12:30 - 13:30 | Lunch  |
-| 13:30 - 14:00 | Spotlight talks (late session) |
-| 14:00 - 15:00 | Posters (late session) |
-| 15:00 - 15:30 | *Coffee break* |
-| 15:30 - 16:00 | Keynote speaker: **Sarah Schwettmann** |
-| 16:00 - 17:00 | Invited lightning talks |
+| 9:00am – 9:30am | Opening remarks |
+| 9:30am – 10:00am | Keynote speaker: **Been Kim** |
+| 10:00am – 10:30am | Keynote speaker: **Chris Olah** |
+| 10:30am – 11:00am | *Coffee break* |
+| 11:00am – 11:30am | Spotlight talks (early session) |
+| 11:30am – 12:30pm | Posters (early session) |
+| 12:30pm – 1:30pm | Lunch  |
+| 1:30pm – 2:00pm | Spotlight talks (late session) |
+| 2:00pm – 3:00pm | Posters (late session) |
+| 3:00pm – 3:30pm | *Coffee break* |
+| 3:30pm – 4:00pm | Keynote speaker: **Sarah Schwettmann** |
+| 4:00pm – 5:00pm | Invited lightning talks |
