@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Paper Title",
+    "authors": ["Author 1", "Author 2"],
+    "openreview": "https://openreview.net/forum?id=XXXXX"
+  },
+  {
+    "title": "Paper Title",
+    "authors": ["Author 1", "Author 2", "Author 3"],
+    "openreview": "https://openreview.net/forum?id=XXXXX"
+  },
+  {
+    "title": "Paper Title",
+    "authors": ["Author 1"],
+    "openreview": "https://openreview.net/forum?id=XXXXX"
+  }
+]

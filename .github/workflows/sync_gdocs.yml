@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   sync:
+    if: false  # Disabled - managing content manually
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
