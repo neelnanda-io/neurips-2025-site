@@ -16,7 +16,7 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 | 10:30am – 11:00am | *Coffee break* |
 | 11:00am – 11:30am | Spotlight talks (early session) |
 | 11:30am – 12:30pm | Posters (early session) |
-| 12:30pm – 1:30pm | Lunch  |
+| 12:30pm – 1:30pm | *Lunch break*  |
 | 1:30pm – 2:00pm | Spotlight talks (late session) |
 | 2:00pm – 3:00pm | Posters (late session) |
 | 3:00pm – 3:30pm | *Coffee break* |
