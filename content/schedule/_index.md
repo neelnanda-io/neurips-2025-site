@@ -8,7 +8,9 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 
 | Time | Activity |
 |------|----------|
-| 9:00am – 9:30am | Opening remarks |
+| 8:00am – 9:00am | *Socializing* |
+| 9:00am – 9:15am | *Coffee break* |
+| 9:15am – 9:30am | Opening remarks |
 | 9:30am – 10:00am | Keynote speaker: **Been Kim** |
 | 10:00am – 10:30am | Keynote speaker: **Sarah Schwettmann** |
 | 10:30am – 11:00am | *Coffee break* |
