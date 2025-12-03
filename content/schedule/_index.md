@@ -4,8 +4,6 @@ title: "Schedule"
 
 The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue in San Diego, California (Upper Level Room 30A-E).
 
-**NOTE: This is a provisional schedule and is **subject to change** as we finalise the programme.**
-
 ## Workshop Program
 
 | Time | Activity |
@@ -20,5 +18,5 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 | 1:30pm – 2:00pm | Spotlight talks (late session) |
 | 2:00pm – 3:00pm | Posters (late session) |
 | 3:00pm – 3:30pm | *Coffee break* |
-| 3:30pm – 4:00pm | Keynote speaker: **Chris Olah** |
+| 3:30pm – 4:00pm | Keynote speaker: **Chris Olah** (Remote) |
 | 4:00pm – 5:00pm | Invited lightning talks |
