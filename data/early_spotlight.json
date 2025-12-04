@@ -92,17 +92,6 @@
     "openreview": "https://openreview.net/forum?id=JTnYGSxN5k"
   },
   {
-    "title": "Interpreting Attention Heads for Image-to-Text Information Flow in Large Vision–Language Models",
-    "authors": [
-      "Jinyeong Kim",
-      "Seil Kang",
-      "Jiwoo Park",
-      "Junhyeok Kim",
-      "Seong Jae Hwang"
-    ],
-    "openreview": "https://openreview.net/forum?id=vNnaKujGEw"
-  },
-  {
     "title": "RL-Obfuscation: Can Language Models Learn to Evade Latent-Space Monitors?",
     "authors": [
       "Rohan Gupta",

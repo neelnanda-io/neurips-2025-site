@@ -34,6 +34,17 @@
     "openreview": "https://openreview.net/forum?id=mqJbhBMFm5"
   },
   {
+    "title": "Interpreting Attention Heads for Image-to-Text Information Flow in Large Vision–Language Models",
+    "authors": [
+      "Jinyeong Kim",
+      "Seil Kang",
+      "Jiwoo Park",
+      "Junhyeok Kim",
+      "Seong Jae Hwang"
+    ],
+    "openreview": "https://openreview.net/forum?id=vNnaKujGEw"
+  },
+  {
     "title": "Finding Manifolds with Bilinear Autoencoders",
     "authors": [
       "Thomas Dooms",
