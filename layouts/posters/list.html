@@ -15,11 +15,13 @@
     <div class="session-content active" id="session-early">
       {{ if .Site.Data.early_spotlight }}
       <h3>Spotlight Posters</h3>
+      <p class="posters-note">Numbered in presentation order, randomly selected.</p>
       <div class="poster-list spotlight">
-        {{ range .Site.Data.early_spotlight }}
+        {{ range $index, $item := .Site.Data.early_spotlight }}
         <div class="poster-item">
-          <a href="{{ .openreview }}">{{ .title }}</a>
-          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <a href="{{ $item.openreview }}">{{ $item.title }}</a>
+          <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
         </div>
         {{ end }}
       </div>
@@ -27,6 +29,7 @@
 
       {{ if .Site.Data.early_poster }}
       <h3>Posters</h3>
+      <p class="posters-note">Sorted alphabetically by first author.</p>
       <div class="poster-list">
         {{ range .Site.Data.early_poster }}
         <div class="poster-item">
@@ -42,11 +45,13 @@
     <div class="session-content" id="session-late">
       {{ if .Site.Data.late_spotlight }}
       <h3>Spotlight Posters</h3>
+      <p class="posters-note">Numbered in presentation order, randomly selected.</p>
       <div class="poster-list spotlight">
-        {{ range .Site.Data.late_spotlight }}
+        {{ range $index, $item := .Site.Data.late_spotlight }}
         <div class="poster-item">
-          <a href="{{ .openreview }}">{{ .title }}</a>
-          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <a href="{{ $item.openreview }}">{{ $item.title }}</a>
+          <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
         </div>
         {{ end }}
       </div>
@@ -54,6 +59,7 @@
 
       {{ if .Site.Data.late_poster }}
       <h3>Posters</h3>
+      <p class="posters-note">Sorted alphabetically by first author.</p>
       <div class="poster-list">
         {{ range .Site.Data.late_poster }}
         <div class="poster-item">
@@ -71,11 +77,13 @@
       
       {{ if .Site.Data.absent_spotlight }}
       <h3>Spotlight Posters</h3>
+      <p class="posters-note">Numbered in presentation order, randomly selected.</p>
       <div class="poster-list spotlight">
-        {{ range .Site.Data.absent_spotlight }}
+        {{ range $index, $item := .Site.Data.absent_spotlight }}
         <div class="poster-item">
-          <a href="{{ .openreview }}">{{ .title }}</a>
-          <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else }}{{ .authors }}{{ end }}</span>
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <a href="{{ $item.openreview }}">{{ $item.title }}</a>
+          <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
         </div>
         {{ end }}
       </div>
@@ -83,6 +91,7 @@
 
       {{ if .Site.Data.absent_poster }}
       <h3>Posters</h3>
+      <p class="posters-note">Sorted alphabetically by first author.</p>
       <div class="poster-list not-presenting">
         {{ range .Site.Data.absent_poster }}
         <div class="poster-item">

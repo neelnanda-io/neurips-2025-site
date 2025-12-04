@@ -10,27 +10,6 @@
     "openreview": "https://openreview.net/forum?id=QrImAlagCG"
   },
   {
-    "title": "Convergent Linear Representations of Emergent Misalignment",
-    "authors": [
-      "Anna Soligo",
-      "Edward Turner",
-      "Senthooran Rajamanoharan",
-      "Neel Nanda"
-    ],
-    "openreview": "https://openreview.net/forum?id=kx7gBNqQdk"
-  },
-  {
-    "title": "Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning",
-    "authors": [
-      "Clément Dumas",
-      "Julian Minder",
-      "Caden Juang",
-      "Bilal Chughtai",
-      "Neel Nanda"
-    ],
-    "openreview": "https://openreview.net/forum?id=CdiCNA1Y2R"
-  },
-  {
     "title": "Emergence of Linear Truth Encodings in Language Models",
     "authors": [
       "Shauli Ravfogel",
@@ -52,12 +31,73 @@
     "openreview": "https://openreview.net/forum?id=MqQkMtS6ry"
   },
   {
-    "title": "Probing by Analogy: Decomposing Probes into Activations for Better Interpretability and Inter-Model Generalization",
+    "title": "RelP: Faithful and Efficient Circuit Discovery in Language Models via Relevance Patching",
     "authors": [
-      "Patrick Leask",
-      "Noura Al Moubayed"
+      "Farnoush Rezaei Jafari",
+      "Oliver Eberle",
+      "Ashkan Khakzar",
+      "Neel Nanda"
     ],
-    "openreview": "https://openreview.net/forum?id=IhI1qGyk6S"
+    "openreview": "https://openreview.net/forum?id=5PKPy82sWN"
+  },
+  {
+    "title": "Convergent Linear Representations of Emergent Misalignment",
+    "authors": [
+      "Anna Soligo",
+      "Edward Turner",
+      "Senthooran Rajamanoharan",
+      "Neel Nanda"
+    ],
+    "openreview": "https://openreview.net/forum?id=kx7gBNqQdk"
+  },
+  {
+    "title": "Adversarial Attacks Leverage Interference Between Features in Superposition",
+    "authors": [
+      "Edward Stevinson",
+      "Lucas Prieto",
+      "Melih Barsbey",
+      "Tolga Birdal"
+    ],
+    "openreview": "https://openreview.net/forum?id=LqI52GG2Ss"
+  },
+  {
+    "title": "Reverse-Engineering Memory in DreamerV3: From Sparse Representations to Functional Circuits",
+    "authors": [
+      "Jan Sobotka",
+      "Auke Ijspeert",
+      "Guillaume Bellegarda"
+    ],
+    "openreview": "https://openreview.net/forum?id=JmjqTi4FDF"
+  },
+  {
+    "title": "Just-in-time and distributed task representations in language models",
+    "authors": [
+      "Yuxuan Li",
+      "Declan Iain Campbell",
+      "Stephanie C.Y. Chan",
+      "Andrew Kyle Lampinen"
+    ],
+    "openreview": "https://openreview.net/forum?id=KC13tBPbQg"
+  },
+  {
+    "title": "Measuring Sparse Autoencoder Feature Sensitivity",
+    "authors": [
+      "Claire Tian",
+      "Katherine Tian",
+      "Nathan Zixia Hu"
+    ],
+    "openreview": "https://openreview.net/forum?id=0bkTiS9Isw"
+  },
+  {
+    "title": "Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning",
+    "authors": [
+      "Clément Dumas",
+      "Julian Minder",
+      "Caden Juang",
+      "Bilal Chughtai",
+      "Neel Nanda"
+    ],
+    "openreview": "https://openreview.net/forum?id=CdiCNA1Y2R"
   },
   {
     "title": "Thought Anchors: Which LLM Reasoning Steps Matter?",
@@ -107,16 +147,6 @@
     "openreview": "https://openreview.net/forum?id=DbXKjT00yK"
   },
   {
-    "title": "RelP: Faithful and Efficient Circuit Discovery in Language Models via Relevance Patching",
-    "authors": [
-      "Farnoush Rezaei Jafari",
-      "Oliver Eberle",
-      "Ashkan Khakzar",
-      "Neel Nanda"
-    ],
-    "openreview": "https://openreview.net/forum?id=5PKPy82sWN"
-  },
-  {
     "title": "Path Channels and Plan Extension Kernels: a Mechanistic Description of Planning in a Sokoban RNN",
     "authors": [
       "Mohammad Taufeeque",
@@ -125,35 +155,6 @@
       "Adrià Garriga-Alonso"
     ],
     "openreview": "https://openreview.net/forum?id=z025sIH4Nq"
-  },
-  {
-    "title": "Adversarial Attacks Leverage Interference Between Features in Superposition",
-    "authors": [
-      "Edward Stevinson",
-      "Lucas Prieto",
-      "Melih Barsbey",
-      "Tolga Birdal"
-    ],
-    "openreview": "https://openreview.net/forum?id=LqI52GG2Ss"
-  },
-  {
-    "title": "Reverse-Engineering Memory in DreamerV3: From Sparse Representations to Functional Circuits",
-    "authors": [
-      "Jan Sobotka",
-      "Auke Ijspeert",
-      "Guillaume Bellegarda"
-    ],
-    "openreview": "https://openreview.net/forum?id=JmjqTi4FDF"
-  },
-  {
-    "title": "Just-in-time and distributed task representations in language models",
-    "authors": [
-      "Yuxuan Li",
-      "Declan Iain Campbell",
-      "Stephanie C.Y. Chan",
-      "Andrew Kyle Lampinen"
-    ],
-    "openreview": "https://openreview.net/forum?id=KC13tBPbQg"
   },
   {
     "title": "Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behaviour",
@@ -168,15 +169,6 @@
     "openreview": "https://openreview.net/forum?id=Dk5thCkmWJ"
   },
   {
-    "title": "Measuring Sparse Autoencoder Feature Sensitivity",
-    "authors": [
-      "Claire Tian",
-      "Katherine Tian",
-      "Nathan Zixia Hu"
-    ],
-    "openreview": "https://openreview.net/forum?id=0bkTiS9Isw"
-  },
-  {
     "title": "Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence",
     "authors": [
       "Bofan Gong",
@@ -184,5 +176,13 @@
       "Dawn Song"
     ],
     "openreview": "https://openreview.net/forum?id=Q7gk6lvqSj"
+  },
+  {
+    "title": "Probing by Analogy: Decomposing Probes into Activations for Better Interpretability and Inter-Model Generalization",
+    "authors": [
+      "Patrick Leask",
+      "Noura Al Moubayed"
+    ],
+    "openreview": "https://openreview.net/forum?id=IhI1qGyk6S"
   }
 ]

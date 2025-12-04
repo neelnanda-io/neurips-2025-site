@@ -20,5 +20,5 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 | 1:30pm – 2:00pm | Spotlight talks (session 2) |
 | 2:00pm – 3:00pm | Posters (session 2) |
 | 3:00pm – 3:30pm | *Coffee break* |
-| 3:30pm – 4:00pm | Keynote speaker: **Chris Olah** (Remote) |
+| 3:30pm – 4:00pm | Keynote speaker: **Chris Olah** (remote) |
 | 4:00pm – 5:00pm | Invited lightning talks |
