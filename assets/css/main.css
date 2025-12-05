@@ -225,11 +225,17 @@ article td em {
   font-style: italic;
 }
 
-/* De-emphasize breaks - items that are ONLY italic (no bold speaker name) */
-.schedule-page td:last-child > em:only-child,
-article td:last-child > em:only-child {
+/* De-emphasize breaks - items that are ONLY italic in the MAIN schedule table */
+.schedule-page > article > table td:last-child > em:only-child,
+.schedule-page article > table:first-of-type td:last-child > em:only-child {
   color: #9ca3af;
   font-style: normal;
+}
+
+/* But NOT in the lightning talks table */
+.schedule-page h3 + table td:last-child > em:only-child {
+  color: #374151;
+  font-style: italic;
 }
 
 /* Emphasize speakers and key events (bold text) */

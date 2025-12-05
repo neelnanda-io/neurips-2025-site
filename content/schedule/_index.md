@@ -21,9 +21,9 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 | 2:00pm – 3:00pm | Posters (session 2) |
 | 3:00pm – 3:30pm | *Coffee break* |
 | 3:30pm – 4:00pm | **Chris Olah** (Remote) · *Reflections on Interpretability* |
-| 4:00pm – 5:00pm | Lightning talks |
+| 4:00pm – 5:00pm | Invited lightning talks |
 
-### Lightning Talks
+### Invited Lightning Talks
 
 | Speaker | Title |
 |---------|-------|
