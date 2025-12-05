@@ -3,6 +3,11 @@ languageCode: "en-us"
 title: "Mechanistic Interpretability Workshop at NeurIPS 2025"
 theme: "ananke"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   description: "The Mechanistic Interpretability Workshop at NeurIPS 2025. How can we use the internals of neural networks to understand a model better?"
   show_reading_time: false

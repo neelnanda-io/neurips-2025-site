@@ -219,9 +219,15 @@ article td:last-child {
   color: #111827;
 }
 
-/* De-emphasize breaks and informal events (italic text) */
+/* Italic text in schedule (breaks and talk titles) */
 .schedule-page td em,
 article td em {
+  font-style: italic;
+}
+
+/* De-emphasize breaks - items that are ONLY italic (no bold speaker name) */
+.schedule-page td:last-child > em:only-child,
+article td:last-child > em:only-child {
   color: #9ca3af;
   font-style: normal;
 }
@@ -237,6 +243,45 @@ article td strong {
 .schedule-page thead tr:first-child:empty,
 article thead tr:first-child:empty {
   display: none;
+}
+
+/* Lightning talks sub-section */
+.schedule-page h3 {
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.schedule-page h3 + table {
+  margin-top: 0.5rem;
+}
+
+/* Lightning talks: Speaker column */
+.schedule-page h3 + table td:first-child {
+  font-weight: 500;
+  color: #111827;
+  width: auto;
+  padding-right: 1.5rem;
+}
+
+/* Affiliation in parentheses */
+.schedule-page .affiliation {
+  font-weight: 400;
+  color: #b0b7c0;
+  font-size: 0.8rem;
+  margin-left: 0.25rem;
+}
+
+/* Lightning talks: Title column */
+.schedule-page h3 + table td:last-child {
+  color: #374151;
+}
+
+.schedule-page h3 + table td:last-child em {
+  font-style: italic;
+  color: #374151;
 }
 
 /* Embedded sections from shortcodes */
