@@ -263,7 +263,7 @@ article thead tr:first-child:empty {
   font-weight: 500;
   color: #111827;
   width: auto;
-  padding-right: 1.5rem;
+  padding-right: 0.75rem;
 }
 
 /* Affiliation in parentheses */
@@ -274,9 +274,18 @@ article thead tr:first-child:empty {
   margin-left: 0.25rem;
 }
 
+@media (max-width: 640px) {
+  .schedule-page .affiliation {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.15rem;
+  }
+}
+
 /* Lightning talks: Title column */
 .schedule-page h3 + table td:last-child {
   color: #374151;
+  font-style: italic;
 }
 
 .schedule-page h3 + table td:last-child em {
