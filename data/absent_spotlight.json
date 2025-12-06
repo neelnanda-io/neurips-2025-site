@@ -32,5 +32,34 @@
       "Xipeng Qiu"
     ],
     "openreview": "https://openreview.net/forum?id=fuA9VP5lek"
+  },
+  {
+    "title": "Probing by Analogy: Decomposing Probes into Activations for Better Interpretability and Inter-Model Generalization",
+    "authors": [
+      "Patrick Leask",
+      "Noura Al Moubayed"
+    ],
+    "openreview": "https://openreview.net/forum?id=IhI1qGyk6S"
+  },
+  {
+    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
+    "authors": [
+      "Dat Minh Hong",
+      "Bruno Kacper Mlodozeniec",
+      "Runa Eschenhagen",
+      "Richard E. Turner"
+    ],
+    "openreview": "https://openreview.net/forum?id=383i8264it"
+  },
+  {
+    "title": "Towards a Mechanistic Understanding of Robustness in Finetuned Reasoning Models",
+    "authors": [
+      "Aashiq Muhamed",
+      "Xuandong Zhao",
+      "Mona T. Diab",
+      "Virginia Smith",
+      "Dawn Song"
+    ],
+    "openreview": "https://openreview.net/forum?id=rqe4zQCURe"
   }
 ]

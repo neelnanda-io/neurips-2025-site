@@ -176,13 +176,5 @@
       "Dawn Song"
     ],
     "openreview": "https://openreview.net/forum?id=Q7gk6lvqSj"
-  },
-  {
-    "title": "Probing by Analogy: Decomposing Probes into Activations for Better Interpretability and Inter-Model Generalization",
-    "authors": [
-      "Patrick Leask",
-      "Noura Al Moubayed"
-    ],
-    "openreview": "https://openreview.net/forum?id=IhI1qGyk6S"
   }
 ]
