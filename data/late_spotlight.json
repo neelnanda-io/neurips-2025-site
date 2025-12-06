@@ -1,15 +1,5 @@
 [
   {
-    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
-    "authors": [
-      "Dat Minh Hong",
-      "Bruno Kacper Mlodozeniec",
-      "Runa Eschenhagen",
-      "Richard E. Turner"
-    ],
-    "openreview": "https://openreview.net/forum?id=383i8264it"
-  },
-  {
     "title": "Dense SAE Latents Are Features, Not Bugs",
     "authors": [
       "Xiaoqing Sun",
@@ -179,16 +169,5 @@
       "Eric Wong"
     ],
     "openreview": "https://openreview.net/forum?id=5sSZn0SGGO"
-  },
-  {
-    "title": "Towards a Mechanistic Understanding of Robustness in Finetuned Reasoning Models",
-    "authors": [
-      "Aashiq Muhamed",
-      "Xuandong Zhao",
-      "Mona T. Diab",
-      "Virginia Smith",
-      "Dawn Song"
-    ],
-    "openreview": "https://openreview.net/forum?id=rqe4zQCURe"
   }
 ]
