@@ -30,7 +30,7 @@ Example: `![Chris Olah speaking](chrisolah-talk.jpg)`
 
 ### Option 5: Side-by-Side Images with Caption
 ```
-[IMAGE-PAIR: conference-pic.jpg | rooftop-pic.jpg | The first Mechanistic Interpretability Workshop (ICML 2024)]
+[IMAGE-PAIR: conference-pic.jpg | rooftop-pic.jpg | The first Mechanistic Interpretability Workshop (ICML 2024).]
 ```
 This creates two images side by side with a centered caption below
 

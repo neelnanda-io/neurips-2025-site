@@ -1,54 +1,61 @@
 {{ define "title" }}Mechanistic Interpretability Workshop at NeurIPS 2025{{ end }}
 
 {{ define "main" }}
-<div class="workshop-header">
-  <h1 class="fade-in">Mechanistic Interpretability Workshop at NeurIPS 2025</h1>
-  <h2 class="fade-in">Sunday December 7, 2025 • Upper Level Room 30A-E • San Diego Convention Centre, California</h2>
+<div class="hero">
+  <img class="hero-curve hero-curve-left" src="" alt="" />
+  <img class="hero-curve hero-curve-right" src="" alt="" />
   
-  <!-- Quick Navigation - Easy access on day-of -->
-  <nav class="quick-nav fade-in">
-    <a href="/schedule/" class="quick-nav-btn">
-      <span class="quick-nav-icon">📅</span>
-      <span class="quick-nav-label">Schedule</span>
-    </a>
-    <a href="/posters/" class="quick-nav-btn">
-      <span class="quick-nav-icon">📄</span>
-      <span class="quick-nav-label">Accepted Posters</span>
-    </a>
-  </nav>
+  <div class="hero-content">
+    <h1>Mechanistic Interpretability <span class="title-workshop">Workshop</span></h1>
+    <p class="hero-subtitle">NeurIPS 2025</p>
+    <p class="hero-details">
+      Sunday, December 7, 2025<br>
+      San Diego Convention Centre · Room 30A-E
+    </p>
+  </div>
+  
+  <!-- Mobile: row of all four -->
+  <div class="curve-row-mobile">
+    <img src="/img/curve0_final_trans.png" alt="" />
+    <img src="/img/curve1_final_trans.png" alt="" />
+    <img src="/img/curve2_final_trans.png" alt="" />
+    <img src="/img/curve3_final_trans.png" alt="" />
+  </div>
+  
 </div>
 
-<!-- Signup Box -->
-<div class="embedded-signup fade-in">
-  <form action="https://buttondown.com/api/emails/embed-subscribe/mechinterpworkshop" method="post" target="popupwindow"
-    onsubmit="window.open('https://buttondown.com/mechinterpworkshop', 'popupwindow')"
-    class="embeddable-buttondown-form">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <input type="submit" value="Subscribe for updates" />
-  </form>
-</div>
+<script>
+(function() {
+  const curves = ['/img/curve0_final_trans.png', '/img/curve1_final_trans.png', '/img/curve2_final_trans.png', '/img/curve3_final_trans.png'];
+  const shuffled = curves.sort(() => Math.random() - 0.5);
+  document.querySelector('.hero-curve-left').src = shuffled[0];
+  document.querySelector('.hero-curve-right').src = shuffled[1];
+})();
+</script>
 
-<main class="fade-in">
-  <!-- Main content from Google Docs -->
-  <section>
+<nav class="main-nav">
+  <a href="/schedule/" class="nav-card">
+    <span class="nav-card-title">Schedule</span>
+    <span class="nav-card-desc">Full program & lightning talks</span>
+  </a>
+  <a href="/posters/" class="nav-card">
+    <span class="nav-card-title">Accepted Posters</span>
+    <span class="nav-card-desc">Spotlight & poster presentations</span>
+  </a>
+</nav>
+
+<main class="home-content">
+  <section class="intro">
     {{ .Content }}
   </section>
 
-  <!-- Conference Photos -->
-  <div class="image-pair">
-    <img src="/img/conference-pic.jpg" alt="Workshop photo 1">
-    <img src="/img/rooftop-pic.jpg" alt="Workshop photo 2">
-  </div>
-  <p class="image-caption">The first Mechanistic Interpretability Workshop (ICML 2024)</p>
-
-  <!-- Speakers Section -->
-  <section class="embedded-speakers">
+  <section class="speakers-section">
     <h2>Keynote Speakers</h2>
-    <div class="speakers">
+    <div class="speakers-grid">
       {{ range .Site.Data.speakers.speakers }}
-      <div class="speaker">
+      <div class="speaker-card">
         <img src="/img/{{ .image }}" alt="{{ .name }}" />
-        <div>
+        <div class="speaker-info">
           <h3>{{ if .website }}<a href="{{ .website }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
           <p>{{ .affiliation }}</p>
         </div>
@@ -57,29 +64,21 @@
     </div>
   </section>
 
-  <!-- Extra content from Google Docs (if exists) -->
-  {{ if .Site.Data.extra_content }}
-  <section class="extra-content">
-    {{ .Site.Data.extra_content.content | markdownify }}
-  </section>
-  {{ end }}
-
-  <!-- Schedule Section -->
-  <section class="embedded-schedule">
-    {{ $schedulePage := .Site.GetPage "/schedule" }}
-    {{ if $schedulePage }}
-        {{ .Render "schedule" }}
-    {{ end }}
+  <section class="photos-section">
+    <div class="photo-grid">
+      <img src="/img/conference-pic.jpg" alt="ICML 2024 Workshop">
+      <img src="/img/rooftop-pic.jpg" alt="ICML 2024 Social">
+    </div>
+    <p class="photo-caption">The first Mechanistic Interpretability Workshop (ICML 2024).</p>
   </section>
 
-  <!-- Organizers Section -->
-  <section class="embedded-organizers">
+  <section class="organizers-section">
     <h2>Organizing Committee</h2>
-    <div class="organizers speakers">
+    <div class="organizers-grid">
       {{ range .Site.Data.organizers.organizers }}
-      <div class="speaker">
+      <div class="organizer-card">
         <img src="/img/{{ .image }}" alt="{{ .name }}" />
-        <div>
+        <div class="organizer-info">
           <h3>{{ if .website }}<a href="{{ .website }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
           <p>{{ .affiliation }}</p>
         </div>
@@ -88,11 +87,20 @@
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:neurips2025@mechinterpworkshop.com">neurips2025@mechinterpworkshop.com</a></p>
+  <section class="contact-section">
+    <p>Questions? Email <a href="mailto:neurips2025@mechinterpworkshop.com">neurips2025@mechinterpworkshop.com</a></p>
+  </section>
+
+  <section class="curve-faq">
+    <div class="curve-faq-content">
+      <div class="curve-faq-image">
+        <img src="/img/curve1_final_trans.png" alt="Curve detector visualization" />
+      </div>
+      <div class="curve-faq-text">
+        <h3>What are those beautiful rainbow flower things?</h3>
+        <p>These are visualizations of "curve detector" neurons from early mechanistic interpretability research. Learn more in the <a href="https://distill.pub/2020/circuits/curve-detectors/">Curve Detectors</a> article on Distill.</p>
+      </div>
+    </div>
   </section>
 </main>
-
-<script src="/js/schedule.js"></script>
 {{ end }}

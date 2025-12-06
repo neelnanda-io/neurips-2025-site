@@ -13,7 +13,7 @@ Chris Olah is a founder of the field of mechanistic interpretability and current
 Been Kim is a researcher at Google DeepMind who has spent more than 15 years doing interpretability work.
 
 ### Sarah Schwettmann
-**Affiliation:** Co-founder of Transluce
+**Affiliation:** Co-founder, Transluce
 
 Sarah Schwettmann is a co-founder of Transluce, working on making neural networks more interpretable.
 
