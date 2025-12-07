@@ -5,6 +5,14 @@
   <article>
     <h1>Poster Session 2 <span class="session-time">(2:00pm–3:00pm)</span></h1>
 
+    <!-- Download/Copy buttons -->
+    <div class="paper-list-actions">
+      <span class="action-label">Get the full list of papers for an LLM prompt:</span>
+      <button class="action-btn" onclick="downloadPaperList()">Download</button>
+      <button class="action-btn" onclick="copyPaperList()">Copy to clipboard</button>
+      <span class="copy-feedback" id="copy-feedback"></span>
+    </div>
+
     {{ $categories := slice 
       "Circuits and Reverse Engineering"
       "Features, Superposition, and SAEs"
@@ -221,6 +229,105 @@
   line-height: 1.6;
   color: var(--text-color, #333);
 }
+
+/* Paper list actions */
+.paper-list-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg, #f8f9fa);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.paper-list-actions .action-label {
+  font-size: 0.9rem;
+  color: var(--text-color, #333);
+  font-weight: 500;
+}
+
+.paper-list-actions .action-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  background: var(--accent-color, #4a90d9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.paper-list-actions .action-btn:hover {
+  background: #3a7bc8;
+}
+
+.paper-list-actions .copy-feedback {
+  font-size: 0.85rem;
+  color: #22c55e;
+  font-weight: 500;
+}
 </style>
+
+<script>
+const paperData = {{ .Site.Data.afternoon_poster_processed | jsonify | safeJS }};
+
+function formatPaperList(data) {
+  let output = "Poster Session 2 (2:00pm–3:00pm)\n";
+  output += "=".repeat(50) + "\n\n";
+  
+  const categories = [...new Set(data.map(p => p.category))].sort();
+  
+  for (const category of categories) {
+    const papers = data.filter(p => p.category === category).sort((a, b) => a.number - b.number);
+    output += category + "\n";
+    output += "-".repeat(category.length) + "\n\n";
+    
+    for (const paper of papers) {
+      const spotlight = paper.is_spotlight ? " [SPOTLIGHT]" : "";
+      const authors = Array.isArray(paper.authors) ? paper.authors.join(", ") : (paper.authors || "Authors TBD");
+      output += `${paper.number}. ${paper.title}${spotlight}\n`;
+      output += `   Authors: ${authors}\n`;
+      if (paper.openreview) {
+        output += `   OpenReview: ${paper.openreview}\n`;
+      }
+      if (paper.abstract) {
+        output += `   Abstract: ${paper.abstract.substring(0, 200)}${paper.abstract.length > 200 ? "..." : ""}\n`;
+      }
+      output += "\n";
+    }
+    output += "\n";
+  }
+  
+  return output;
+}
+
+function downloadPaperList() {
+  const text = formatPaperList(paperData);
+  const blob = new Blob([text], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'poster_session_2_papers.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function copyPaperList() {
+  const text = formatPaperList(paperData);
+  navigator.clipboard.writeText(text).then(() => {
+    const feedback = document.getElementById('copy-feedback');
+    feedback.textContent = '✓ Copied!';
+    setTimeout(() => { feedback.textContent = ''; }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy:', err);
+    alert('Failed to copy to clipboard');
+  });
+}
+</script>
 {{ end }}
 
