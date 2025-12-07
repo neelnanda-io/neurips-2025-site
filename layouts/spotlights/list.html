@@ -1,0 +1,245 @@
+{{ define "title" }}Spotlight Talks{{ end }}
+
+{{ define "main" }}
+<div class="container spotlights-page">
+  <article>
+    <h1>Spotlight Talks</h1>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <strong>Jump to:</strong>
+      <a href="#morning">Morning Session</a>
+      <a href="#afternoon">Afternoon Session</a>
+      <a href="#not-presenting">Not Presenting</a>
+    </nav>
+
+    <!-- MORNING SPOTLIGHTS -->
+    <section class="spotlight-section">
+      <h2 id="morning"><a href="#morning">Morning Session</a></h2>
+      <p class="session-note">Spotlight Talks 1 (10:30am–11:00am)</p>
+      {{ $morningSpotlights := where .Site.Data.early_poster_processed "is_spotlight" true }}
+      {{ if $morningSpotlights }}
+      <p class="posters-note">Numbered in presentation order, randomly selected.</p>
+      <div class="poster-list">
+        {{ range $index, $item := sort $morningSpotlights "number" }}
+        <div class="poster-item">
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <div class="poster-content">
+            <a href="{{ $item.openreview }}" class="poster-title">{{ $item.title }}</a>
+            <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
+            {{ if $item.abstract }}
+            <details class="abstract-toggle">
+              <summary>Abstract</summary>
+              <div class="abstract-content">{{ $item.abstract }}</div>
+            </details>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+
+    <!-- AFTERNOON SPOTLIGHTS -->
+    <section class="spotlight-section">
+      <h2 id="afternoon"><a href="#afternoon">Afternoon Session</a></h2>
+      <p class="session-note">Spotlight Talks 2 (1:30pm–2:00pm)</p>
+      {{ $afternoonSpotlights := where .Site.Data.afternoon_poster_processed "is_spotlight" true }}
+      {{ if $afternoonSpotlights }}
+      <p class="posters-note">Numbered in presentation order, randomly selected.</p>
+      <div class="poster-list">
+        {{ range $index, $item := sort $afternoonSpotlights "number" }}
+        <div class="poster-item">
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <div class="poster-content">
+            <a href="{{ $item.openreview }}" class="poster-title">{{ $item.title }}</a>
+            <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
+            {{ if $item.abstract }}
+            <details class="abstract-toggle">
+              <summary>Abstract</summary>
+              <div class="abstract-content">{{ $item.abstract }}</div>
+            </details>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+
+    <!-- NOT PRESENTING SPOTLIGHTS -->
+    <section class="spotlight-section">
+      <h2 id="not-presenting"><a href="#not-presenting">Not Presenting</a></h2>
+      <p class="session-note">These spotlight papers were accepted but the authors are unable to present in person.</p>
+      {{ if .Site.Data.absent_spotlight }}
+      <div class="poster-list">
+        {{ range $index, $item := .Site.Data.absent_spotlight }}
+        <div class="poster-item">
+          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <div class="poster-content">
+            <a href="{{ $item.openreview }}" class="poster-title">{{ $item.title }}</a>
+            <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
+            {{ if $item.abstract }}
+            <details class="abstract-toggle">
+              <summary>Abstract</summary>
+              <div class="abstract-content">{{ $item.abstract }}</div>
+            </details>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ else }}
+      <p class="no-items">No absent spotlight talks.</p>
+      {{ end }}
+    </section>
+
+  </article>
+</div>
+
+<style>
+/* Spotlights page styles */
+.spotlights-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Table of Contents */
+.spotlights-page .toc {
+  background: var(--toc-bg, #f0f4f8);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.spotlights-page .toc strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.spotlights-page .toc a {
+  display: block;
+  color: var(--link-color, #0066cc);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.2rem 0;
+}
+
+.spotlights-page .toc a:hover {
+  text-decoration: underline;
+}
+
+.spotlights-page .spotlight-section {
+  margin-bottom: 2.5rem;
+}
+
+.spotlights-page .spotlight-section h2 {
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--accent-color, #4a90d9);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color, #333);
+  scroll-margin-top: 5rem;
+}
+
+.spotlights-page .spotlight-section h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.spotlights-page .spotlight-section h2 a:hover {
+  color: var(--link-color, #0066cc);
+}
+
+.spotlights-page .session-note {
+  color: var(--muted-color, #666);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.spotlights-page .posters-note {
+  color: var(--muted-color, #888);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.spotlights-page .poster-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  background: var(--card-bg, #f8f9fa);
+}
+
+.spotlights-page .spotlight-number {
+  font-weight: bold;
+  min-width: 2rem;
+  color: var(--number-color, #666);
+}
+
+.spotlights-page .poster-content {
+  flex: 1;
+}
+
+.spotlights-page .poster-title {
+  font-weight: 600;
+  color: var(--link-color, #0066cc);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.spotlights-page .poster-title:hover {
+  text-decoration: underline;
+}
+
+.spotlights-page .authors {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted-color, #666);
+}
+
+.spotlights-page .no-items {
+  color: var(--muted-color, #888);
+  font-style: italic;
+}
+
+.spotlights-page .abstract-toggle {
+  margin-top: 0.5rem;
+}
+
+.spotlights-page .abstract-toggle summary {
+  cursor: pointer;
+  color: var(--link-color, #0066cc);
+  font-weight: 500;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.spotlights-page .abstract-toggle summary::before {
+  content: '▶';
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.spotlights-page .abstract-toggle[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.spotlights-page .abstract-toggle summary:hover {
+  text-decoration: underline;
+}
+
+.spotlights-page .abstract-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: var(--abstract-bg, #f0f4f8);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-color, #333);
+}
+</style>
+{{ end }}

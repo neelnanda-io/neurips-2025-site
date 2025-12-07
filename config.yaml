@@ -20,6 +20,15 @@ menu:
     - name: "Schedule"
       url: "/schedule/"
       weight: 2
-    - name: "Accepted Posters"
-      url: "/posters/"
+    - name: "Posters 1"
+      url: "/posters-1/"
       weight: 3
+    - name: "Posters 2"
+      url: "/posters-2/"
+      weight: 4
+    - name: "Spotlights"
+      url: "/spotlights/"
+      weight: 5
+    - name: "Not Presenting"
+      url: "/not-presenting/"
+      weight: 6

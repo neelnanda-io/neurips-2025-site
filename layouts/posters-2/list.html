@@ -1,0 +1,226 @@
+{{ define "title" }}Poster Session 2 (2:00pm–3:00pm){{ end }}
+
+{{ define "main" }}
+<div class="container posters-page">
+  <article>
+    <h1>Poster Session 2 <span class="session-time">(2:00pm–3:00pm)</span></h1>
+
+    {{ $categories := slice 
+      "Circuits and Reverse Engineering"
+      "Features, Superposition, and SAEs"
+      "Probing and Representation Engineering"
+      "Alignment, Safety, and Robustness"
+      "Reasoning Models"
+      "Multimodal Models"
+      "Miscellaneous, Tools, and Dynamics"
+    }}
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <strong>Jump to:</strong>
+      {{ range $categories }}
+        {{ $slug := . | urlize }}
+        <a href="#{{ $slug }}">{{ . }}</a>
+      {{ end }}
+    </nav>
+    
+    {{ if .Site.Data.afternoon_poster_processed }}
+      {{ $allPosters := .Site.Data.afternoon_poster_processed }}
+      {{ range $categories }}
+        {{ $category := . }}
+        {{ $slug := . | urlize }}
+        {{ $categoryPosters := where $allPosters "category" $category }}
+        {{ if $categoryPosters }}
+        <div class="category-section">
+          <h2 id="{{ $slug }}"><a href="#{{ $slug }}">{{ $category }}</a></h2>
+          <div class="poster-list">
+            {{ range sort $categoryPosters "number" }}
+            <div class="poster-item{{ if .is_spotlight }} spotlight{{ end }}">
+              <span class="poster-number">{{ .number }}.</span>
+              <div class="poster-content">
+                <div class="poster-title-line">
+                  {{ if .openreview }}
+                  <a href="{{ .openreview }}" class="poster-title">{{ .title }}</a>
+                  {{ else }}
+                  <span class="poster-title">{{ .title }}</span>
+                  {{ end }}
+                  {{ if .is_spotlight }}<span class="spotlight-badge">Spotlight</span>{{ end }}
+                </div>
+                <span class="authors">{{ if reflect.IsSlice .authors }}{{ delimit .authors ", " }}{{ else if .authors }}{{ .authors }}{{ else }}Authors TBD{{ end }}</span>
+                {{ if .abstract }}
+                <details class="abstract-toggle">
+                  <summary>Abstract</summary>
+                  <div class="abstract-content">{{ .abstract }}</div>
+                </details>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+  </article>
+</div>
+
+<style>
+/* Poster page specific styles */
+.posters-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.posters-page .session-time {
+  font-weight: 400;
+  color: var(--muted-color, #666);
+  font-size: 0.7em;
+}
+
+/* Table of Contents */
+.posters-page .toc {
+  background: var(--toc-bg, #f0f4f8);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.posters-page .toc strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.posters-page .toc a {
+  display: block;
+  color: var(--link-color, #0066cc);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.2rem 0;
+}
+
+.posters-page .toc a:hover {
+  text-decoration: underline;
+}
+
+.posters-page .category-section {
+  margin-bottom: 2.5rem;
+}
+
+.posters-page .category-section h2 {
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--accent-color, #4a90d9);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color, #333);
+  scroll-margin-top: 5rem;
+}
+
+.posters-page .category-section h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.posters-page .category-section h2 a:hover {
+  color: var(--link-color, #0066cc);
+}
+
+.posters-page .poster-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  background: var(--card-bg, #f8f9fa);
+}
+
+.posters-page .poster-item.spotlight {
+  border: 3px solid var(--spotlight-color, #f5a623);
+  background: var(--spotlight-bg, #fffbf0);
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.2);
+}
+
+.posters-page .poster-number {
+  font-weight: bold;
+  min-width: 2.5rem;
+  color: var(--number-color, #666);
+}
+
+.posters-page .poster-content {
+  flex: 1;
+}
+
+.posters-page .poster-title-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.posters-page .poster-title {
+  font-weight: 600;
+  color: var(--link-color, #0066cc);
+}
+
+.posters-page a.poster-title:hover {
+  text-decoration: underline;
+}
+
+.posters-page .spotlight-badge {
+  background: var(--spotlight-color, #f5a623);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.posters-page .authors {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted-color, #666);
+  margin-bottom: 0.5rem;
+}
+
+.posters-page .abstract-toggle {
+  margin-top: 0.5rem;
+}
+
+.posters-page .abstract-toggle summary {
+  cursor: pointer;
+  color: var(--link-color, #0066cc);
+  font-weight: 500;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.posters-page .abstract-toggle summary::before {
+  content: '▶';
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.posters-page .abstract-toggle[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.posters-page .abstract-toggle summary:hover {
+  text-decoration: underline;
+}
+
+.posters-page .abstract-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: var(--abstract-bg, #f0f4f8);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-color, #333);
+}
+</style>
+{{ end }}
+

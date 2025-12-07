@@ -165,6 +165,12 @@ body {
   padding: 0 1.5rem;
 }
 
+.main-nav.stacked {
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
 .nav-card {
   flex: 1;
   background: #111;
@@ -175,11 +181,24 @@ body {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.main-nav.stacked .nav-card {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 .nav-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   text-decoration: none;
   color: #fff;
+}
+
+.main-nav.stacked .nav-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .nav-card-title {

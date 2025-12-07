@@ -336,6 +336,16 @@
     "openreview": "https://openreview.net/forum?id=H5sbfvEbTh"
   },
   {
+    "title": "Compressed Computation is (probably) not Computation in Superposition",
+    "authors": [
+      "Jai Bhagat",
+      "Sara Molas-Medina",
+      "Giorgi Giglemiani",
+      "Stefan Heimersheim"
+    ],
+    "openreview": "https://openreview.net/forum?id=iVeOIeHDP1"
+  },
+  {
     "title": "Detecting and Characterizing Planning in Language Models",
     "authors": [
       "Jatin Nainani",
@@ -599,13 +609,6 @@
       "Peter Bloem"
     ],
     "openreview": "https://openreview.net/forum?id=gf29u4yLcK"
-  },
-  {
-    "title": "Interpretability at the Network Level: Prior-Guided Drift Diffusion for Neural Circuit Analysis",
-    "authors": [
-      "Tahereh Toosi"
-    ],
-    "openreview": "https://openreview.net/forum?id=vL28JhJDEM"
   },
   {
     "title": "Centroid Affinity: How Deep Networks Represent Features",

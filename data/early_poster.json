@@ -255,16 +255,6 @@
     "openreview": "https://openreview.net/forum?id=dqebPZUo2K"
   },
   {
-    "title": "Compressed Computation is (probably) not Computation in Superposition",
-    "authors": [
-      "Jai Bhagat",
-      "Sara Molas-Medina",
-      "Giorgi Giglemiani",
-      "Stefan Heimersheim"
-    ],
-    "openreview": "https://openreview.net/forum?id=iVeOIeHDP1"
-  },
-  {
     "title": "Rank-1 LoRAs Encode Interpretable Reasoning Signals",
     "authors": [
       "Jake Ward",
@@ -588,6 +578,13 @@
       "John Jingxuan Yang"
     ],
     "openreview": "https://openreview.net/forum?id=0Y0BC0ldOQ"
+  },
+  {
+    "title": "Interpretability at the Network Level: Prior-Guided Drift Diffusion for Neural Circuit Analysis",
+    "authors": [
+      "Tahereh Toosi"
+    ],
+    "openreview": "https://openreview.net/forum?id=vL28JhJDEM"
   },
   {
     "title": "Uncovering Object Localization Mechanisms in VLMs",
