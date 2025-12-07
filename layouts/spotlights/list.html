@@ -21,9 +21,9 @@
       {{ if $morningSpotlights }}
       <p class="posters-note">Numbered in presentation order, randomly selected.</p>
       <div class="poster-list">
-        {{ range $index, $item := sort $morningSpotlights "number" }}
+        {{ range $item := sort $morningSpotlights "presentation_order" }}
         <div class="poster-item">
-          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <span class="spotlight-number">{{ $item.presentation_order }}.</span>
           <div class="poster-content">
             <a href="{{ $item.openreview }}" class="poster-title">{{ $item.title }}</a>
             <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>
@@ -48,9 +48,9 @@
       {{ if $afternoonSpotlights }}
       <p class="posters-note">Numbered in presentation order, randomly selected.</p>
       <div class="poster-list">
-        {{ range $index, $item := sort $afternoonSpotlights "number" }}
+        {{ range $item := sort $afternoonSpotlights "presentation_order" }}
         <div class="poster-item">
-          <span class="spotlight-number">{{ add $index 1 }}.</span>
+          <span class="spotlight-number">{{ $item.presentation_order }}.</span>
           <div class="poster-content">
             <a href="{{ $item.openreview }}" class="poster-title">{{ $item.title }}</a>
             <span class="authors">{{ if reflect.IsSlice $item.authors }}{{ delimit $item.authors ", " }}{{ else }}{{ $item.authors }}{{ end }}</span>

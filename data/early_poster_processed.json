@@ -11,7 +11,8 @@
       "Yossi Gandelsman",
       "Yonatan Belinkov"
     ],
-    "openreview": "https://openreview.net/forum?id=QrImAlagCG"
+    "openreview": "https://openreview.net/forum?id=QrImAlagCG",
+    "presentation_order": 1
   },
   {
     "number": 2,
@@ -40,7 +41,8 @@
       "Joan Bruna",
       "Alberto Bietti"
     ],
-    "openreview": "https://openreview.net/forum?id=KDK99BgmPe"
+    "openreview": "https://openreview.net/forum?id=KDK99BgmPe",
+    "presentation_order": 2
   },
   {
     "number": 4,
@@ -65,7 +67,8 @@
       "Jack Lindsey",
       "Emmanuel Ameisen"
     ],
-    "openreview": "https://openreview.net/forum?id=MqQkMtS6ry"
+    "openreview": "https://openreview.net/forum?id=MqQkMtS6ry",
+    "presentation_order": 3
   },
   {
     "number": 6,
@@ -164,7 +167,8 @@
       "Ashkan Khakzar",
       "Neel Nanda"
     ],
-    "openreview": "https://openreview.net/forum?id=5PKPy82sWN"
+    "openreview": "https://openreview.net/forum?id=5PKPy82sWN",
+    "presentation_order": 4
   },
   {
     "number": 13,
@@ -178,7 +182,8 @@
       "Adam Gleave",
       "Adrià Garriga-Alonso"
     ],
-    "openreview": "https://openreview.net/forum?id=z025sIH4Nq"
+    "openreview": "https://openreview.net/forum?id=z025sIH4Nq",
+    "presentation_order": 16
   },
   {
     "number": 14,
@@ -206,7 +211,8 @@
       "Auke Ijspeert",
       "Guillaume Bellegarda"
     ],
-    "openreview": "https://openreview.net/forum?id=JmjqTi4FDF"
+    "openreview": "https://openreview.net/forum?id=JmjqTi4FDF",
+    "presentation_order": 7
   },
   {
     "number": 16,
@@ -270,7 +276,8 @@
       "Bilal Chughtai",
       "Neel Nanda"
     ],
-    "openreview": "https://openreview.net/forum?id=CdiCNA1Y2R"
+    "openreview": "https://openreview.net/forum?id=CdiCNA1Y2R",
+    "presentation_order": 10
   },
   {
     "number": 21,
@@ -370,7 +377,8 @@
     "authors": [
       "Michał Brzozowski"
     ],
-    "openreview": "https://openreview.net/forum?id=DbXKjT00yK"
+    "openreview": "https://openreview.net/forum?id=DbXKjT00yK",
+    "presentation_order": 15
   },
   {
     "number": 29,
@@ -384,7 +392,8 @@
       "Melih Barsbey",
       "Tolga Birdal"
     ],
-    "openreview": "https://openreview.net/forum?id=LqI52GG2Ss"
+    "openreview": "https://openreview.net/forum?id=LqI52GG2Ss",
+    "presentation_order": 6
   },
   {
     "number": 30,
@@ -427,7 +436,8 @@
       "Katherine Tian",
       "Nathan Zixia Hu"
     ],
-    "openreview": "https://openreview.net/forum?id=0bkTiS9Isw"
+    "openreview": "https://openreview.net/forum?id=0bkTiS9Isw",
+    "presentation_order": 9
   },
   {
     "number": 33,
@@ -440,7 +450,8 @@
       "Shiyang Lai",
       "Dawn Song"
     ],
-    "openreview": "https://openreview.net/forum?id=Q7gk6lvqSj"
+    "openreview": "https://openreview.net/forum?id=Q7gk6lvqSj",
+    "presentation_order": 18
   },
   {
     "number": 34,
@@ -612,7 +623,8 @@
       "Senthooran Rajamanoharan",
       "Neel Nanda"
     ],
-    "openreview": "https://openreview.net/forum?id=kx7gBNqQdk"
+    "openreview": "https://openreview.net/forum?id=kx7gBNqQdk",
+    "presentation_order": 5
   },
   {
     "number": 47,
@@ -651,7 +663,8 @@
       "Rohan Gupta",
       "Erik Jenner"
     ],
-    "openreview": "https://openreview.net/forum?id=YT97yOoD4x"
+    "openreview": "https://openreview.net/forum?id=YT97yOoD4x",
+    "presentation_order": 14
   },
   {
     "number": 50,
@@ -667,7 +680,8 @@
       "Ashwinee Panda",
       "Aishwarya Balwani"
     ],
-    "openreview": "https://openreview.net/forum?id=Dk5thCkmWJ"
+    "openreview": "https://openreview.net/forum?id=Dk5thCkmWJ",
+    "presentation_order": 17
   },
   {
     "number": 51,
@@ -761,7 +775,8 @@
       "Neel Nanda",
       "Arthur Conmy"
     ],
-    "openreview": "https://openreview.net/forum?id=VnSlfeRCaU"
+    "openreview": "https://openreview.net/forum?id=VnSlfeRCaU",
+    "presentation_order": 11
   },
   {
     "number": 57,
@@ -790,7 +805,8 @@
       "Stephanie C.Y. Chan",
       "Andrew Kyle Lampinen"
     ],
-    "openreview": "https://openreview.net/forum?id=KC13tBPbQg"
+    "openreview": "https://openreview.net/forum?id=KC13tBPbQg",
+    "presentation_order": 8
   },
   {
     "number": 59,
@@ -1036,7 +1052,8 @@
       "Dan Jurafsky",
       "Christopher Potts"
     ],
-    "openreview": "https://openreview.net/forum?id=F62dVLJ8wk"
+    "openreview": "https://openreview.net/forum?id=F62dVLJ8wk",
+    "presentation_order": 12
   },
   {
     "number": 76,
@@ -1050,7 +1067,8 @@
       "Igor Shilov",
       "Rohit Gandikota"
     ],
-    "openreview": "https://openreview.net/forum?id=JTnYGSxN5k"
+    "openreview": "https://openreview.net/forum?id=JTnYGSxN5k",
+    "presentation_order": 13
   },
   {
     "number": 77,
