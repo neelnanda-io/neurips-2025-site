@@ -42,16 +42,6 @@
     "openreview": "https://openreview.net/forum?id=IhI1qGyk6S"
   },
   {
-    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
-    "authors": [
-      "Dat Minh Hong",
-      "Bruno Kacper Mlodozeniec",
-      "Runa Eschenhagen",
-      "Richard E. Turner"
-    ],
-    "openreview": "https://openreview.net/forum?id=383i8264it"
-  },
-  {
     "title": "Towards a Mechanistic Understanding of Robustness in Finetuned Reasoning Models",
     "authors": [
       "Aashiq Muhamed",
