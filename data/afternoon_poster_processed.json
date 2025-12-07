@@ -227,7 +227,7 @@
       "Kun Zhang"
     ],
     "openreview": "https://openreview.net/forum?id=d9ACURK6bI",
-    "presentation_order": 11
+    "presentation_order": 12
   },
   {
     "number": 17,
@@ -243,7 +243,7 @@
       "Neel Nanda"
     ],
     "openreview": "https://openreview.net/forum?id=mqJbhBMFm5",
-    "presentation_order": 12
+    "presentation_order": 13
   },
   {
     "number": 18,
@@ -270,7 +270,7 @@
       "Ward Gauderis"
     ],
     "openreview": "https://openreview.net/forum?id=ybJXIh4vcF",
-    "presentation_order": 13
+    "presentation_order": 14
   },
   {
     "number": 20,
@@ -301,7 +301,7 @@
       "Max Tegmark"
     ],
     "openreview": "https://openreview.net/forum?id=R65Ez0Uo8h",
-    "presentation_order": 1
+    "presentation_order": 2
   },
   {
     "number": 22,
@@ -383,7 +383,7 @@
       "Trenton Bricken"
     ],
     "openreview": "https://openreview.net/forum?id=ZB84SvrZB8",
-    "presentation_order": 7
+    "presentation_order": 8
   },
   {
     "number": 28,
@@ -399,7 +399,7 @@
       "Pedro A. M. Mediano"
     ],
     "openreview": "https://openreview.net/forum?id=dGHlIOcQtX",
-    "presentation_order": 15
+    "presentation_order": 16
   },
   {
     "number": 29,
@@ -468,7 +468,7 @@
       "Tsui-Wei Weng"
     ],
     "openreview": "https://openreview.net/forum?id=ungnJ4O0AD",
-    "presentation_order": 9
+    "presentation_order": 10
   },
   {
     "number": 34,
@@ -493,7 +493,7 @@
       "Samuel Marks"
     ],
     "openreview": "https://openreview.net/forum?id=OEDW0lmJTv",
-    "presentation_order": 2
+    "presentation_order": 3
   },
   {
     "number": 36,
@@ -535,7 +535,7 @@
       "Eric Wong"
     ],
     "openreview": "https://openreview.net/forum?id=xDyJVMnab8",
-    "presentation_order": 4
+    "presentation_order": 5
   },
   {
     "number": 40,
@@ -639,7 +639,7 @@
       "Marek Masiak"
     ],
     "openreview": "https://openreview.net/forum?id=CLg5P5m4E1",
-    "presentation_order": 8
+    "presentation_order": 9
   },
   {
     "number": 47,
@@ -729,7 +729,7 @@
       "Clement Neo"
     ],
     "openreview": "https://openreview.net/forum?id=CoaaltVlx7",
-    "presentation_order": 14
+    "presentation_order": 15
   },
   {
     "number": 53,
@@ -802,7 +802,7 @@
       "Neel Nanda"
     ],
     "openreview": "https://openreview.net/forum?id=pxaCoKZWVf",
-    "presentation_order": 3
+    "presentation_order": 4
   },
   {
     "number": 57,
@@ -1005,7 +1005,7 @@
       "Cole Blondin"
     ],
     "openreview": "https://openreview.net/forum?id=EV30qkZXrR",
-    "presentation_order": 6
+    "presentation_order": 7
   },
   {
     "number": 71,
@@ -1076,7 +1076,7 @@
       "Seong Jae Hwang"
     ],
     "openreview": "https://openreview.net/forum?id=vNnaKujGEw",
-    "presentation_order": 10
+    "presentation_order": 11
   },
   {
     "number": 76,
@@ -1164,7 +1164,7 @@
       "Eric Wong"
     ],
     "openreview": "https://openreview.net/forum?id=5sSZn0SGGO",
-    "presentation_order": 16
+    "presentation_order": 17
   },
   {
     "number": 82,
@@ -1192,7 +1192,7 @@
       "Andrew Lee"
     ],
     "openreview": "https://openreview.net/forum?id=ldMcQn7Z2Q",
-    "presentation_order": 5
+    "presentation_order": 6
   },
   {
     "number": 84,
@@ -1246,5 +1246,20 @@
       "Clément Dumas"
     ],
     "openreview": "https://openreview.net/forum?id=ACic3VDIHp"
+  },
+  {
+    "number": 88,
+    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
+    "abstract": "Influence functions offer a principled way to trace model predictions back to training data, but their use in deep learning is hampered by the need to invert a large, ill-conditioned Hessian matrix. Approximations such as Generalised Gauss-Newton (GGN) and Kronecker-Factored Approximate Curvature (K-FAC) have been proposed to make influence computation tractable, yet it remains unclear how the departure from exactness impacts data attribution performance. Critically, given the restricted regime in which influence functions are derived, it's not necessarily clear better Hessian approximations should even lead to better data attribution performance. In this paper, we investigate the effect of Hessian approximation quality on influence-function attributions in a controlled classification setting. Our experiments show that better Hessian approximations consistently yield better influence score quality, offering justification for recent research efforts towards that end. We further decompose the approximation steps for recent Hessian approximation methods and evaluate each step's influence on attribution accuracy. Notably, the mismatch between K-FAC eigenvalues and GGN/EK-FAC eigenvalues accounts for the majority of the error and influence loss, whereas the GGN substitution and block-diagonal assumption incur smaller penalties. These findings highlight which approximations are most critical, guiding future efforts to balance computational tractability and attribution accuracy.",
+    "category": "Miscellaneous, Tools, and Dynamics",
+    "is_spotlight": true,
+    "authors": [
+      "Dat Minh Hong",
+      "Bruno Kacper Mlodozeniec",
+      "Runa Eschenhagen",
+      "Richard E. Turner"
+    ],
+    "openreview": "https://openreview.net/forum?id=383i8264it",
+    "presentation_order": 1
   }
 ]

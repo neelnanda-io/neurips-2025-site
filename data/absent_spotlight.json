@@ -1,16 +1,5 @@
 [
   {
-    "title": "Better Hessians Matter: Studying the Impact of Curvature Approximations in Influence Functions",
-    "authors": [
-      "Dat Minh Hong",
-      "Bruno Kacper Mlodozeniec",
-      "Runa Eschenhagen",
-      "Richard E. Turner"
-    ],
-    "openreview": "https://openreview.net/forum?id=383i8264it",
-    "abstract": "Influence functions offer a principled way to trace model predictions back to training data, but their use in deep learning is hampered by the need to invert a large, ill-conditioned Hessian matrix. Approximations such as Generalised Gauss-Newton (GGN) and Kronecker-Factored Approximate Curvature (K-FAC) have been proposed to make influence computation tractable, yet it remains unclear how the departure from exactness impacts data attribution performance. Critically, given the restricted regime in which influence functions are derived, it's not necessarily clear better Hessian approximations should even lead to better data attribution performance. In this paper, we investigate the effect of Hessian approximation quality on influence-function attributions in a controlled classification setting. Our experiments show that better Hessian approximations consistently yield better influence score quality, offering justification for recent research efforts towards that end. We further decompose the approximation steps for recent Hessian approximation methods and evaluate each step's influence on attribution accuracy. Notably, the mismatch between K-FAC eigenvalues and GGN/EK-FAC eigenvalues accounts for the majority of the error and influence loss, whereas the GGN substitution and block-diagonal assumption incur smaller penalties. These findings highlight which approximations are most critical, guiding future efforts to balance computational tractability and attribution accuracy."
-  },
-  {
     "title": "Mechanistic Interpretability as Statistical Estimation: A Variance Analysis of EAP-IG",
     "authors": [
       "Maxime Méloux",
