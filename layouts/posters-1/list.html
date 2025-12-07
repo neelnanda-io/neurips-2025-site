@@ -1,9 +1,9 @@
-{{ define "title" }}Poster Session 1 (11:30am–12:30pm){{ end }}
+{{ define "title" }}Poster Session 1 (11:00am–12:30pm){{ end }}
 
 {{ define "main" }}
 <div class="container posters-page">
   <article>
-    <h1>Poster Session 1 <span class="session-time">(11:30am–12:30pm)</span></h1>
+    <h1>Poster Session 1 <span class="session-time">(11:00am–12:30pm)</span></h1>
 
     <!-- Download/Copy buttons -->
     <div class="paper-list-actions">
@@ -276,7 +276,7 @@
 const paperData = {{ .Site.Data.early_poster_processed | jsonify | safeJS }};
 
 function formatPaperList(data) {
-  let output = "Poster Session 1 (11:30am–12:30pm)\n";
+  let output = "Poster Session 1 (11:00am–12:30pm)\n";
   output += "=".repeat(50) + "\n\n";
   
   const categories = [...new Set(data.map(p => p.category))].sort();

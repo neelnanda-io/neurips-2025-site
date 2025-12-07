@@ -20,15 +20,21 @@ menu:
     - name: "Schedule"
       url: "/schedule/"
       weight: 2
-    - name: "Posters 1"
-      url: "/posters-1/"
+    - identifier: "posters"
+      name: "Posters"
       weight: 3
-    - name: "Posters 2"
+    - name: "Session 1"
+      parent: "posters"
+      url: "/posters-1/"
+      weight: 1
+    - name: "Session 2"
+      parent: "posters"
       url: "/posters-2/"
-      weight: 4
+      weight: 2
+    - name: "Remote"
+      parent: "posters"
+      url: "/not-presenting/"
+      weight: 3
     - name: "Spotlights"
       url: "/spotlights/"
-      weight: 5
-    - name: "Not Presenting"
-      url: "/not-presenting/"
-      weight: 6
+      weight: 4
