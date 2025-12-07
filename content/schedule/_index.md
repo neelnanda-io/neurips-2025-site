@@ -29,8 +29,8 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 |---------|-------|
 | Ekdeep Singh Lubana <span class="affiliation">(Goodfire)</span> | *What is the Right Basis for Computation?* |
 | Adam Belfki <span class="affiliation">(NDIF / Northeastern University)</span> | *Infrastructure for Your Interpretability Research* |
-| Rowan Wang <span class="affiliation">(Anthropic)</span> | *Just Ask the Model: Interpreting Models with Clever Prompting* |
 | Josh Engels <span class="affiliation">(Google DeepMind)</span> | *A Pragmatic Vision for Interpretability* |
+| Rowan Wang <span class="affiliation">(Anthropic)</span> | *Just Ask the Model: Interpreting Models with Clever Prompting* |
 | Sheridan Feucht <span class="affiliation">(Northeastern University)</span> | *Equifinality: There's Often Multiple Explanations* |
 | Uzay Macar <span class="affiliation">(Anthropic Fellows)</span> | *Reasoning Model Interpretability Needs New Techniques* |
 | Leo Gao <span class="affiliation">(OpenAI)</span> | *An Ambitious Vision for Interpretability* |
