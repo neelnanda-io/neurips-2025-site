@@ -201,6 +201,39 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* Feedback CTA */
+.feedback-cta {
+  text-align: center;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #e85d04 0%, #dc2f02 100%);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(220, 47, 2, 0.3);
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 47, 2, 0.4);
+  text-decoration: none;
+  color: #fff;
+}
+
+.feedback-btn:active {
+  transform: translateY(0);
+}
+
 /* Signup Banner */
 .signup-banner {
   max-width: 400px;
