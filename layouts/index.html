@@ -39,6 +39,18 @@
   <a href="/posters-2/" class="nav-card">Poster Session 2 (1:30pm–3:00pm)</a>
 </nav>
 
+<div class="signup-banner">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/mechinterpworkshop"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/mechinterpworkshop', 'popupwindow')"
+        class="signup-form">
+    <span class="signup-label">Get workshop updates</span>
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
 <main class="home-content">
   <section class="intro">
     {{ .Content }}
