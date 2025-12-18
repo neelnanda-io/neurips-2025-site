@@ -27,14 +27,14 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 
 | Speaker | Title |
 |---------|-------|
-| Ekdeep Singh Lubana <span class="affiliation">(Goodfire)</span> | *What is the Right Basis for Computation?* |
-| Adam Belfki <span class="affiliation">(NDIF / Northeastern University)</span> | *Infrastructure for Your Interpretability Research* |
-| Josh Engels <span class="affiliation">(Google DeepMind)</span> | *A Pragmatic Vision for Interpretability* |
-| Rowan Wang <span class="affiliation">(Anthropic)</span> | *Just Ask the Model: Interpreting Models with Clever Prompting* |
-| Sheridan Feucht <span class="affiliation">(Northeastern University)</span> | *Equifinality: There's Often Multiple Explanations* |
-| Uzay Macar <span class="affiliation">(Anthropic Fellows)</span> | *Reasoning Model Interpretability Needs New Techniques* |
+| Ekdeep Singh Lubana <span class="affiliation">(Goodfire)</span> | *What is the Right Basis for Computation?* ([slides](https://docs.google.com/presentation/d/113O3P30gYmBzSkpUaovpqS5jiECbKSO-51G1IV8C4w8/edit?usp=sharing)) |
+| Adam Belfki <span class="affiliation">(NDIF / Northeastern University)</span> | *Infrastructure for Your Interpretability Research* ([slides](https://docs.google.com/presentation/d/1rMHLso3bq1dyrScyvFvJHzjBgfQrN-o2qDUaF4QzPPE/edit?usp=sharing)) |
+| Josh Engels <span class="affiliation">(Google DeepMind)</span> | *A Pragmatic Vision for Interpretability* ([slides](https://docs.google.com/presentation/d/1JmCvSiHZkr6ykX3WDEFHGHTGNpoSAR03x057cWhuuyA/edit?usp=sharing)) |
+| Rowan Wang <span class="affiliation">(Anthropic)</span> | *Just Ask the Model: Interpreting Models with Clever Prompting* ([slides](https://docs.google.com/presentation/d/1A0-EU-as_-81143IaBXjNAhA0DWK0Bd5xJe4H1xrsdE/edit?usp=sharing)) |
+| Sheridan Feucht <span class="affiliation">(Northeastern University)</span> | *Equifinality: There's Often Multiple Explanations* ([slides](https://docs.google.com/presentation/d/1K8r2zD1lmFQGirQJCGEY8r_S8qYB5zK4X40BJiVZlTI/edit?usp=sharing)) |
+| Uzay Macar <span class="affiliation">(Anthropic Fellows)</span> | *Reasoning Model Interpretability Needs New Techniques* ([slides](https://docs.google.com/presentation/d/1k-OdiE5Ifaj4Qi5iiTOjrs2xzcBDWHRiyVTWo3V5zgw/edit?usp=sharing)) |
 | Leo Gao <span class="affiliation">(OpenAI)</span> | *An Ambitious Vision for Interpretability* |
-| Satvik Golechha & Sid Black <span class="affiliation">(UK AISI)</span> | *Auditing Games for Sandbagging* |
-| Bartosz Cywinski <span class="affiliation">(MATS)</span> | *How Model Organisms Can Enable Useful Interpretability Studies* |
-| David Bau <span class="affiliation">(Northeastern University)</span> | *In Defense of Curiosity* |
+| Satvik Golechha & Sid Black <span class="affiliation">(UK AISI)</span> | *Auditing Games for Sandbagging* ([slides](https://docs.google.com/presentation/d/1sgM8Y9kl6gfLWiBFCZ0l1yxTDnjYVM7kcfwnH9Yd1lo/edit?usp=sharing)) |
+| Bartosz Cywinski <span class="affiliation">(MATS)</span> | *How Model Organisms Can Enable Useful Interpretability Studies* ([slides](https://docs.google.com/presentation/d/1eF_u2oWSlICljzRNKLYSa8IZonkYhVgWbzGuuhxoghY/edit?usp=sharing)) |
+| David Bau <span class="affiliation">(Northeastern University)</span> | *In Defense of Curiosity* ([slides](https://docs.google.com/presentation/d/1v_b9fLqrvWap3Gas8fVhrPn8tbzQttxXhFrWv2PS0vw/edit?usp=sharing)) |
 | Jake Mendel <span class="affiliation">(Coefficient Giving)</span> | *How to Get Funding for Your Interpretability Research* |
