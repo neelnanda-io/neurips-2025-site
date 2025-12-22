@@ -37,4 +37,4 @@ The workshop will be held on **Sunday, December 7, 2025** at the NeurIPS venue i
 | Satvik Golechha & Sid Black <span class="affiliation">(UK AISI)</span> | *Auditing Games for Sandbagging* ([slides](https://docs.google.com/presentation/d/1sgM8Y9kl6gfLWiBFCZ0l1yxTDnjYVM7kcfwnH9Yd1lo/edit?usp=sharing)) |
 | Bartosz Cywinski <span class="affiliation">(MATS)</span> | *How Model Organisms Can Enable Useful Interpretability Studies* ([slides](https://docs.google.com/presentation/d/1eF_u2oWSlICljzRNKLYSa8IZonkYhVgWbzGuuhxoghY/edit?usp=sharing)) |
 | David Bau <span class="affiliation">(Northeastern University)</span> | *In Defense of Curiosity* ([slides](https://docs.google.com/presentation/d/1v_b9fLqrvWap3Gas8fVhrPn8tbzQttxXhFrWv2PS0vw/edit?usp=sharing)) |
-| Jake Mendel <span class="affiliation">(Coefficient Giving)</span> | *How to Get Funding for Your Interpretability Research* |
+| Jake Mendel <span class="affiliation">(Coefficient Giving)</span> | *How to Get Funding for Your Interpretability Research* ([slides](https://docs.google.com/presentation/d/1fH0FA8hqNX_j99gaPDiodO4mg9KeRzoSp5jED2m2gk4/edit?usp=sharing)) |
