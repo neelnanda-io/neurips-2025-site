@@ -1,48 +1,19 @@
-{{ define "title" }}Mechanistic Interpretability Workshop at NeurIPS 2025{{ end }}
+{{ define "title" }}Mechanistic Interpretability Workshop at ICML 2026{{ end }}
 
 {{ define "main" }}
-<div class="hero">
-  <img class="hero-curve hero-curve-left" src="" alt="" />
-  <img class="hero-curve hero-curve-right" src="" alt="" />
-  
+<div class="hero hero-photo-bg">
   <div class="hero-content">
     <h1>Mechanistic Interpretability <span class="title-workshop">Workshop</span></h1>
-    <p class="hero-subtitle">NeurIPS 2025</p>
+    <p class="hero-subtitle">ICML 2026</p>
     <p class="hero-details">
-      Sunday, December 7, 2025<br>
-      San Diego Convention Centre · Room 30A-E
+      July 10 or 11, 2026 (TBC)<br>
+      COEX Convention & Exhibition Center · Seoul, South Korea
     </p>
   </div>
-  
-  <!-- Mobile: row of all four -->
-  <div class="curve-row-mobile">
-    <img src="/img/curve0_final_trans.png" alt="" />
-    <img src="/img/curve1_final_trans.png" alt="" />
-    <img src="/img/curve2_final_trans.png" alt="" />
-    <img src="/img/curve3_final_trans.png" alt="" />
-  </div>
-  
 </div>
 
-<script>
-(function() {
-  const curves = ['/img/curve0_final_trans.png', '/img/curve1_final_trans.png', '/img/curve2_final_trans.png', '/img/curve3_final_trans.png'];
-  const shuffled = curves.sort(() => Math.random() - 0.5);
-  document.querySelector('.hero-curve-left').src = shuffled[0];
-  document.querySelector('.hero-curve-right').src = shuffled[1];
-})();
-</script>
-
-<nav class="main-nav stacked">
-  <a href="/schedule/" class="nav-card">Schedule</a>
-  <a href="/posters-1/" class="nav-card">Poster Session 1 (11:00am–12:30pm)</a>
-  <a href="/posters-2/" class="nav-card">Poster Session 2 (1:30pm–3:00pm)</a>
-</nav>
-
-<div class="feedback-cta">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe13gWSNKtrC3uGsrhgg5qRLHxSLCBmP3p7ZGoqxDKaV4_Cmg/viewform" target="_blank" class="feedback-btn">
-    Attended? Give feedback on the workshop!
-  </a>
+<div class="coming-soon-banner">
+  Call for papers and schedule coming soon
 </div>
 
 <div class="signup-banner">
@@ -62,6 +33,7 @@
     {{ .Content }}
   </section>
 
+  {{ if .Site.Data.speakers.speakers }}
   <section class="speakers-section">
     <h2>Keynote Speakers</h2>
     <div class="speakers-grid">
@@ -76,6 +48,7 @@
       {{ end }}
     </div>
   </section>
+  {{ end }}
 
   <section class="photos-section">
     <div class="photo-grid">
@@ -90,7 +63,7 @@
     <div class="organizers-grid">
       {{ range .Site.Data.organizers.organizers }}
       <div class="organizer-card">
-        <img src="/img/{{ .image }}" alt="{{ .name }}" />
+        {{ if .image }}<img src="/img/{{ .image }}" alt="{{ .name }}" />{{ else }}<div class="organizer-img-placeholder"></div>{{ end }}
         <div class="organizer-info">
           <h3>{{ if .website }}<a href="{{ .website }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
           <p>{{ .affiliation }}</p>
@@ -101,7 +74,7 @@
   </section>
 
   <section class="contact-section">
-    <p>Questions? Email <a href="mailto:neurips2025@mechinterpworkshop.com">neurips2025@mechinterpworkshop.com</a></p>
+    <p>Questions? Email <a href="mailto:icml2026@mechinterpworkshop.com">icml2026@mechinterpworkshop.com</a></p>
   </section>
 
   <section class="curve-faq">

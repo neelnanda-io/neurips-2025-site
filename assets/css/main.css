@@ -18,6 +18,90 @@ body {
   overflow: hidden;
 }
 
+/* ICML 2026: Photo hero background */
+.hero.hero-photo-bg {
+  background-image: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.2) 100%), url('/img/hero-photo.jpg');
+  background-size: cover;
+  background-position: center 80%;
+  padding: 4.5rem 2rem;
+  min-height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+}
+
+.hero-photo-bg .hero-content {
+  max-width: 900px;
+}
+
+.hero.hero-photo-bg h1 {
+  color: #fff;
+  font-size: 3.3rem;
+  font-weight: 800;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+  line-height: 1.1;
+}
+
+.hero.hero-photo-bg .hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2.42rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin: 0.75rem 0 1.5rem;
+}
+
+.hero.hero-photo-bg .hero-details {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.54rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .hero.hero-photo-bg h1 { font-size: 2.64rem; }
+  .hero.hero-photo-bg .hero-subtitle { font-size: 1.98rem; }
+  .hero.hero-photo-bg .hero-details { font-size: 1.32rem; }
+}
+
+@media (max-width: 640px) {
+  .hero.hero-photo-bg h1 { font-size: 2.1rem; }
+  .hero.hero-photo-bg .hero-subtitle { font-size: 1.65rem; }
+  .hero.hero-photo-bg .hero-details { font-size: 1.1rem; }
+  .hero.hero-photo-bg { min-height: 45vh; padding: 2.5rem 1.25rem; }
+  .coming-soon-banner { font-size: 1.05rem; padding: 1rem; }
+  body::before { background-size: 432px 432px; background-position: -130px 30%; }
+}
+
+.coming-soon-banner {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  background: #f7f7f7;
+  border-bottom: 1px solid #eee;
+}
+
+/* Large faded curve as page background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img/curve1_final_trans.png');
+  background-repeat: no-repeat;
+  background-position: -227px 30%;
+  background-size: 756px 756px;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
 /* Hero Curves - Desktop */
 .hero-curve {
   position: absolute;
@@ -236,7 +320,7 @@ body {
 
 /* Signup Banner */
 .signup-banner {
-  max-width: 400px;
+  max-width: 480px;
   margin: 1.5rem auto 0;
   padding: 0 1.5rem;
 }
@@ -439,11 +523,30 @@ body {
   border: 1px solid #eee;
 }
 
-.organizer-card img {
+.organizer-card img, .organizer-img-placeholder {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.organizer-img-placeholder {
+  background: #e5e5e5;
+  flex-shrink: 0;
+}
+
+.archive-notice {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.speakers-tba {
+  color: #666;
+  font-style: italic;
 }
 
 .organizer-info h3 {

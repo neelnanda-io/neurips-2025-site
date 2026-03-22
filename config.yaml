@@ -1,6 +1,6 @@
-baseURL: "https://neurips-2025-site.netlify.app/"
+baseURL: "https://mechinterpworkshop.com/"
 languageCode: "en-us"
-title: "Mechanistic Interpretability Workshop at NeurIPS 2025"
+title: "Mechanistic Interpretability Workshop at ICML 2026"
 theme: "ananke"
 
 markup:
@@ -9,9 +9,9 @@ markup:
       unsafe: true
 
 params:
-  description: "The Mechanistic Interpretability Workshop at NeurIPS 2025. How can we use the internals of neural networks to understand a model better?"
+  description: "The Mechanistic Interpretability Workshop at ICML 2026. How can we use the internals of neural networks to understand a model better?"
   show_reading_time: false
-  
+
 menu:
   main:
     - name: "Home"
@@ -20,21 +20,17 @@ menu:
     - name: "Schedule"
       url: "/schedule/"
       weight: 2
-    - identifier: "posters"
-      name: "Posters"
+    - name: "Call for Papers"
+      url: "/cfp/"
       weight: 3
-    - name: "Session 1"
-      parent: "posters"
-      url: "/posters-1/"
+    - identifier: "previous"
+      name: "Previous Workshops"
+      weight: 10
+    - name: "NeurIPS 2025"
+      parent: "previous"
+      url: "/neurips2025/"
       weight: 1
-    - name: "Session 2"
-      parent: "posters"
-      url: "/posters-2/"
+    - name: "ICML 2024"
+      parent: "previous"
+      url: "https://icml2024mi.pages.dev/"
       weight: 2
-    - name: "Remote"
-      parent: "posters"
-      url: "/not-presenting/"
-      weight: 3
-    - name: "Spotlights"
-      url: "/spotlights/"
-      weight: 4

@@ -13,3 +13,25 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
+
+
+# Redirect old NeurIPS 2025 URLs to the archived subpath
+[[redirects]]
+  from = "/posters-1/*"
+  to = "/neurips2025/posters-1/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/posters-2/*"
+  to = "/neurips2025/posters-2/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/spotlights/*"
+  to = "/neurips2025/spotlights/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/not-presenting/*"
+  to = "/neurips2025/not-presenting/:splat"
+  status = 301
