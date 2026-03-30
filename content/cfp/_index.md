@@ -3,7 +3,7 @@ title: "Call for Papers"
 type: "cfp"
 ---
 
-We are inviting submissions of **short** (max 4 pages) and **long** (max 8 pages) papers outlining new research, due **May 8th, 2026 (AOE)**. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. **Submission link coming soon.**
+We are inviting submissions of **short** (max 4 pages) and **long** (full-length) papers outlining new research, due **May 8th, 2026 (AOE)**. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. **Submission link coming soon.**
 
 **We require at least one reciprocal reviewer per submission!** Each reciprocal reviewer will be assigned 3 papers to review. You can be a reciprocal reviewer on max 3 papers.
 
@@ -18,8 +18,8 @@ Details:
 * Submissions **undergoing peer review** (e.g., COLM, NeurIPS) at the time of the paper submission deadline are **welcome.**
 * All submissions must be made via OpenReview
   * **Note**: If you do not have an institutional email, be aware that it can take **up to 2 weeks** to get an OpenReview account approved. Please plan accordingly.
-* Please use the [ICML 2026 LaTeX Template](https://icml.cc/Conferences/2026/AuthorInstructions) for all submissions. We will also accept submissions in NeurIPS format, but accepted papers must be converted to the ICML format for the camera ready deadline.
-* Both short (max 4 page) and long (max 8 page) papers allow unlimited pages for references and appendices, but reviewers are not expected to read these.
+* We recommend the [ICML 2026 LaTeX Template](https://icml.cc/Conferences/2026/AuthorInstructions), but submissions in NeurIPS format are also welcome. Accepted papers must use the ICML template for the camera ready.
+* Short papers are max 4 pages. Long paper page limits follow the conventions of the chosen template. Both allow unlimited pages for references and appendices, but reviewers are not expected to read these.
 * Accepted papers will be allowed **one additional page in the camera ready** version, to integrate reviewer feedback.
 * Long works will be held to a higher standard of rigor and depth than short works.
 * Authors are encouraged but not required to attend the workshop in person
