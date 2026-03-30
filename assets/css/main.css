@@ -1427,3 +1427,60 @@ article hr {
   border-top: 1px solid #e2e8f0;
   margin: 2.5rem 0;
 }
+
+/* CFP Article Styling */
+.cfp-article {
+  font-size: 1.02rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.cfp-article h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.cfp-article h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.4rem;
+}
+
+.cfp-article p {
+  margin-bottom: 1rem;
+}
+
+.cfp-article a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cfp-article ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.cfp-article ul li {
+  margin-bottom: 0.5rem;
+}
+
+.cfp-article ul ul {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.cfp-article ul ul li {
+  margin-bottom: 0.3rem;
+  color: #555;
+}
