@@ -4,6 +4,6 @@ As neural networks grow in influence and capability, understanding the mechanism
 
 The field has grown rapidly, with sizable communities in academia, industry and independent research, dedicated startups, and a rich ecosystem of tools and techniques. Following our workshops at [ICML 2024](https://icml2024mi.pages.dev/) and [NeurIPS 2025](/neurips2025/), this edition at ICML 2026 aims to bring together diverse perspectives from the community to discuss recent advances, build common understanding and chart future directions.
 
-**[Call for Papers](/cfp/) is now live!**
+**[Call for Papers](/cfp/) is now live!** **[Submit on OpenReview](https://openreview.net/group?id=ICML.cc/2026/Workshop/Mech_Interp).**
 
 **Paper submission deadline — May 8th, 2026 (AOE).**
