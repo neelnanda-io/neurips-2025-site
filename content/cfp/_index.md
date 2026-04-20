@@ -15,6 +15,9 @@ Details:
 * Authors will be notified of acceptance by **June 12th (AOE)**.
 * We welcome submissions of papers that have already been accepted to ICML 2026. There will be an option to request a fast-track submission, in which authors will be asked to provide evidence of previous reviews and acceptance. Fast-track submissions are still subject to additional reviews (e.g., theme fit) once all other reviews are completed.
 * We **do not accept** submissions of work that has been accepted to an **archival** venue other than ICML 2026.
+* **Prior submissions to the 2025 Mech Interp Workshop:**
+  * Papers previously **accepted** to the 2025 workshop (including extended/expanded versions) **will not be accepted** — please submit such work to a conference instead.
+  * Papers previously **rejected** from the 2025 workshop that have not been meaningfully revised will be **desk-rejected**. Authors resubmitting should briefly describe the substantive changes in the submission.
 * Submissions **undergoing peer review** (e.g., COLM, NeurIPS) at the time of the paper submission deadline are **welcome.**
 * All submissions must be made via OpenReview
   * **Note**: If you do not have an institutional email, be aware that it can take **up to 2 weeks** to get an OpenReview account approved. Please plan accordingly.
