@@ -3,11 +3,13 @@ title: "Call for Papers"
 type: "cfp"
 ---
 
-We are inviting submissions of short and long papers outlining new research, due **May 8th, 2026 (AOE)**. This year we are accepting both ICML and NeurIPS formats for submissions, but all camera ready papers must be in ICML format. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. **[Submit on OpenReview](https://openreview.net/group?id=ICML.cc/2026/Workshop/Mech_Interp).**
+### The call for papers is now closed — thanks to everyone who submitted!
+
+We are inviting submissions of short and long papers outlining new research, due **May 8th, 2026 (AOE)**. This year we are accepting both ICML and NeurIPS formats for submissions, but all camera ready papers must be in ICML format. We welcome all submissions that convincingly argue for why they further the field: i.e. which further our ability to use the internal states of neural networks to understand them. <s>**[Submit on OpenReview](https://openreview.net/group?id=ICML.cc/2026/Workshop/Mech_Interp).**</s>
 
 **We require at least one reciprocal reviewer per submission!** Each reciprocal reviewer will be assigned 3 papers to review. You can be a reciprocal reviewer on max 3 papers.
 
-We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://forms.gle/LRpywTjuAoFqbWaB7).
+<s>We are extremely grateful to all who volunteer as reviewers, you can [express interest here](https://forms.gle/LRpywTjuAoFqbWaB7).</s>
 
 Details:
 
