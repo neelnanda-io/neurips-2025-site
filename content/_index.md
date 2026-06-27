@@ -4,4 +4,4 @@ As neural networks grow in influence and capability, understanding the mechanism
 
 The field has grown rapidly, with sizable communities in academia, industry and independent research, dedicated startups, and a rich ecosystem of tools and techniques. Following our workshops at [ICML 2024](https://icml2024mi.pages.dev/) and [NeurIPS 2025](/neurips2025/), this edition at ICML 2026 aims to bring together diverse perspectives from the community to discuss recent advances, build common understanding and chart future directions.
 
-**The [Call for Papers](/cfp/) is now closed — thanks to everyone who submitted!** Authors will be notified of acceptance by **June 12th (AOE)**.
+**The workshop takes place on Friday, July 10, 2026, at ICML in Seoul.** This year's [accepted posters](/posters/) — including 23 spotlights — are now online. We look forward to seeing you there!

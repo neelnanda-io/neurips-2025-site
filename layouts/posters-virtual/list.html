@@ -1,0 +1,60 @@
+{{ define "title" }}Virtual Posters{{ end }}
+
+{{ define "main" }}
+<div class="container icml-posters-page">
+  <article>
+    <h1>Accepted Posters</h1>
+
+    {{ $all := .Site.Data.icml2026_posters }}
+    {{ $inperson := where $all "track" "inperson" }}
+    {{ $spotlights := where $all "track" "spotlight" }}
+    {{ $virtual := where $all "track" "virtual" }}
+    {{ $inpersonTotal := add (len $inperson) (len $spotlights) }}
+
+    <nav class="poster-tabs">
+      <a href="{{ "posters/" | relURL }}">In-person ({{ $inpersonTotal }})</a>
+      <a class="active" href="{{ "posters/virtual/" | relURL }}">Virtual ({{ len $virtual }})</a>
+    </nav>
+
+    <p class="posters-intro">
+      {{ len $virtual }} virtual posters were accepted. They are part of the workshop program but are
+      not presented in person. Grouped by topic.
+    </p>
+
+    {{ $categories := slice
+      "Circuits & Attribution Graphs"
+      "SAEs & Concept Discovery"
+      "Representations & Feature Geometry"
+      "Probing & Steering"
+      "Reasoning & Chain-of-Thought"
+      "Multimodal & Vision"
+      "Training Dynamics & Learning"
+      "Applications, Benchmarks & Tools"
+      "Other"
+    }}
+
+    <nav class="toc">
+      <strong>Jump to:</strong>
+      <div class="toc-links">
+        {{ range $categories }}{{ $c := . }}
+        {{ if where $virtual "category" $c }}<a href="#{{ $c | urlize }}">{{ $c }}</a>{{ end }}
+        {{ end }}
+      </div>
+    </nav>
+
+    {{ range $categories }}{{ $c := . }}
+    {{ $items := where $virtual "category" $c }}
+    {{ if $items }}
+    <section class="category-section">
+      <h2 id="{{ $c | urlize }}"><a href="#{{ $c | urlize }}">{{ $c }}</a> <span class="count">({{ len $items }})</span></h2>
+      <div class="poster-grid">
+        {{ range sort $items "number" }}{{ partial "poster-card.html" . }}{{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ end }}
+
+  </article>
+</div>
+{{ partial "poster-styles.html" . }}
+{{ end }}

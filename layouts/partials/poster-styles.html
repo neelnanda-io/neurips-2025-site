@@ -1,0 +1,64 @@
+<style>
+  .icml-posters-page h1 { margin-bottom: 0.4rem; }
+  .icml-posters-page .posters-intro { color: var(--muted-color, #555); margin-bottom: 1.5rem; max-width: 62ch; }
+
+  /* Tabs: In-person / Virtual */
+  .icml-posters-page .poster-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .icml-posters-page .poster-tabs a { padding: 0.55rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; background: var(--card-bg, #eef2f7); color: var(--heading-color, #333); border: 2px solid transparent; transition: background 0.15s ease; }
+  .icml-posters-page .poster-tabs a:hover { background: #e0e6ee; }
+  .icml-posters-page .poster-tabs a.active { background: var(--accent-color, #4a90d9); color: #fff; }
+
+  /* TOC */
+  .icml-posters-page .toc { background: var(--toc-bg, #f0f4f8); padding: 0.9rem 1.15rem; border-radius: 8px; margin-bottom: 2rem; }
+  .icml-posters-page .toc strong { display: block; margin-bottom: 0.45rem; }
+  .icml-posters-page .toc-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+  .icml-posters-page .toc a { color: var(--link-color, #0066cc); text-decoration: none; font-size: 0.9rem; }
+  .icml-posters-page .toc a:hover { text-decoration: underline; }
+
+  /* Section headers */
+  .icml-posters-page .category-section { margin-bottom: 2rem; }
+  .icml-posters-page .category-section h2 { font-size: 1.4rem; border-bottom: 2px solid var(--accent-color, #4a90d9); padding-bottom: 0.4rem; margin-bottom: 1rem; color: var(--heading-color, #333); scroll-margin-top: 5rem; }
+  .icml-posters-page .category-section h2 a { color: inherit; text-decoration: none; }
+  .icml-posters-page .category-section h2 a:hover { color: var(--link-color, #0066cc); }
+  .icml-posters-page .count { font-weight: 400; font-size: 0.85rem; color: var(--muted-color, #888); }
+
+  /* Spotlight showcase: bigger cards, ~2 per row on desktop */
+  .icml-posters-page .spotlights-block { margin-bottom: 2.75rem; }
+  .icml-posters-page .spotlights-block h2 { font-size: 1.6rem; color: var(--spotlight-color, #d98b00); border-bottom: 3px solid var(--spotlight-color, #f5a623); padding-bottom: 0.4rem; margin-bottom: 1.1rem; scroll-margin-top: 5rem; }
+  .icml-posters-page .spotlights-block h2 a { color: inherit; text-decoration: none; }
+  .icml-posters-page .spotlight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 1.25rem; }
+  .icml-posters-page .spotlight-card { border: 2px solid var(--spotlight-color, #f5a623); background: var(--spotlight-bg, #fffbf0); box-shadow: 0 2px 12px rgba(245, 166, 35, 0.18); border-radius: 10px; padding: 1.25rem 1.4rem; }
+  .icml-posters-page .spotlight-card .poster-title { font-size: 1.15rem; line-height: 1.4; }
+
+  /* Regular posters: compact grid, ~4 per row on desktop */
+  .icml-posters-page .poster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.85rem; align-items: start; }
+  .icml-posters-page .poster-card { background: var(--card-bg, #f8f9fa); border-radius: 6px; padding: 0.8rem 0.9rem; }
+
+  /* Shared card internals */
+  .icml-posters-page .poster-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+  .icml-posters-page .tag { font-size: 0.65rem; padding: 0.12rem 0.45rem; border-radius: 3px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+  .icml-posters-page .tag-spotlight { background: var(--spotlight-color, #f5a623); color: #fff; }
+  .icml-posters-page .tag-virtual { background: #6b7cff; color: #fff; }
+  .icml-posters-page .tag-inperson { background: #2bb673; color: #fff; }
+  .icml-posters-page .tag-cat { background: #e3e8ef; color: #44506a; text-transform: none; font-weight: 600; letter-spacing: 0; }
+  .icml-posters-page .poster-title { display: block; font-weight: 600; font-size: 0.98rem; line-height: 1.35; color: var(--link-color, #0066cc); }
+  .icml-posters-page a.poster-title:hover { text-decoration: underline; }
+  .icml-posters-page .authors { display: block; font-size: 0.82rem; color: var(--muted-color, #666); margin-top: 0.3rem; }
+
+  /* Abstract toggle */
+  .icml-posters-page .abstract-toggle { margin-top: 0.5rem; }
+  .icml-posters-page .abstract-toggle summary { cursor: pointer; color: var(--link-color, #0066cc); font-weight: 500; font-size: 0.82rem; user-select: none; display: inline-flex; align-items: center; gap: 0.25rem; }
+  .icml-posters-page .abstract-toggle summary::before { content: '▶'; font-size: 0.65rem; transition: transform 0.2s ease; }
+  .icml-posters-page .abstract-toggle[open] summary::before { transform: rotate(90deg); }
+  .icml-posters-page .abstract-content { margin-top: 0.5rem; padding: 0.7rem; background: var(--abstract-bg, #f0f4f8); border-radius: 4px; font-size: 0.82rem; line-height: 1.55; color: var(--text-color, #333); }
+
+  /* Mobile-first: single column, full-width touch targets */
+  @media (max-width: 640px) {
+    .icml-posters-page .spotlight-grid,
+    .icml-posters-page .poster-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+    .icml-posters-page .poster-tabs a { flex: 1 1 auto; text-align: center; }
+    .icml-posters-page .spotlight-card { padding: 1rem 1.1rem; }
+    .icml-posters-page .spotlight-card .poster-title { font-size: 1.05rem; }
+    .icml-posters-page .track-heading { font-size: 1.6rem; }
+  }
+</style>

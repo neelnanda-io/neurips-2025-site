@@ -20,8 +20,8 @@ menu:
     - name: "Schedule"
       url: "/schedule/"
       weight: 2
-    - name: "Call for Papers"
-      url: "/cfp/"
+    - name: "Posters"
+      url: "/posters/"
       weight: 3
     - identifier: "previous"
       name: "Previous Workshops"
