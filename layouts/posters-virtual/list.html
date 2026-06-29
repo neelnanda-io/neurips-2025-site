@@ -12,8 +12,8 @@
     {{ $inpersonTotal := add (len $inperson) (len $spotlights) }}
 
     <nav class="poster-tabs">
-      <a href="{{ "posters/" | relURL }}">In-person ({{ $inpersonTotal }})</a>
-      <a class="active" href="{{ "posters/virtual/" | relURL }}">Virtual ({{ len $virtual }})</a>
+      <a href="{{ "posters/" | relURL }}">Poster ({{ $inpersonTotal }})</a>
+      <a class="active" href="{{ "posters/virtual/" | relURL }}">Virtual poster ({{ len $virtual }})</a>
     </nav>
 
     <p class="posters-intro">

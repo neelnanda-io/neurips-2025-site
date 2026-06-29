@@ -2,9 +2,9 @@
 <div class="poster-card">
   <div class="poster-tags">
     {{ if eq .track "virtual" }}
-    <span class="tag tag-virtual">Virtual</span>
+    <span class="tag tag-virtual">Virtual poster</span>
     {{ else }}
-    <span class="tag tag-inperson">In-person</span>
+    <span class="tag tag-inperson">Poster</span>
     {{ end }}
   </div>
   <a href="{{ .openreview }}" class="poster-title">{{ .title }}</a>

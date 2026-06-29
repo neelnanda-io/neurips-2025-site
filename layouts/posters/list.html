@@ -1,4 +1,4 @@
-{{ define "title" }}In-person Posters{{ end }}
+{{ define "title" }}Posters{{ end }}
 
 {{ define "main" }}
 <div class="container icml-posters-page">
@@ -12,13 +12,13 @@
     {{ $inpersonTotal := add (len $inperson) (len $spotlights) }}
 
     <nav class="poster-tabs">
-      <a class="active" href="{{ "posters/" | relURL }}">In-person ({{ $inpersonTotal }})</a>
-      <a href="{{ "posters/virtual/" | relURL }}">Virtual ({{ len $virtual }})</a>
+      <a class="active" href="{{ "posters/" | relURL }}">Poster ({{ $inpersonTotal }})</a>
+      <a href="{{ "posters/virtual/" | relURL }}">Virtual poster ({{ len $virtual }})</a>
     </nav>
 
     <p class="posters-intro">
-      {{ $inpersonTotal }} in-person posters were accepted, including {{ len $spotlights }} spotlights.
-      Spotlights are showcased at the top; all other in-person posters are grouped by topic.
+      {{ $inpersonTotal }} posters were accepted, including {{ len $spotlights }} spotlights.
+      Spotlights are showcased at the top; all other posters are grouped by topic.
     </p>
 
     {{ $categories := slice
