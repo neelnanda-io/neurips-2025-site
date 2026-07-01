@@ -570,6 +570,47 @@ body::before {
   margin: 0;
 }
 
+/* Sponsors */
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sponsor-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.sponsor-card img {
+  max-height: 56px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.sponsor-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sponsor-info h3 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.sponsor-info h3 a:hover {
+  text-decoration: underline;
+}
+
 /* Contact Section */
 .contact-section {
   text-align: center;

@@ -73,6 +73,22 @@
     </div>
   </section>
 
+  {{ if .Site.Data.sponsors.sponsors }}
+  <section class="sponsors-section">
+    <h2>Sponsors</h2>
+    <div class="sponsors-grid">
+      {{ range .Site.Data.sponsors.sponsors }}
+      <div class="sponsor-card">
+        <img src="/img/{{ .logo }}" alt="{{ .name }}" />
+        <div class="sponsor-info">
+          <h3>{{ if .website }}<a href="{{ .website }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
   <section class="contact-section">
     <p>Questions? Email <a href="mailto:mechinterpworkshop@gmail.com">mechinterpworkshop@gmail.com</a></p>
   </section>
