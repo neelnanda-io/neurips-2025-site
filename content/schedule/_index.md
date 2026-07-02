@@ -23,3 +23,5 @@ The workshop will be held on **Friday, July 10, 2026** at the **COEX Convention 
 | 2:00pm – 3:00pm | [Posters (session 2)](/posters/) |
 | 3:00pm – 3:30pm | *Coffee break* |
 | 3:30pm – 5:00pm | Invited lightning talks |
+
+*All workshop posters will be presented together in one large hall room. See the [accepted posters](/posters/) page for each poster's board number and session (morning or afternoon).*

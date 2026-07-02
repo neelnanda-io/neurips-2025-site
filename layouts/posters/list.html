@@ -10,6 +10,7 @@
     {{ $spotlights := where $all "track" "spotlight" }}
     {{ $virtual := where $all "track" "virtual" }}
     {{ $inpersonTotal := add (len $inperson) (len $spotlights) }}
+    {{ $boards := .Site.Data.icml2026_poster_boards }}
 
     <nav class="poster-tabs">
       <a class="active" href="{{ "posters/" | relURL }}">Poster ({{ $inpersonTotal }})</a>
@@ -20,6 +21,16 @@
       {{ $inpersonTotal }} posters were accepted, including {{ len $spotlights }} spotlights.
       Spotlights are showcased at the top; all other posters are grouped by topic.
     </p>
+
+    <div class="board-info-banner">
+      <p>
+        This year, all workshop posters will be held together in one large hall.
+        Our workshop's poster boards are numbered
+        <strong>120&ndash;126</strong>, <strong>200&ndash;217</strong>, and <strong>300&ndash;316</strong>.
+        Each poster below is tagged with its board number and session (morning or afternoon);
+        see the <a href="{{ "schedule/" | relURL }}">schedule</a> for session times.
+      </p>
+    </div>
 
     {{ $categories := slice
       "Circuits & Attribution Graphs"
@@ -48,8 +59,14 @@
       <h2 id="spotlights"><a href="#spotlights">★ Spotlights</a> <span class="count">({{ len $spotlights }})</span></h2>
       <div class="spotlight-grid">
         {{ range sort $spotlights "number" }}
+        {{ $board := "" }}
+        {{ $boardMatches := where $boards "number" .number }}
+        {{ if $boardMatches }}{{ $board = index $boardMatches 0 }}{{ end }}
         <div class="spotlight-card">
-          <div class="poster-tags"><span class="tag tag-spotlight">Spotlight</span><span class="tag tag-cat">{{ .category }}</span></div>
+          <div class="poster-tags">
+            <span class="tag tag-spotlight">Spotlight</span><span class="tag tag-cat">{{ .category }}</span>
+            {{ with $board }}<span class="tag tag-board tag-board-{{ lower .session }}">{{ .session }} session &middot; Board {{ .board }}</span>{{ end }}
+          </div>
           <a href="{{ .openreview }}" class="poster-title">{{ .title }}</a>
           <span class="authors">{{ delimit .authors ", " }}</span>
           {{ with .abstract }}
@@ -67,7 +84,12 @@
     <section class="category-section">
       <h2 id="{{ $c | urlize }}"><a href="#{{ $c | urlize }}">{{ $c }}</a> <span class="count">({{ len $items }})</span></h2>
       <div class="poster-grid">
-        {{ range sort $items "number" }}{{ partial "poster-card.html" . }}{{ end }}
+        {{ range sort $items "number" }}
+        {{ $board := "" }}
+        {{ $boardMatches := where $boards "number" .number }}
+        {{ if $boardMatches }}{{ $board = index $boardMatches 0 }}{{ end }}
+        {{ partial "poster-card.html" (dict "poster" . "board" $board) }}
+        {{ end }}
       </div>
     </section>
     {{ end }}

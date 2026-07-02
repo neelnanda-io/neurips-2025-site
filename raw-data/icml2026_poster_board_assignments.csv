@@ -1,0 +1,159 @@
+Poster session,Poster board,Paper number,Presentation type,Primary topic,Title
+Morning,120,61,poster,AI Safety,Two Refusals or One? Disentangling Safety and Epistemic Abstention Directions in Language Model Activations
+Morning,121,137,poster,Benchmarking Interpretability,Are Sparse Autoencoder Benchmarks Reliable?
+Morning,121,198,poster,Benchmarking Interpretability,"Building Fast, Evaluating Slow: Pipeline Choices Dominate Autointerpretability Score Variance"
+Morning,122,199,poster,Benchmarking Interpretability,The Platonic Universe: Do Foundation Models See the Same Sky?
+Morning,122,384,poster,Benchmarking Interpretability,Reasoning aligns language models to human inference
+Morning,123,403,poster,Benchmarking Interpretability,Making LLMs Say What They Think: Measuring and Improving CoT-Interpretability Alignment
+Morning,123,503,poster,Benchmarking Interpretability,Current Activation Oracles Are Hard to Use on Safety-Relevant Tasks
+Morning,124,514,poster,Benchmarking Interpretability,Emergent Latent-State Computation under Stochastic Volatility
+Morning,124,800,poster,Benchmarking Interpretability,Stress Tests REVEAL Fragile Temporal and Visual Grounding in Video-Language Models
+Morning,125,318,spotlight,Benchmarking Interpretability,Validating Causal Abstraction Metrics on Simulated Complex Systems
+Morning,125,603,spotlight,Benchmarking Interpretability,Surrogate Fidelity: When Can Open LLMs Explain Closed Ones?
+Morning,126,21,poster,Circuit Analysis,Multi-Granular Node Pruning for Causal Circuit Discovery
+Morning,126,590,fast track,Circuit Analysis,"Shared Semantics, Divergent Mechanisms: Unsupervised Feature Discovery by Aligning Semantics and Mechanisms"
+Morning,200,90,poster,Circuit Analysis,LLMs Know They're Wrong and Agree Anyway: The Shared Sycophancy-Lying Circuit
+Morning,200,148,poster,Circuit Analysis,A Mechanistic Study of Transformers Training Dynamics
+Morning,201,193,poster,Circuit Analysis,Ghost Heads Across Training: When Greedy and Distributional Patching Disagree
+Morning,201,212,poster,Circuit Analysis,Finding Interpretable Prompt-Specific Circuits in Language Models
+Morning,202,343,poster,Circuit Analysis,Understanding the Effect of Model Compression on Mechanistic Interpretability in Transformer Language Models: A Short Review
+Morning,202,367,poster,Circuit Analysis,Demystifying Variance in Circuit Discovery of LLMs
+Morning,203,405,poster,Circuit Analysis,Fixed Universal Transformer
+Morning,203,532,poster,Circuit Analysis,Detection Without Suppression: A Sign Flip in IOI Circuit Formation
+Morning,204,550,poster,Circuit Analysis,Cross-Model Circuit Discovery
+Morning,204,566,poster,Circuit Analysis,Additive Relational Bindings in Transformers: What Sparse Autoencoders Miss
+Morning,205,617,poster,Circuit Analysis,LLMs can annotate attribution graphs
+Morning,205,648,poster,Circuit Analysis,LAWFUL: Law-Aligned Witness for Faithful Use of Latents
+Morning,206,714,poster,Circuit Analysis,"Row-Attention Extracts, Column-Attention Projects: How ConTextTab Solves In-Context Linear Classification"
+Morning,206,769,poster,Circuit Analysis,Mechanistic Evidence for Preserved-but-Misaligned Representations in Non-IID FedAvg
+Morning,207,131,poster,"Concept Discovery (e.g., SAEs, dictionary learning)","Same Concept, Different Directions: Cross-Modal Feature Heterogeneity in Sparse Autoencoders"
+Morning,207,295,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding
+Morning,208,197,spotlight,"Concept Discovery (e.g., SAEs, dictionary learning)",Predictive Concept Decoders: Training Scalable End-to-End Interpretability Assistants
+Morning,208,644,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Crosscoders Identify Shared or Specific Features between the Human Brain and Language Models
+Morning,209,104,fast track,Feature Geometry,Decomposing Query-Key Feature Interactions Using Contrastive Covariances
+Morning,209,114,fast track,Feature Geometry,Old Habits Die Hard: How Conversational History Geometrically Traps LLMs
+Morning,210,115,fast track,Feature Geometry,Emergent Analogical Reasoning in Transformers
+Morning,210,201,fast track,Feature Geometry,The Information Geometry of Softmax: Probing and Steering
+Morning,211,214,fast track,Feature Geometry,Singular Vectors of Attention Heads Align with Features
+Morning,211,404,fast track,Feature Geometry,MetaOthello: A Controlled Study of Multiple World Models in Transformers
+Morning,212,93,poster,Feature Geometry,Class-Conditional Activation Regularization (CCAR): Intrinsic Robustness as an Emergent Geometric Property
+Morning,212,446,fast track,Feature Geometry,The data manifold under the microscope
+Morning,213,179,poster,Feature Geometry,Attacking the Representation Manifold: A Mechanistic Study of Adversarial Robustness in Modular Addition
+Morning,213,186,poster,Feature Geometry,Sink vs. diagonal patterns as mechanisms for attention switch and oversmoothing prevention
+Morning,214,190,poster,Feature Geometry,Lossy Superposition: Predicting Compositional Errors Without Seeing Inputs
+Morning,214,267,poster,Feature Geometry,Geometry-Adaptive Explainer for Faithful Dictionary-Based Interpretability under Distribution Shift
+Morning,215,290,poster,Feature Geometry,What Cosine Similarity of Label Representations Can and Cannot Tell us
+Morning,215,392,poster,Feature Geometry,Probing Persona-Dependent Preferences in Language Models
+Morning,216,414,poster,Feature Geometry,Weight-Space Geometry of Offline Reasoning Training
+Morning,216,489,poster,Feature Geometry,Hierarchical Concept Geometry in Language Representations Emerges from Word Co-occurrence
+Morning,217,491,poster,Feature Geometry,"LatentCompass: T2I Diffusion Steering via Orthogonal Attribute Spaces for Debiasing, Concept Erasure, and Red Teaming"
+Morning,217,523,poster,Feature Geometry,Transformers learn factored representations
+Morning,300,203,spotlight,Feature Geometry,Representational Geometry Reveals How Context Structures Concept Spaces in Language Models
+Morning,300,657,poster,Feature Geometry,Dissociating the Internal Representations of Sycophancy in LLMs
+Morning,301,236,spotlight,Feature Geometry,The Geometric Wall: Manifold Structure Predicts Layerwise Sparse Autoencoder Scaling Laws
+Morning,301,412,spotlight,Feature Geometry,Conditional Dependence Structure in Sparse Autoencoder Features
+Morning,302,202,poster,Interpretability for AI Safety,Reading Between the Dots: Decoding Hidden Computation across Filler Tokens
+Morning,302,486,fast track,Interpretability for AI Safety,BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking
+Morning,303,229,poster,Interpretability for AI Safety,Subliminal Learning Is Steering Vector Distillation
+Morning,303,248,poster,Interpretability for AI Safety,Hallucination as Commitment Failure: Larger LLMs Misfire Despite Knowing the Answer
+Morning,304,282,poster,Interpretability for AI Safety,Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics
+Morning,304,340,poster,Interpretability for AI Safety,"Disentangling Self-Preservation in Language Models: Post-Training Gating, Geometric Structure, and Koan-Derived Agentic Steering"
+Morning,305,341,poster,Interpretability for AI Safety,Where Do Reasoning Models Refuse?
+Morning,305,349,poster,Interpretability for AI Safety,Step-Wise Refusal Dynamics in Autoregressive and Diffusion Language Models
+Morning,306,399,poster,Interpretability for AI Safety,"Large Language Models Generate Harmful Content Using a Distinct, Unified Mechanism"
+Morning,306,487,poster,Interpretability for AI Safety,User Persona Subspaces Modulate Refusal Behavior in Language Models
+Morning,307,522,poster,Interpretability for AI Safety,Adaptive and interpretable two-sample test as a batch-level tool for AI safety
+Morning,307,527,poster,Interpretability for AI Safety,The Channel Geometry of Refusal: Mechanistic Diagnosis of Alignment Collapse Under KV Quantization
+Morning,308,627,poster,Interpretability for AI Safety,Why do Irrelevant Instructions Inhibit Refusal?
+Morning,308,678,poster,Interpretability for AI Safety,LLM Jailbreaks Exploit Attention Sinks
+Morning,309,746,poster,Interpretability for AI Safety,A Mechanistic View of  Authority Hierarchy in LLM Sycophancy
+Morning,309,750,poster,Interpretability for AI Safety,Not All Eval-Awareness is Equal: Capabilities Framing Predicts Compliance
+Morning,310,442,spotlight,Interpretability for AI Safety,Subliminal Learning is Non-Semantic Distillation
+Morning,310,774,poster,Interpretability for AI Safety,Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting
+Morning,311,170,spotlight,Interpretability tooling and software,MultiSTEVE-1s: A Model Zoo and Interpretability Suite for Instruction-Following Vision Agents
+Morning,311,406,fast track,Interpretability tooling and software,Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning
+Morning,312,155,poster,"Methods (probing, steering, causal interventions)",Minionese: Comprehensive Benchmark and Mechanistic Study of Multilingual LLM Safety
+Morning,312,165,poster,"Methods (probing, steering, causal interventions)",Unveiling Memorization–Generalization Coexistence: A Case Study on Arithmetic Tasks with Label Noise
+Morning,313,294,spotlight,"Methods (probing, steering, causal interventions)",Analysis-by-Proxy: Localization Signals in VLMs Operating as Condition Encoders
+Morning,313,511,poster,"Methods (probing, steering, causal interventions)",Mitigating Reward Hacking via Task Representations
+Morning,314,651,spotlight,"Methods (probing, steering, causal interventions)",Language Models Learn Universal Representations of Numbers and Why You Should Care
+Morning,315,80,fast track,Understanding high-level properties of models,Attention Sink Forges Native MoE in Attention Layers: Sink-Aware Training to Address Head Collapse
+Afternoon,120,228,fast track,Applications of interpretability,Interpreting Physics in Video World Models
+Afternoon,120,315,poster,Applications of interpretability,C-Δθ: Circuit-Restricted Weight Arithmetic for Selective Refusal
+Afternoon,121,447,poster,Applications of interpretability,Designing Effective Monitor-Based Interventions for Mitigating Reward Hacking During RL
+Afternoon,121,578,poster,Applications of interpretability,Towards Measuring and Detecting Unverbalized Evaluation Awareness
+Afternoon,122,597,poster,Applications of interpretability,Masked Diffusion Training Induces Resampling-like Carry Representations in Addition
+Afternoon,122,625,poster,Applications of interpretability,Mechanistic Interpretability of Adversarial Suffixes Reveals Non-Robust Shortcuts of Safety Monitors
+Afternoon,123,637,poster,Applications of interpretability,Mechanistic Capability Probes as a Cheap Screen for Sequence-Mixer Architectures
+Afternoon,123,646,poster,Applications of interpretability,Fine-Tuning Enhances Latent Metacognitive Capability in Language Models
+Afternoon,124,729,poster,Applications of interpretability,Discovering Mechanisms in Tokenized Graph Transformers
+Afternoon,124,737,poster,Applications of interpretability,Fine-tuning with Harmfulness Probes Leads to Natural Refusals
+Afternoon,125,362,spotlight,Applications of interpretability,How do Small Transformer Models Learn Hard Math Tasks?
+Afternoon,125,804,poster,Applications of interpretability,Sparse Autoencoders for LoRA-Adapted CLIP Under Domain Shift
+Afternoon,126,135,poster,Automated interpretability,SPICE: Simple Polysemantic feature Interpretation via Clustering-based Explanations
+Afternoon,200,744,fast track,Circuit Analysis,Disentangling meaning from language in LLM-based machine translation
+Afternoon,201,142,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",Interpreting Genomic Language Models using Sparse Autoencoders
+Afternoon,201,296,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",From Directions to Regions: Decomposing Activations in Language Models via Local Geometry
+Afternoon,202,320,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",What is Missing? Explaining Neurons Activated by Absent Concepts
+Afternoon,202,346,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",Interpretability Transfer from Language to Vision via Sparse Autoencoders
+Afternoon,203,188,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Expander Sparse Autoencoders: Parameter-Efficient Dictionaries for Mechanistic Interpretability
+Afternoon,203,411,fast track,"Concept Discovery (e.g., SAEs, dictionary learning)",Position: Causality is Key for Interpretability Claims to Generalise
+Afternoon,204,218,poster,"Concept Discovery (e.g., SAEs, dictionary learning)","Decompose Sparsely Where You Should, Absorb Densely Where You Should Not"
+Afternoon,204,263,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",What Does a Chemical Language Model Know About Molecules?
+Afternoon,205,456,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Discovering Cross-Language Reasoning Invariance in LLMs with Geometry-Invariant Sparse Autoencoders
+Afternoon,205,571,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",LoRAcles: Self-Supervised Weight-Space Interpretability at Scale
+Afternoon,206,595,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",FTC: Fourier Transcoder for Monosemantic Sparse Feature Decomposition in Vision Language Model
+Afternoon,206,663,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Feature-Resolved Attention
+Afternoon,207,670,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Feature Recovery Requires Structured Event Regimes in Sparse Reconstruction
+Afternoon,207,718,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Representation Is Not Reliance: Concept-Based Causal Diagnostics of Shortcut Learning in Vision
+Afternoon,208,735,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Scaling Laws for SAE Training Data
+Afternoon,208,767,poster,"Concept Discovery (e.g., SAEs, dictionary learning)",Investigating Expert Semantic Specialization in Mixture-of-Expert Models
+Afternoon,209,98,spotlight,"Concept Discovery (e.g., SAEs, dictionary learning)",Variant-specific crosscoder features are seed-stable but not detectably task-causal in a GRPO-LoRA math setting
+Afternoon,209,288,spotlight,"Concept Discovery (e.g., SAEs, dictionary learning)",The Dark Subspace of Fine-Tuning Memorisation
+Afternoon,210,438,spotlight,"Concept Discovery (e.g., SAEs, dictionary learning)",How Optimality Structures Sparse Dictionaries: A Theory for Understanding SAE Representations
+Afternoon,210,650,spotlight,"Concept Discovery (e.g., SAEs, dictionary learning)",Size Doesn't Matter: Cosine-Scored Sparse Autoencoders
+Afternoon,211,307,poster,Feature Geometry,How feature learning breaks the curse of dimensionality in isotropic data:\\ A mean field approach
+Afternoon,211,389,poster,Feature Geometry,Relational Linear Properties in Language Models: An Empirical Investigation
+Afternoon,212,776,poster,Feature Geometry,Scale Determines Whether Language Models Organize Representation Geometry for Prediction
+Afternoon,212,808,poster,Feature Geometry,"Unstable Features, Reproducible Subspaces: Understanding Seed Dependence in Sparse Autoencoders"
+Afternoon,213,425,poster,Interpretability for AI Safety,Language Triggers Hijack Language Circuits: A Mechanistic Analysis of Backdoor Behaviors in Large Language Models
+Afternoon,213,788,poster,Interpretability for AI Safety,GRAFT: Geometric Representations of Alignment’s Fingerprint in Transformer Belief Trajectories
+Afternoon,214,120,fast track,Interpretability for Knowledge Discovery,Induction Meets Biology: Mechanisms of Repeat Detection in Protein Language Models
+Afternoon,214,272,poster,Interpretability for Knowledge Discovery,Mechanistic Evidence for Spectral Structures in Prior-Data Fitted Networks
+Afternoon,215,277,poster,Interpretability for Knowledge Discovery,"Emergent Symbolic Structure in Health Foundation Models: Extraction, Alignment, and Cross-Modal Transfer"
+Afternoon,215,801,poster,Interpretability for Knowledge Discovery,Metric Choice Determines Semantic Geometry in LLM Hidden States: A measurement Study of Hidden-State Geometry
+Afternoon,216,156,fast track,"Methods (probing, steering, causal interventions)",Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions
+Afternoon,216,157,fast track,"Methods (probing, steering, causal interventions)",Steering at the Source: Style Modulation Heads for Robust Persona Control
+Afternoon,217,172,fast track,"Methods (probing, steering, causal interventions)",The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level
+Afternoon,217,812,fast track,"Methods (probing, steering, causal interventions)",RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing
+Afternoon,300,191,poster,"Methods (probing, steering, causal interventions)",Backtracking is Decorative: A Mechanistic Account
+Afternoon,300,192,poster,"Methods (probing, steering, causal interventions)",Ghost Tracks: Hypothesis Competition in Sparse Feature Space as a Preliminary Signal of LLM Hallucinations
+Afternoon,301,245,poster,"Methods (probing, steering, causal interventions)",Verifiable Explanations Cannot Be Much Smaller Than the Behavior They Explain
+Afternoon,301,312,poster,"Methods (probing, steering, causal interventions)",Where’s the Plan? Locating Latent Planning in Language Models with Lightweight Mechanistic Interventions
+Afternoon,302,316,poster,"Methods (probing, steering, causal interventions)",The Dead Salmons of AI Interpretability
+Afternoon,302,344,poster,"Methods (probing, steering, causal interventions)",Predicting Future Behaviors in Reasoning Models Enables Better Steering
+Afternoon,303,373,poster,"Methods (probing, steering, causal interventions)",Beyond a Single Direction: Chain-of-Thought Disrupts Simple Steering of Refusal
+Afternoon,303,417,poster,"Methods (probing, steering, causal interventions)",Residue-Level Attributions in Protein Allergenicity Models Do Not Recover Allergen Epitopes
+Afternoon,304,462,poster,"Methods (probing, steering, causal interventions)",Mixture-of-Steering Vectors (MoSV): Sparse Gating for Compositional Hallucination Mitigation
+Afternoon,304,490,poster,"Methods (probing, steering, causal interventions)",Towards \textit{Effective Theory} of LLMs: A Representation Learning Approach
+Afternoon,305,526,poster,"Methods (probing, steering, causal interventions)",Invariant Reasoning Directions in Latent Trajectories of Language Models
+Afternoon,305,580,poster,"Methods (probing, steering, causal interventions)",Inducing post-hoc chain-of-thought reasoning in LLMs on multiple-choice question answering tasks
+Afternoon,306,618,poster,"Methods (probing, steering, causal interventions)",Observing and Controlling Features in Vision-Language-Action Models
+Afternoon,306,620,poster,"Methods (probing, steering, causal interventions)",Retrieval Heads Meet Vision: Uncovering How VLMs Locate and Extract Visual Information
+Afternoon,307,624,poster,"Methods (probing, steering, causal interventions)",Reusable Uncertainty Representations Support Metacognitive Behavior in Llama-3.3-70B
+Afternoon,307,666,poster,"Methods (probing, steering, causal interventions)",Decoded but Unused: Instruction Tuning Routes Moral Framing into the Judgment Readout
+Afternoon,308,675,poster,"Methods (probing, steering, causal interventions)",InverseScope: Scalable Activation Inversion for Interpreting Large Language Models
+Afternoon,308,676,poster,"Methods (probing, steering, causal interventions)",Reading Calibrated Uncertainty from Language Model Trajectories
+Afternoon,309,730,poster,"Methods (probing, steering, causal interventions)",Non-linear Interventions on Large Language Models
+Afternoon,309,732,poster,"Methods (probing, steering, causal interventions)",Before the Last Token: Diagnosing Final-Token Safety Probe Failures
+Afternoon,310,139,spotlight,"Methods (probing, steering, causal interventions)",From Noise to Diversity: Random Embedding Injection in LLM Reasoning
+Afternoon,310,271,spotlight,"Methods (probing, steering, causal interventions)",From Tokens to Policy: Minimal and Sufficient Heterogeneous Treatment Effects Identification
+Afternoon,311,540,spotlight,"Methods (probing, steering, causal interventions)",Cross-Layer Transcoders are incentivized to learn Unfaithful Circuits
+Afternoon,311,546,spotlight,"Methods (probing, steering, causal interventions)",Localizing RL-Induced Tool Use to a Single Crosscoder Feature
+Afternoon,312,661,spotlight,"Methods (probing, steering, causal interventions)",Multiplication Beyond Groups: Stratified Fourier Mechanisms in Transformer Circuits
+Afternoon,313,86,fast track,Other,"ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior"
+Afternoon,313,305,poster,Other,Reasoning as State Transition: A Representational Analysis of Reasoning Evolution in Large Language Models
+Afternoon,314,372,poster,Other,Position: Interpretability Can Be Actionable
+Afternoon,315,97,poster,Probing,Tracing Psychometric Inference in Large Language Models
+Afternoon,315,100,poster,Probing,Representational Depth of Evaluation Awareness Shifts With Scale in Open-Weight Language Models
+Afternoon,316,77,poster,Sparse Autoencoders,"Sparse Autoencoders Find Causal, Lineage-Specific Context Features in Chromatin Foundation Models"

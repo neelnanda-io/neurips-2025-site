@@ -1,15 +1,24 @@
-{{/* Compact poster card. Context (.) is one entry from data/icml2026_posters.json */}}
+{{/*
+  Compact poster card. Context (.) is either a raw entry from
+  data/icml2026_posters.json, or a dict "poster" (that entry) + "board"
+  (matching entry from data/icml2026_poster_boards.json, if any).
+*/}}
+{{ $poster := . }}
+{{ $board := "" }}
+{{ if .poster }}{{ $poster = .poster }}{{ end }}
+{{ if .board }}{{ $board = .board }}{{ end }}
 <div class="poster-card">
   <div class="poster-tags">
-    {{ if eq .track "virtual" }}
+    {{ if eq $poster.track "virtual" }}
     <span class="tag tag-virtual">Virtual poster</span>
     {{ else }}
     <span class="tag tag-inperson">Poster</span>
     {{ end }}
+    {{ with $board }}<span class="tag tag-board tag-board-{{ lower .session }}">{{ .session }} session &middot; Board {{ .board }}</span>{{ end }}
   </div>
-  <a href="{{ .openreview }}" class="poster-title">{{ .title }}</a>
-  <span class="authors">{{ delimit .authors ", " }}</span>
-  {{ with .abstract }}
+  <a href="{{ $poster.openreview }}" class="poster-title">{{ $poster.title }}</a>
+  <span class="authors">{{ delimit $poster.authors ", " }}</span>
+  {{ with $poster.abstract }}
   <details class="abstract-toggle"><summary>Abstract</summary><div class="abstract-content">{{ . }}</div></details>
   {{ end }}
 </div>
