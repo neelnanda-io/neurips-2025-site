@@ -1033,6 +1033,7 @@ article thead tr:first-child:empty {
 /* Affiliation in parentheses */
 .schedule-page .affiliation {
   font-weight: 400;
+  font-style: normal;
   color: #b0b7c0;
   font-size: 0.8rem;
   margin-left: 0.25rem;
@@ -1050,6 +1051,12 @@ article thead tr:first-child:empty {
 .schedule-page h3 + table td:last-child {
   color: #374151;
   font-style: italic;
+}
+
+/* Lightning talks: single-column rows (no Title yet) keep the Speaker styling */
+.schedule-page h3 + table td:only-child {
+  color: #111827;
+  font-style: normal;
 }
 
 .schedule-page h3 + table td:last-child em {
