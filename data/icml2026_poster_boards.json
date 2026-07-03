@@ -335,11 +335,6 @@
     "session": "Morning"
   },
   {
-    "number": 343,
-    "board": 202,
-    "session": "Morning"
-  },
-  {
     "number": 344,
     "board": 302,
     "session": "Afternoon"
@@ -352,6 +347,11 @@
   {
     "number": 349,
     "board": 305,
+    "session": "Morning"
+  },
+  {
+    "number": 353,
+    "board": 202,
     "session": "Morning"
   },
   {
