@@ -30,8 +30,8 @@ The workshop will be held on **Friday, July 10, 2026** at the **COEX Convention 
 |---------|
 | Belinda Zou Li <span class="affiliation">(Anthropic)</span> |
 | Eric Michaud <span class="affiliation">(Astera Institute / Simplex)</span> |
-| Dhruva Karkada <span class="affiliation">(UC Berkeley)</span> |
 | Daniel Kunin <span class="affiliation">(UC Berkeley)</span> |
+| Dhruva Karkada <span class="affiliation">(UC Berkeley)</span> |
 | Aryaman Arora <span class="affiliation">(Stanford)</span> |
 | Adam Shai <span class="affiliation">(Simplex)</span> |
 | Jesse Hoogland <span class="affiliation">(Timaeus / Resolution)</span> |
