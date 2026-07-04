@@ -16,17 +16,11 @@
   The <a href="/posters/" style="color: inherit; text-decoration: underline;">accepted posters</a> are now online — join us on <strong>July 10</strong> in Seoul!
 </div>
 
-<div class="signup-banner">
-  <form action="https://buttondown.com/api/emails/embed-subscribe/mechinterpworkshop"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/mechinterpworkshop', 'popupwindow')"
-        class="signup-form">
-    <span class="signup-label">Get updates on future workshops</span>
-    <input type="email" name="email" placeholder="your@email.com" required />
-    <button type="submit">Subscribe</button>
-  </form>
-</div>
+<section class="thanks-banner">
+  <p>
+    A special thanks to our <a href="/icml2026-thanks/">Area Chairs, emergency reviewers, and outstanding reviewers</a> for making this workshop possible.
+  </p>
+</section>
 
 <main class="home-content">
   <section class="intro">
@@ -89,10 +83,6 @@
   </section>
   {{ end }}
 
-  <section class="contact-section">
-    <p>Questions? Email <a href="mailto:mechinterpworkshop@gmail.com">mechinterpworkshop@gmail.com</a></p>
-  </section>
-
   <section class="curve-faq">
     <div class="curve-faq-content">
       <div class="curve-faq-image">
@@ -103,6 +93,22 @@
         <p>These are visualizations of "curve detector" neurons from early mechanistic interpretability research. Learn more in the <a href="https://distill.pub/2020/circuits/curve-detectors/">Curve Detectors</a> article on Distill.</p>
       </div>
     </div>
+  </section>
+
+  <div class="signup-banner">
+    <form action="https://buttondown.com/api/emails/embed-subscribe/mechinterpworkshop"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.com/mechinterpworkshop', 'popupwindow')"
+          class="signup-form">
+      <span class="signup-label">Get updates on future workshops</span>
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <section class="contact-section">
+    <p>Questions? Email <a href="mailto:mechinterpworkshop@gmail.com">mechinterpworkshop@gmail.com</a></p>
   </section>
 </main>
 {{ end }}

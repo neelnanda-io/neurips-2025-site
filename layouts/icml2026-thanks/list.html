@@ -1,0 +1,52 @@
+{{ define "title" }}Thank You{{ end }}
+
+{{ define "main" }}
+<div class="container thanks-page">
+  <article>
+    <h1>Thank You</h1>
+    <p class="thanks-intro">
+      Running this workshop's review process took a huge amount of volunteer effort.
+      We're deeply grateful to the Area Chairs, emergency reviewers, and outstanding
+      reviewers listed below for making it possible.
+    </p>
+
+    {{ $data := .Site.Data.thanks }}
+
+    {{ if $data.area_chairs }}
+    <section class="thanks-section">
+      <h2>Area Chairs</h2>
+      <p class="thanks-section-note">{{ len $data.area_chairs }} Area Chairs helped oversee the review process and make final accept/reject decisions.</p>
+      <ul class="thanks-list">
+        {{ range $data.area_chairs }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{ if $data.emergency_reviewers }}
+    <section class="thanks-section">
+      <h2>Emergency Reviewers</h2>
+      <p class="thanks-section-note">{{ len $data.emergency_reviewers }} reviewers stepped in on short notice to cover papers that needed additional reviews.</p>
+      <ul class="thanks-list">
+        {{ range $data.emergency_reviewers }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
+    {{ if $data.outstanding_reviewers }}
+    <section class="thanks-section">
+      <h2>Outstanding Reviewers</h2>
+      <p class="thanks-section-note">{{ len $data.outstanding_reviewers }} reviewers were nominated by Area Chairs for writing exceptionally thoughtful and thorough reviews.</p>
+      <ul class="thanks-list">
+        {{ range $data.outstanding_reviewers }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </article>
+</div>
+{{ end }}
