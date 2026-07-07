@@ -69,8 +69,16 @@
           </div>
           <a href="{{ .openreview }}" class="poster-title">{{ .title }}</a>
           <span class="authors">{{ delimit .authors ", " }}</span>
-          {{ with .abstract }}
-          <details class="abstract-toggle"><summary>Abstract</summary><div class="abstract-content">{{ . }}</div></details>
+          {{ $hasPdf := in site.Data.poster_pdfs .number }}
+          {{ if or .abstract $hasPdf }}
+          <div class="card-actions">
+            {{ with .abstract }}
+            <details class="abstract-toggle"><summary>Abstract</summary><div class="abstract-content">{{ . }}</div></details>
+            {{ end }}
+            {{ if $hasPdf }}
+            <a class="poster-pdf" href="{{ printf "/poster-pdfs/%d.pdf" (int .number) | relURL }}" target="_blank" rel="noopener">Poster PDF</a>
+            {{ end }}
+          </div>
           {{ end }}
         </div>
         {{ end }}
