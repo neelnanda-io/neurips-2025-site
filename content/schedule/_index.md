@@ -3,7 +3,7 @@ title: "Schedule"
 type: "schedule"
 ---
 
-The workshop will be held on **Friday, July 10, 2026** at the **COEX Convention & Exhibition Center** in Seoul, South Korea, co-located with ICML 2026.
+The workshop will be held on **Friday, July 10, 2026** in **Hall C** at the **COEX Convention & Exhibition Center** in Seoul, South Korea, co-located with ICML 2026.
 
 *All workshop posters will be presented together in one large hall room. See the [accepted posters](/posters/) page for each poster's board number and session (morning or afternoon).*
 
