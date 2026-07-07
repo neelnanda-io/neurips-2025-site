@@ -16,7 +16,7 @@ Morning,200,90,poster,Circuit Analysis,LLMs Know They're Wrong and Agree Anyway:
 Morning,200,148,poster,Circuit Analysis,A Mechanistic Study of Transformers Training Dynamics
 Morning,201,193,poster,Circuit Analysis,Ghost Heads Across Training: When Greedy and Distributional Patching Disagree
 Morning,201,212,poster,Circuit Analysis,Finding Interpretable Prompt-Specific Circuits in Language Models
-Morning,202,353,poster,Circuit Analysis,Mechanistically Interpreting Compression in Vision-Language Models
+Morning,202,353,poster,Circuit Analysis,Understanding the Effect of Model Compression on Mechanistic Interpretability in Transformer Language Models: A Short Review
 Morning,202,367,poster,Circuit Analysis,Demystifying Variance in Circuit Discovery of LLMs
 Morning,203,405,poster,Circuit Analysis,Fixed Universal Transformer
 Morning,203,532,poster,Circuit Analysis,Detection Without Suppression: A Sign Flip in IOI Circuit Formation
@@ -70,7 +70,7 @@ Morning,309,746,poster,Interpretability for AI Safety,A Mechanistic View of  Aut
 Morning,309,750,poster,Interpretability for AI Safety,Not All Eval-Awareness is Equal: Capabilities Framing Predicts Compliance
 Morning,310,442,spotlight,Interpretability for AI Safety,Subliminal Learning is Non-Semantic Distillation
 Morning,310,774,poster,Interpretability for AI Safety,Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting
-Morning,311,170,spotlight,Interpretability tooling and software,MultiSTEVE-1s: A Model Zoo and Interpretability Suite for Instruction-Following Vision Agents
+Morning,317,170,spotlight,Interpretability tooling and software,MultiSTEVE-1s: A Model Zoo and Interpretability Suite for Instruction-Following Vision Agents
 Morning,311,406,fast track,Interpretability tooling and software,Geometry of Reason: Spectral Signatures of Valid Mathematical Reasoning
 Morning,312,155,poster,"Methods (probing, steering, causal interventions)",Minionese: Comprehensive Benchmark and Mechanistic Study of Multilingual LLM Safety
 Morning,312,165,poster,"Methods (probing, steering, causal interventions)",Unveiling Memorization–Generalization Coexistence: A Case Study on Arithmetic Tasks with Label Noise
@@ -78,6 +78,7 @@ Morning,313,294,spotlight,"Methods (probing, steering, causal interventions)",An
 Morning,313,511,poster,"Methods (probing, steering, causal interventions)",Mitigating Reward Hacking via Task Representations
 Morning,314,651,spotlight,"Methods (probing, steering, causal interventions)",Language Models Learn Universal Representations of Numbers and Why You Should Care
 Morning,315,80,fast track,Understanding high-level properties of models,Attention Sink Forges Native MoE in Attention Layers: Sink-Aware Training to Address Head Collapse
+Morning,316,453,poster,Other,The Model Organism Lottery: Model Organism Interpretability Strongly Depends on Training Methodology
 Afternoon,120,228,fast track,Applications of interpretability,Interpreting Physics in Video World Models
 Afternoon,120,315,poster,Applications of interpretability,C-Δθ: Circuit-Restricted Weight Arithmetic for Selective Refusal
 Afternoon,121,447,poster,Applications of interpretability,Designing Effective Monitor-Based Interventions for Mitigating Reward Hacking During RL
@@ -157,3 +158,4 @@ Afternoon,314,372,poster,Other,Position: Interpretability Can Be Actionable
 Afternoon,315,97,poster,Probing,Tracing Psychometric Inference in Large Language Models
 Afternoon,315,100,poster,Probing,Representational Depth of Evaluation Awareness Shifts With Scale in Open-Weight Language Models
 Afternoon,316,77,poster,Sparse Autoencoders,"Sparse Autoencoders Find Causal, Lineage-Specific Context Features in Chromatin Foundation Models"
+Afternoon,316,528,poster,Other,When Is an Attention Head a Computational Unit? Shared Circuits Despite Orthogonal Representations
