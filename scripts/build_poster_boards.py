@@ -17,6 +17,13 @@ CSV_PATH = ROOT / "raw-data" / "icml2026_poster_board_assignments.csv"
 POSTERS_PATH = ROOT / "data" / "icml2026_posters.json"
 OUT_PATH = ROOT / "data" / "icml2026_poster_boards.json"
 
+# Papers whose authors told us (after the venue CSV was finalized) that no one
+# can attend in person. They stay listed as posters but get no board/session.
+NOT_ATTENDING = {
+    272,  # Mechanistic Evidence for Spectral Structures in Prior-Data Fitted Networks
+    718,  # Representation Is Not Reliance: Concept-Based Causal Diagnostics of Shortcut Learning in Vision
+}
+
 
 def main() -> None:
     # Virtual posters are not presented in person, so they never get a
@@ -30,6 +37,9 @@ def main() -> None:
             number = int(row["Paper number"])
             if track_by_number.get(number) == "virtual":
                 print(f"Skipping paper {number}: virtual track, no physical board")
+                continue
+            if number in NOT_ATTENDING:
+                print(f"Skipping paper {number}: authors not attending in person")
                 continue
             entries.append(
                 {

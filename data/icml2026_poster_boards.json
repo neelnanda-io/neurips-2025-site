@@ -250,11 +250,6 @@
     "session": "Afternoon"
   },
   {
-    "number": 272,
-    "board": 214,
-    "session": "Afternoon"
-  },
-  {
     "number": 277,
     "board": 215,
     "session": "Afternoon"
@@ -698,11 +693,6 @@
     "number": 714,
     "board": 206,
     "session": "Morning"
-  },
-  {
-    "number": 718,
-    "board": 207,
-    "session": "Afternoon"
   },
   {
     "number": 729,
