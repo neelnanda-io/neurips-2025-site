@@ -1116,6 +1116,22 @@ article thead tr:first-child:empty {
   }
 }
 
+/* Keynote talk titles: own line, below speaker + affiliation */
+.schedule-page .talk-title {
+  display: block;
+  margin-top: 0.4rem;
+  color: #4b5563;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Give rows with a talk title (keynotes) extra breathing room */
+.schedule-page tr:has(.talk-title) td {
+  padding-top: 1rem;
+  padding-bottom: 1.15rem;
+}
+
 /* Lightning talks: Title column */
 .schedule-page h3 + table td:last-child {
   color: #374151;

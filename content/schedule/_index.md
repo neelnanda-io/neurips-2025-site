@@ -14,11 +14,11 @@ The workshop will be held on **Friday, July 10, 2026** in **Hall C** at the **CO
 | 8:00am – 9:00am | *Socializing* |
 | 9:00am – 9:30am | *Coffee break* |
 | 9:30am – 10:00am | Opening remarks |
-| 10:00am – 10:30am | Keynote 1: **Mor Geva** <span class="affiliation">(Tel Aviv University)</span> |
+| 10:00am – 10:30am | Keynote 1: **Mor Geva** <span class="affiliation">(Tel Aviv University)</span><span class="talk-title">"Interpretability 2030"</span> |
 | 10:30am – 11:00am | Spotlight talks (morning) |
 | 11:00am – 12:00pm | [Posters (morning)](/posters/) |
 | 12:00pm – 1:00pm | *Lunch* |
-| 1:00pm – 1:30pm | Keynote 2: **Jack Lindsey** <span class="affiliation">(Anthropic)</span> |
+| 1:00pm – 1:30pm | Keynote 2: **Jack Lindsey** <span class="affiliation">(Anthropic)</span><span class="talk-title">"AI psychology"</span> |
 | 1:30pm – 2:00pm | Spotlight talks (afternoon) |
 | 2:00pm – 3:00pm | [Posters (afternoon)](/posters/) |
 | 3:00pm – 3:30pm | *Coffee break* |
